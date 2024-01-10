@@ -12,6 +12,7 @@ export default async function Page() {
       const filePath = path.join(postsDirectory, fileName);
       const fileContents = await readFile(filePath, "utf8");
       const { data } = matter(fileContents);
+      guardData(data);
       return {
         slug: fileName.replace(".md", ""),
         frontmatter: data,
@@ -19,7 +20,9 @@ export default async function Page() {
     })
   ).then((posts) =>
     posts.sort(
-      (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+      (a, b) =>
+        new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime()
     )
   );
 
@@ -35,4 +38,10 @@ export default async function Page() {
       </ul>
     </div>
   );
+}
+
+function guardData(data: any): asserts data is { title: string; date: string } {
+  if (typeof data.title !== "string") {
+    throw new Error("invalid data");
+  }
 }
