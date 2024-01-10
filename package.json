@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "gray-matter": "4.0.3",
     "next": "14.0.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "rehype-react": "8.0.0",
+    "remark-parse": "11.0.0",
+    "remark-rehype": "11.0.0",
+    "unified": "11.0.4"
   },
   "devDependencies": {
     "@types/node": "20.10.7",
