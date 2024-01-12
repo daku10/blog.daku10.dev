@@ -16,7 +16,7 @@ type Post = {
 export const retrievePostSummaries: () => Promise<PostSummary[]> = async () => {
   const postsDir = path.join(process.cwd(), "content");
   const fileNames = (await readdir(postsDir)).filter((fileName) =>
-    fileName.endsWith(".md")
+    fileName.endsWith(".md"),
   );
 
   return (
@@ -30,11 +30,11 @@ export const retrievePostSummaries: () => Promise<PostSummary[]> = async () => {
           slug: fileName.replace(/\.md$/, ""),
           ...data,
         };
-      })
+      }),
     )
   ).sort(
     (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 };
 
@@ -51,7 +51,7 @@ export const retrievePost: (slug: string) => Promise<Post> = async (slug) => {
 };
 
 function guardData(
-  data: unknown
+  data: unknown,
 ): asserts data is { title: string; publishedAt: string; updatedAt?: string } {
   if (typeof data !== "object" || data === null) {
     throw new Error("data is not an object");
