@@ -1,7 +1,8 @@
 ---
-title: Hello World
+title: Blog始めました
+description: "Blog始めました。Next.jsベースで作られています。"
+tags: ["next.js", "frontend", "blog"]
 publishedAt: "2023-06-24"
-description: "This is my first blog post!"
 ---
 
 ## 見出し
