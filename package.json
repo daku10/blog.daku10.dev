@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "yarn gen && next build",
+    "start": "serve out",
     "lint": "next lint",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "gen": "tsx scripts/generate-tags.ts"
   },
   "dependencies": {
     "gray-matter": "4.0.3",
@@ -26,6 +27,8 @@
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
     "prettier": "3.1.1",
+    "serve": "14.2.1",
+    "tsx": "4.7.0",
     "typescript": "5.3.3"
   },
   "packageManager": "yarn@4.0.2+sha256.825003a0f561ad09a3b1ac4a3b3ea6207af2796d54f62a9420520915721f5186"
