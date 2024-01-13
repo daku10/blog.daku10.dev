@@ -84,20 +84,24 @@ export const retrieveTagWithPostCounts: () => Promise<
   TagWithPostCount[]
 > = async () => {
   const postSummaries = await retrievePostSummaries();
-  const tags = new Map<Tag, TagWithPostCount>();
-  postSummaries
+  const tags = postSummaries
     .flatMap((post) => post.tags)
-    .forEach((tag) => {
-      if (tags.has(tag)) {
-        tags.get(tag)!.postCount++;
+    .reduce((acc, tag) => {
+      const t = acc.get(tag);
+      if (t) {
+        acc.set(tag, {
+          ...t,
+          postCount: t.postCount + 1,
+        });
       } else {
-        tags.set(tag, {
+        acc.set(tag, {
           slug: tag,
           label: TagLabel[tag],
           postCount: 1,
         });
       }
-    });
+      return acc;
+    }, new Map<Tag, TagWithPostCount>());
 
   return [...tags.values()].sort((a, b) => {
     if (a.postCount === b.postCount) {
