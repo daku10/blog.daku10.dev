@@ -1,16 +1,25 @@
 import { readFile, readdir } from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
-import { NonEmptyArray } from "./type";
 import { Tag, Tags } from "@/generated/tags";
 import { TagLabel } from "./const";
+import * as v from "valibot";
+
+const postMetadataSchema = v.object({
+  title: v.string(),
+  description: v.string(),
+  tags: v.array(v.picklist(Tags), [v.minLength(1)]),
+  publishedAt: v.string(),
+  updatedAt: v.optional(v.string()),
+});
 
 type PostMetadata = {
   title: string;
   description: string;
-  tags: NonEmptyArray<Tag>;
+  // TODO: tags should be non-empty array
+  tags: Tag[];
   publishedAt: string;
-  updatedAt?: string;
+  updatedAt?: string | undefined;
 };
 
 type PostSummary = {
@@ -39,10 +48,10 @@ export const retrievePostSummaries: (
         const filePath = path.join(postsDir, fileName);
         const fileContent = await readFile(filePath, "utf-8");
         const { data } = matter(fileContent);
-        assertData(data);
+        const parsed = v.parse(postMetadataSchema, data);
         return {
           slug: fileName.replace(/\.md$/, ""),
-          ...data,
+          ...parsed,
         };
       }),
     )
@@ -63,11 +72,11 @@ export const retrievePost: (slug: string) => Promise<Post> = async (slug) => {
   const filePath = path.join(process.cwd(), "contents", `${slug}.md`);
   const fileContent = await readFile(filePath, "utf-8");
   const { data, content } = matter(fileContent);
-  assertData(data);
+  const parsed = v.parse(postMetadataSchema, data);
   return {
     slug,
     content,
-    ...data,
+    ...parsed,
   };
 };
 
@@ -123,24 +132,3 @@ export const retrieveTag: (slug: string) => TagWithLabel | undefined = (
 ) => {
   return retrieveTags().filter((tag) => tag.slug === slug)[0];
 };
-
-function assertData(data: unknown): asserts data is PostMetadata {
-  if (typeof data !== "object" || data === null) {
-    throw new Error("data is not an object");
-  }
-  if (!("title" in data)) {
-    throw new Error("title is missing");
-  }
-  if (!("description" in data)) {
-    throw new Error("description is missing");
-  }
-  if (!("tags" in data)) {
-    throw new Error("tags is missing");
-  }
-  if (!(Array.isArray(data.tags) && data.tags.length > 0)) {
-    throw new Error("tags is not an non empty array");
-  }
-  if (!("publishedAt" in data)) {
-    throw new Error("publishedAt is missing");
-  }
-}
