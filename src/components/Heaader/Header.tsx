@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 export const Header = () => {
   return (
     <header>
-      <span>blog.daku10.dev</span>
+      <Link href="/" className="text-3xl font-bold">
+        blog.daku10.dev
+      </Link>
     </header>
   );
 };
