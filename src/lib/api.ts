@@ -4,11 +4,17 @@ import path from "path";
 import { Tag, Tags } from "@/generated/tags";
 import { TagLabel } from "./const";
 import * as v from "valibot";
+import { NonEmptyArray } from "./type";
 
 const postMetadataSchema = v.object({
   title: v.string(),
   description: v.string(),
-  tags: v.array(v.picklist(Tags), [v.minLength(1)]),
+  tags: v.transform(
+    v.array(v.picklist(Tags), [v.minLength(1)]),
+    (value: Tag[]) => {
+      return value as NonEmptyArray<Tag>;
+    },
+  ),
   publishedAt: v.string(),
   updatedAt: v.optional(v.string()),
 });
@@ -16,8 +22,7 @@ const postMetadataSchema = v.object({
 type PostMetadata = {
   title: string;
   description: string;
-  // TODO: tags should be non-empty array
-  tags: Tag[];
+  tags: NonEmptyArray<Tag>;
   publishedAt: string;
   updatedAt?: string | undefined;
 };
