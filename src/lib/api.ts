@@ -1,10 +1,11 @@
 import { readFile, readdir } from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
-import { Tag, Tags } from "@/generated/tags";
+import type { Tag } from "@/generated/tags";
+import { Tags } from "@/generated/tags";
 import { TagLabel } from "./const";
 import * as v from "valibot";
-import { NonEmptyArray } from "./type";
+import type { NonEmptyArray } from "./type";
 
 const postMetadataSchema = v.object({
   title: v.string(),

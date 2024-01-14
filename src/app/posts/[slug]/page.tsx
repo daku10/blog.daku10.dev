@@ -1,6 +1,6 @@
 import { retrievePost, retrievePostSummaries } from "@/lib/api";
 import { processor } from "@/lib/processor";
-import { ResolvingMetadata } from "next";
+import type { ResolvingMetadata } from "next";
 
 type Props = {
   params: { slug: string };

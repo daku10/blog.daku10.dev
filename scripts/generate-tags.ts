@@ -23,4 +23,6 @@ export type Tag = typeof Tags[number];
   await writeFile(path.join(process.cwd(), "src/generated/tags.ts"), data);
 
   console.log("Generated tags.");
-})();
+})().catch((e) => {
+  console.error(e);
+});

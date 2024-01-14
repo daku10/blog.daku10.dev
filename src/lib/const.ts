@@ -1,4 +1,4 @@
-import { Tag } from "@/generated/tags";
+import type { Tag } from "@/generated/tags";
 
 export const TagLabel = {
   blog: "ブログ",

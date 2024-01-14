@@ -5,6 +5,7 @@ import { unified } from "unified";
 import * as prod from "react/jsx-runtime";
 
 // @ts-expect-error: the react types are missing.
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const production = { Fragment: prod.Fragment, jsx: prod.jsx, jsxs: prod.jsxs };
 
 export const processor = unified()

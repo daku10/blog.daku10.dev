@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "yarn gen && next build",
     "start": "serve out",
-    "lint": "next lint",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.mjs './**/*.{ts,tsx}'",
     "format": "prettier . --write",
     "gen": "tsx scripts/generate-tags.ts"
   },
@@ -22,11 +22,19 @@
     "valibot": "0.25.0"
   },
   "devDependencies": {
+    "@eslint/js": "8.56.0",
+    "@next/eslint-plugin-next": "14.0.4",
+    "@types/eslint": "8.56.2",
+    "@types/eslint__js": "8.42.3",
     "@types/node": "20.10.7",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
+    "@typescript-eslint/eslint-plugin": "6.18.1",
+    "@typescript-eslint/parser": "6.18.1",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
     "prettier": "3.1.1",
     "serve": "14.2.1",
     "tsx": "4.7.0",

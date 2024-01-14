@@ -3,14 +3,14 @@ import {
   retrieveTag,
   retrieveTagWithPostCounts,
 } from "@/lib/api";
-import { ResolvingMetadata } from "next";
+import type { ResolvingMetadata } from "next";
 import Link from "next/link";
 
 type Props = {
   params: { slug: string };
 };
 
-export async function generateMetadata(
+export function generateMetadata(
   { params }: Props,
   _parent: ResolvingMetadata,
 ) {
