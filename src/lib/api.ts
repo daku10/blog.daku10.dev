@@ -10,12 +10,7 @@ import type { NonEmptyArray } from "./type";
 const postMetadataSchema = v.object({
   title: v.string(),
   description: v.string(),
-  tags: v.transform(
-    v.array(v.picklist(Tags), [v.minLength(1)]),
-    (value: Tag[]) => {
-      return value as NonEmptyArray<Tag>;
-    },
-  ),
+  tags: v.tuple([v.picklist(Tags)], v.picklist(Tags)),
   publishedAt: v.string(),
   updatedAt: v.optional(v.string()),
 });
