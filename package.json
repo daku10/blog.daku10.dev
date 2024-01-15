@@ -11,6 +11,8 @@
     "gen": "tsx scripts/generate-tags.ts"
   },
   "dependencies": {
+    "@heroicons/react": "2.1.1",
+    "clsx": "2.1.0",
     "gray-matter": "4.0.3",
     "next": "14.0.4",
     "react": "18.2.0",
@@ -18,6 +20,8 @@
     "rehype-react": "8.0.0",
     "remark-parse": "11.0.0",
     "remark-rehype": "11.0.0",
+    "simple-icons": "11.1.0",
+    "tailwind-merge": "2.2.0",
     "unified": "11.0.4",
     "valibot": "0.25.0"
   },

@@ -19,7 +19,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.23.2":
+"@babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.5":
   version: 7.23.8
   resolution: "@babel/runtime@npm:7.23.8"
   dependencies:
@@ -228,6 +228,15 @@ __metadata:
   version: 8.56.0
   resolution: "@eslint/js@npm:8.56.0"
   checksum: 60b3a1cf240e2479cec9742424224465dc50e46d781da1b7f5ef240501b2d1202c225bd456207faac4b34a64f4765833345bc4ddffd00395e1db40fa8c426f5a
+  languageName: node
+  linkType: hard
+
+"@heroicons/react@npm:2.1.1":
+  version: 2.1.1
+  resolution: "@heroicons/react@npm:2.1.1"
+  peerDependencies:
+    react: ">= 16"
+  checksum: c85f76d4ccb5bdad9e6ffaa62bfdcde1c1f9ebaf3287908a7be0994c2d0f6151b9017f6e41d0a1ec9ba1eb1c53ab88f30704b0d25c72adc59896882b0a60147e
   languageName: node
   linkType: hard
 
@@ -1098,6 +1107,7 @@ __metadata:
   resolution: "blog.daku10.dev@workspace:."
   dependencies:
     "@eslint/js": "npm:8.56.0"
+    "@heroicons/react": "npm:2.1.1"
     "@next/eslint-plugin-next": "npm:14.0.4"
     "@types/eslint": "npm:8.56.2"
     "@types/eslint__js": "npm:8.42.3"
@@ -1107,6 +1117,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:6.18.1"
     "@typescript-eslint/parser": "npm:6.18.1"
     autoprefixer: "npm:10.4.16"
+    clsx: "npm:2.1.0"
     eslint: "npm:8.56.0"
     eslint-config-next: "npm:14.0.4"
     eslint-plugin-react: "npm:7.33.2"
@@ -1121,6 +1132,8 @@ __metadata:
     remark-parse: "npm:11.0.0"
     remark-rehype: "npm:11.0.0"
     serve: "npm:14.2.1"
+    simple-icons: "npm:11.1.0"
+    tailwind-merge: "npm:2.2.0"
     tailwindcss: "npm:3.4.1"
     tsx: "npm:4.7.0"
     typescript: "npm:5.3.3"
@@ -1385,6 +1398,13 @@ __metadata:
     execa: "npm:^5.1.1"
     is-wsl: "npm:^2.2.0"
   checksum: 299d66e13fcaccf656306e76d629ce6927eaba8ba58ae5328e3379ae627e469e29df8ef87408cdb234e2ad0e25f0024dd203393f7e59c67ae79772579c4de052
+  languageName: node
+  linkType: hard
+
+"clsx@npm:2.1.0":
+  version: 2.1.0
+  resolution: "clsx@npm:2.1.0"
+  checksum: c09c00ad14f638366ca814097e6cab533dfa1972a358da5b557be487168acbb25b4c1395e89ffa842a8a61ba87a462d2b4885bc9d4f8410b598f3cb339599cdb
   languageName: node
   linkType: hard
 
@@ -4954,6 +4974,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"simple-icons@npm:11.1.0":
+  version: 11.1.0
+  resolution: "simple-icons@npm:11.1.0"
+  checksum: e88accc29d4b6356b0e931e3f4230d039f4737d57a620cc453a753aed66883614462bc8cd2a585073df4962b0ccd26425b12f9fb3ef4dc8271f445d261975886
+  languageName: node
+  linkType: hard
+
 "slash@npm:^3.0.0":
   version: 3.0.0
   resolution: "slash@npm:3.0.0"
@@ -5217,6 +5244,15 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 6c4032340701a9950865f7ae8ef38578d8d7053f5e10518076e6554a9381fa91bd9c6850193695c141f32b21f979c985db07265a758867bac95de05f7d8aeb39
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:2.2.0":
+  version: 2.2.0
+  resolution: "tailwind-merge@npm:2.2.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.5"
+  checksum: 41476d686af101c770401f4db509ffea9ec13bf99fd18185903dd86df2b71b3f512d9373b0f2785cb9e9abf093f39373327a29e9b3dde643b9daf7062f77c4ba
   languageName: node
   linkType: hard
 
