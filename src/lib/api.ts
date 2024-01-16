@@ -5,7 +5,6 @@ import type { Tag } from "@/generated/tags";
 import { Tags } from "@/generated/tags";
 import { TagLabel } from "./const";
 import * as v from "valibot";
-import type { NonEmptyArray } from "./type";
 
 const postMetadataSchema = v.object({
   title: v.string(),
@@ -14,6 +13,8 @@ const postMetadataSchema = v.object({
   publishedAt: v.string(),
   updatedAt: v.optional(v.string()),
 });
+
+type NonEmptyArray<T> = [T, ...T[]];
 
 type PostMetadata = {
   title: string;

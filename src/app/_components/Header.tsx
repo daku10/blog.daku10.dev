@@ -1,4 +1,5 @@
 import { Link } from "@/components/Link";
+import { ThemeToggleButton } from "./ThemeToggleButton";
 
 export const Header = () => {
   return (
@@ -14,6 +15,7 @@ export const Header = () => {
               <Link href="/about">About</Link>
             </li>
           </ul>
+          <ThemeToggleButton />
         </nav>
       </div>
     </header>

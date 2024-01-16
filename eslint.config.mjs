@@ -37,6 +37,7 @@ export default [
       ...nextPlugin.configs.recommended.rules,
       ...nextPlugin.configs["core-web-vitals"].rules,
       "react/self-closing-comp": "error",
+      "react/prop-types": "off",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {

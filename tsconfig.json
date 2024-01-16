@@ -14,7 +14,7 @@
     "incremental": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
-    "exactOptionalPropertyTypes": true,
+    // "exactOptionalPropertyTypes": true, // TODO: fix conflicts on radix
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
