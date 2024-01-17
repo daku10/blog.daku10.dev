@@ -11,8 +11,8 @@
     "gen": "tsx scripts/generate-tags.ts"
   },
   "dependencies": {
+    "@headlessui/react": "1.7.18",
     "@heroicons/react": "2.1.1",
-    "@radix-ui/react-dropdown-menu": "2.0.6",
     "clsx": "2.1.0",
     "gray-matter": "4.0.3",
     "lucide-react": "0.309.0",
@@ -45,6 +45,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "postcss": "8.4.33",
     "prettier": "3.1.1",
+    "prettier-plugin-tailwindcss": "0.5.11",
     "serve": "14.2.1",
     "tailwindcss": "3.4.1",
     "tsx": "4.7.0",

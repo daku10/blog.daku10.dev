@@ -2,8 +2,16 @@
 
 import { Icon } from "@/components/Icon";
 import { useTheme } from "next-themes";
+import type { ComponentProps } from "react";
 import { forwardRef, useEffect, useState } from "react";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { Menu } from "@headlessui/react";
+import { cn } from "@/lib/util";
+
+type Theme = "light" | "dark" | "system";
+
+const isValidTheme = (theme: string | undefined): theme is Theme => {
+  return theme === "light" || theme === "dark" || theme === "system";
+};
 
 export const ThemeToggleButton = () => {
   const { theme, setTheme } = useTheme();
@@ -13,31 +21,46 @@ export const ThemeToggleButton = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
+  if (!mounted || !isValidTheme(theme)) {
     return <ThemeIconButton />;
   }
 
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
-        <ThemeIconButton />
-      </DropdownMenu.Trigger>
-      <DropdownMenu.Content
-        align="end"
-        hideWhenDetached
-        className="mt-2 p-2 border rounded-xl shadow-md"
-      >
-        <DropdownMenu.RadioGroup
-          value={theme}
-          onValueChange={setTheme}
-          className="flex flex-col gap-2"
-        >
-          <RadioItem value="light" />
-          <RadioItem value="dark" />
-          <RadioItem value="system" />
-        </DropdownMenu.RadioGroup>
-      </DropdownMenu.Content>
-    </DropdownMenu.Root>
+    <Menu as="div" className="relative">
+      <Menu.Button as={ThemeIconButton} />
+      <Menu.Items className="absolute right-0 mt-2 flex flex-col rounded-md border p-2 shadow-md ring-1 ring-black/5 focus:outline-none">
+        <Menu.Item>
+          {({ active }) => (
+            <RadioItem
+              active={active}
+              current={theme}
+              value="light"
+              onChange={setTheme}
+            />
+          )}
+        </Menu.Item>
+        <Menu.Item>
+          {({ active }) => (
+            <RadioItem
+              active={active}
+              current={theme}
+              value="dark"
+              onChange={setTheme}
+            />
+          )}
+        </Menu.Item>
+        <Menu.Item>
+          {({ active }) => (
+            <RadioItem
+              active={active}
+              current={theme}
+              value="system"
+              onChange={setTheme}
+            />
+          )}
+        </Menu.Item>
+      </Menu.Items>
+    </Menu>
   );
 };
 
@@ -46,37 +69,52 @@ const ThemeIconButton = forwardRef<HTMLButtonElement>((props, ref) => {
     <button
       {...props}
       ref={ref}
-      className="p-2 outline-none focus-visible:ring-2 rounded-md hover:bg-accent hover:text-accent-foreground"
+      className="rounded-md p-2 hover:bg-accent hover:text-accent-foreground"
     >
-      <Icon type="sun" className="w-6 h-6 block dark:hidden" />
-      <Icon type="moon" className="w-6 h-6 hidden dark:block" />
+      <Icon type="sun" className="block h-6 w-6 dark:hidden" />
+      <Icon type="moon" className="hidden h-6 w-6 dark:block" />
     </button>
   );
 });
 ThemeIconButton.displayName = "ThemeIconButton";
 
 type RadioItemProps = {
-  value: "light" | "dark" | "system";
-};
+  active: boolean;
+  current: Theme;
+  value: Theme;
+  onChange: (value: Theme) => void;
+} & Omit<ComponentProps<"button">, "onChange">;
 
-const RadioItem = ({ value }: RadioItemProps) => {
-  const type =
-    value === "light" ? "sun" : value === "dark" ? "moon" : "sun-moon";
-  const label =
-    value === "light" ? "Light" : value === "dark" ? "Dark" : "System";
+const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
+  ({ current, value, onChange, active, ...rest }, ref) => {
+    const type =
+      value === "light" ? "sun" : value === "dark" ? "moon" : "sun-moon";
+    const label =
+      value === "light" ? "Light" : value === "dark" ? "Dark" : "System";
 
-  return (
-    <DropdownMenu.RadioItem
-      value={value}
-      className="cursor-pointer select-none outline-none rounded-md transition-colors focus:bg-accent focus:text-accent-foreground"
-    >
-      <div className="flex items-center">
-        <Icon type={type} className="w-6 h-6" />
-        <span className="ml-2">{label}</span>
-        <DropdownMenu.DropdownMenuItemIndicator>
-          <Icon type="check" className="ml-2 w-4 h-4" />
-        </DropdownMenu.DropdownMenuItemIndicator>
-      </div>
-    </DropdownMenu.RadioItem>
-  );
-};
+    return (
+      <button
+        {...rest}
+        ref={ref}
+        onClick={(e) => {
+          rest.onClick?.(e);
+          onChange(value);
+        }}
+        className={cn(
+          "w-28 cursor-pointer select-none rounded-md py-1.5 outline-none transition-colors",
+          { "bg-accent text-accent-foreground": active },
+        )}
+      >
+        <div className="flex items-center">
+          <Icon type={type} className="h-6 w-6" />
+          <span className="ml-2">{label}</span>
+          <div className="ml-auto h-4 w-4">
+            {current === value && <Icon type="check" />}
+          </div>
+        </div>
+      </button>
+    );
+  },
+);
+
+RadioItem.displayName = "RadioItem";

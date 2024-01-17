@@ -4,7 +4,7 @@ import { ThemeToggleButton } from "./ThemeToggleButton";
 export const Header = () => {
   return (
     <header>
-      <div className="max-w-7xl mx-auto py-8">
+      <div className="mx-auto max-w-7xl py-8">
         <nav className="flex items-center">
           <Link href="/" className="text-3xl font-bold">
             blog.daku10.dev
