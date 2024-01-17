@@ -3,8 +3,8 @@
 import { Icon } from "@/components/Icon";
 import { useTheme } from "next-themes";
 import type { ComponentProps } from "react";
-import { forwardRef, useEffect, useState } from "react";
-import { Menu } from "@headlessui/react";
+import { Fragment, forwardRef, useEffect, useState } from "react";
+import { Menu, Transition } from "@headlessui/react";
 import { cn } from "@/lib/util";
 
 type Theme = "light" | "dark" | "system";
@@ -28,38 +28,48 @@ export const ThemeToggleButton = () => {
   return (
     <Menu as="div" className="relative">
       <Menu.Button as={ThemeIconButton} />
-      <Menu.Items className="absolute right-0 mt-2 flex flex-col rounded-md border p-2 shadow-md ring-1 ring-black/5 focus:outline-none">
-        <Menu.Item>
-          {({ active }) => (
-            <RadioItem
-              active={active}
-              current={theme}
-              value="light"
-              onChange={setTheme}
-            />
-          )}
-        </Menu.Item>
-        <Menu.Item>
-          {({ active }) => (
-            <RadioItem
-              active={active}
-              current={theme}
-              value="dark"
-              onChange={setTheme}
-            />
-          )}
-        </Menu.Item>
-        <Menu.Item>
-          {({ active }) => (
-            <RadioItem
-              active={active}
-              current={theme}
-              value="system"
-              onChange={setTheme}
-            />
-          )}
-        </Menu.Item>
-      </Menu.Items>
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="opacity-0 transform scale-95"
+        enterTo="opacity-100 transform scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="opacity-100 transform scale-100"
+        leaveTo="opacity-0 transform scale-95"
+      >
+        <Menu.Items className="absolute right-0 mt-2 flex flex-col rounded-md border p-2 shadow-md ring-1 ring-black/5 focus:outline-none">
+          <Menu.Item>
+            {({ active }) => (
+              <RadioItem
+                active={active}
+                current={theme}
+                value="light"
+                onChange={setTheme}
+              />
+            )}
+          </Menu.Item>
+          <Menu.Item>
+            {({ active }) => (
+              <RadioItem
+                active={active}
+                current={theme}
+                value="dark"
+                onChange={setTheme}
+              />
+            )}
+          </Menu.Item>
+          <Menu.Item>
+            {({ active }) => (
+              <RadioItem
+                active={active}
+                current={theme}
+                value="system"
+                onChange={setTheme}
+              />
+            )}
+          </Menu.Item>
+        </Menu.Items>
+      </Transition>
     </Menu>
   );
 };
