@@ -6,8 +6,6 @@ export default async function Page() {
 
   return (
     <div>
-      <h1>My Blog</h1>
-      <Link href="/tags">タグ一覧</Link>
       <ul>
         {postSummaries.map((postSummary) => (
           <li key={postSummary.slug}>
