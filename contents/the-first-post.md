@@ -1,6 +1,6 @@
 ---
 title: Blog始めました
-description: "Blog始めました。Next.jsのApp Router + Static Exportベースで作られており、Cloudflare Pagesでデプロイされています。"
+description: "Blog始めました。Next.jsのApp Router + Static Exportベースで作られており、Cloudflare Pagesでデプロイされています。ブログを始めたモチベーションや使用した技術スタックについて書いています。"
 tags: ["nextjs", "frontend", "blog", "cloudflare"]
 publishedAt: "2023-06-24"
 ---
@@ -18,6 +18,8 @@ publishedAt: "2023-06-24"
 
 ## 技術スタック
 
+今回は以下のような技術スタックでブログを作りました。
+
 ### Next.js
 
 ### Tailwind CSS
@@ -25,3 +27,7 @@ publishedAt: "2023-06-24"
 ### Cloudflare
 
 ## 参考にさせていただいたブログ
+
+## おわりに
+
+ブログのソースコードは[GitHub]()で公開しています。また、記事の内容に誤りがあった場合は、[GitHubのIssue]()や[X]()で教えていただけると嬉しいです。
