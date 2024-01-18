@@ -1,5 +1,4 @@
-// import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
-import { Moon, Sun, SunMoon } from "lucide-react";
+import { IconSun, IconMoon, IconSunMoon, IconCheck } from "@tabler/icons-react";
 import { siZenn } from "simple-icons";
 
 const icons = ["sun", "moon", "sun-moon", "check"] as const;
@@ -21,22 +20,13 @@ export const Icon = ({ type, className }: Props) => {
   ) {
     switch (type) {
       case "sun":
-        return <Sun className={className} />;
+        return <IconSun className={className} />;
       case "moon":
-        return <Moon className={className} />;
+        return <IconMoon className={className} />;
       case "sun-moon":
-        return <SunMoon className={className} />;
+        return <IconSunMoon className={className} />;
       case "check":
-        return (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            className={className}
-          >
-            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-          </svg>
-        );
+        return <IconCheck className={className} />;
     }
   }
   switch (type) {

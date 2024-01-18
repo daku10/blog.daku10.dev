@@ -118,8 +118,8 @@ const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
         <div className="flex items-center">
           <Icon type={type} className="h-6 w-6" />
           <span className="ml-2">{label}</span>
-          <div className="ml-auto h-4 w-4">
-            {current === value && <Icon type="check" />}
+          <div className="ml-auto">
+            {current === value && <Icon type="check" className="h-4 w-4" />}
           </div>
         </div>
       </button>
