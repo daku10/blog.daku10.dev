@@ -6,10 +6,27 @@
     :root {
         --accent: 210 40% 96.1%;
         --accent-foreground: 222.2 47.4% 11.2%;
+
+        --primary: 0 0 0;
+        --secondary: 83 86 97;
+        --background: 255 255 255;
     }
 
     .dark {
         --accent: 217.2 32.6% 17.5%;
         --accent-foreground: 210 40% 98%;
+
+        --primary: 255 255 255;
+        --secondary: 169 173 193;
+        --background: 24 24 27;
     }
+}
+
+body {
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }

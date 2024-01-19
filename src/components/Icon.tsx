@@ -1,8 +1,8 @@
 import { IconSun, IconMoon, IconSunMoon, IconCheck } from "@tabler/icons-react";
-import { siZenn } from "simple-icons";
+import { siZenn, siGithub } from "simple-icons";
 
 const icons = ["sun", "moon", "sun-moon", "check"] as const;
-const serviceIcons = ["zenn"] as const;
+const serviceIcons = ["zenn", "github"] as const;
 
 type Icon = (typeof icons)[number] | (typeof serviceIcons)[number];
 
@@ -39,6 +39,17 @@ export const Icon = ({ type, className }: Props) => {
           className={className}
         >
           <path d={siZenn.path} />
+        </svg>
+      );
+    case "github":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          className={className}
+        >
+          <path d={siGithub.path} />
         </svg>
       );
   }

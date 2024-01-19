@@ -1,16 +1,8 @@
-import { cn } from "@/lib/util";
 import NextLink from "next/link";
 import type { ComponentProps } from "react";
 
-type Props = ComponentProps<typeof NextLink> & {
-  withUnderline?: boolean;
-};
+type Props<T> = ComponentProps<typeof NextLink<T>>;
 
-export const Link = ({ withUnderline, className, ...rest }: Props) => {
-  return (
-    <NextLink
-      {...rest}
-      className={cn(className, { underline: withUnderline })}
-    />
-  );
-};
+export function Link<T>({ ...rest }: Props<T>) {
+  return <NextLink {...rest} />;
+}

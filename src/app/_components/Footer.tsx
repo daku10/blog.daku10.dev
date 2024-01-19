@@ -8,10 +8,7 @@ export const Footer = () => {
         <span>All rights reserved © daku10 2024</span>
         <span>
           このサイトはGoogle Analyticsを使用しています。詳細は
-          <Link
-            href="https://policies.google.com/technologies/partner-sites?hl=ja"
-            withUnderline
-          >
+          <Link href="https://policies.google.com/technologies/partner-sites?hl=ja">
             こちら
           </Link>
           をご覧ください。

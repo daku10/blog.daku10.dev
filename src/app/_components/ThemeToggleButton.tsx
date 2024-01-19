@@ -79,7 +79,7 @@ const ThemeIconButton = forwardRef<HTMLButtonElement>((props, ref) => {
     <button
       {...props}
       ref={ref}
-      className="rounded-md p-2 hover:bg-accent hover:text-accent-foreground"
+      className="text-secondary hover:text-primary p-2"
     >
       <Icon type="sun" className="block h-6 w-6 dark:hidden" />
       <Icon type="moon" className="hidden h-6 w-6 dark:block" />
@@ -111,8 +111,8 @@ const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
           onChange(value);
         }}
         className={cn(
-          "w-28 cursor-pointer select-none rounded-md py-1.5 outline-none transition-colors",
-          { "bg-accent text-accent-foreground": active },
+          "text-secondary w-28 cursor-pointer select-none py-1.5 outline-none transition-colors",
+          { "text-primary": active },
         )}
       >
         <div className="flex items-center">
