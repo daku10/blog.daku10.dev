@@ -9,10 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
         primary: "rgb(var(--primary))",
         secondary: "rgb(var(--secondary))",
         background: "rgb(var(--background))",

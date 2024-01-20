@@ -112,7 +112,7 @@ const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
         }}
         className={cn(
           "text-secondary w-28 cursor-pointer select-none py-1.5 outline-none transition-colors",
-          { "text-primary": active },
+          { "text-primary": active || current === value },
         )}
       >
         <div className="flex items-center">

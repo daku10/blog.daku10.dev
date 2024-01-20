@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className="bg-background">
+      <body className="bg-background transition-colors">
         <Providers>
           <Header />
           {children}
