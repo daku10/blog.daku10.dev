@@ -1,18 +1,14 @@
 import { readFile, readdir } from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
-import type { Tag } from "@/generated/tags";
-import { Tags } from "@/generated/tags";
-import { TagLabel } from "./const";
+import type { Tag } from "./const";
+import { TagLabel, Tags } from "./const";
 import * as v from "valibot";
 
 const postMetadataSchema = v.object({
   title: v.string(),
   description: v.string(),
   tags: v.tuple([v.picklist(Tags)], v.picklist(Tags)),
-  visual: v.object({
-    main: v.string(),
-  }),
   published: v.boolean(),
   publishedAt: v.string(),
   updatedAt: v.optional(v.string()),
@@ -24,9 +20,6 @@ type PostMetadata = {
   title: string;
   description: string;
   tags: NonEmptyArray<Tag>;
-  visual: {
-    main: string;
-  };
   published: boolean;
   publishedAt: string;
   updatedAt?: string | undefined;
@@ -42,7 +35,6 @@ type Post = {
 
 type PostSearchParams = {
   tag?: Tag;
-  withDraft?: boolean;
 };
 
 export const retrievePostSummaries: (
@@ -69,14 +61,9 @@ export const retrievePostSummaries: (
     )
   )
     .filter((post) => {
-      if (params?.withDraft) {
-        // do nothing
-      } else {
-        if (!post.published) {
-          return false;
-        }
+      if (!post.published) {
+        return false;
       }
-
       if (!params?.tag) {
         return true;
       }

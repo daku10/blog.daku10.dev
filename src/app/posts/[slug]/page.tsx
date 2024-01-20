@@ -57,15 +57,7 @@ export default async function Page({ params }: Props) {
         ))}
       </ul>
 
-      {/* <img
-        src={post.visual.main}
-        width={960}
-        height={480}
-        alt="main visual"
-        className="mx-auto my-12 h-[360px] w-[720px] rounded-3xl object-cover"
-      /> */}
-
-      <article className="prose prose-gray mt-8 max-w-none dark:prose-invert">
+      <article className="prose prose-gray mt-8 max-w-none dark:prose-invert prose-img:mx-auto">
         {processedContent.result}
       </article>
     </div>

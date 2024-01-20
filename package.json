@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "yarn gen && next build",
+    "build": "next build",
     "start": "serve out",
     "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.mjs './**/*.{ts,tsx}'",
-    "format": "prettier . --write",
-    "gen": "tsx scripts/generate-tags.ts"
+    "format": "prettier . --write"
   },
   "dependencies": {
     "@headlessui/react": "1.7.18",

@@ -1,4 +1,12 @@
-import type { Tag } from "@/generated/tags";
+export const Tags = [
+  "blog",
+  "cloudflare",
+  "frontend",
+  "isucon",
+  "nextjs",
+] as const;
+
+export type Tag = (typeof Tags)[number];
 
 export const TagLabel = {
   blog: "ブログ",
