@@ -48,6 +48,7 @@ export default [
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/no-import-type-side-effects": "error",
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+      "@next/next/no-img-element": "off",
     },
     settings: {
       react: {

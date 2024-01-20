@@ -10,6 +10,9 @@ const postMetadataSchema = v.object({
   title: v.string(),
   description: v.string(),
   tags: v.tuple([v.picklist(Tags)], v.picklist(Tags)),
+  visual: v.object({
+    main: v.string(),
+  }),
   published: v.boolean(),
   publishedAt: v.string(),
   updatedAt: v.optional(v.string()),
@@ -21,6 +24,9 @@ type PostMetadata = {
   title: string;
   description: string;
   tags: NonEmptyArray<Tag>;
+  visual: {
+    main: string;
+  };
   published: boolean;
   publishedAt: string;
   updatedAt?: string | undefined;
@@ -36,34 +42,41 @@ type Post = {
 
 type PostSearchParams = {
   tag?: Tag;
+  withDraft?: boolean;
 };
 
 export const retrievePostSummaries: (
   params?: PostSearchParams,
 ) => Promise<PostSummary[]> = async (params) => {
-  const postsDir = path.join(process.cwd(), "contents");
-  const fileNames = (await readdir(postsDir)).filter((fileName) =>
-    fileName.endsWith(".md"),
-  );
+  const postsDir = path.join(process.cwd(), "public", "posts");
+  const fileNames = (await readdir(postsDir)).map((dir) => ({
+    slug: dir,
+    fileName: path.join(dir, "index.md"),
+  }));
 
   return (
     await Promise.all(
       fileNames.map(async (fileName) => {
-        const filePath = path.join(postsDir, fileName);
+        const filePath = path.join(postsDir, fileName.fileName);
         const fileContent = await readFile(filePath, "utf-8");
         const { data } = matter(fileContent);
         const parsed = v.parse(postMetadataSchema, data);
         return {
-          slug: fileName.replace(/\.md$/, ""),
+          slug: fileName.slug,
           ...parsed,
         };
       }),
     )
   )
     .filter((post) => {
-      if (!post.published) {
-        return false;
+      if (params?.withDraft) {
+        // do nothing
+      } else {
+        if (!post.published) {
+          return false;
+        }
       }
+
       if (!params?.tag) {
         return true;
       }
@@ -76,7 +89,13 @@ export const retrievePostSummaries: (
 };
 
 export const retrievePost: (slug: string) => Promise<Post> = async (slug) => {
-  const filePath = path.join(process.cwd(), "contents", `${slug}.md`);
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    "posts",
+    slug,
+    "index.md",
+  );
   const fileContent = await readFile(filePath, "utf-8");
   const { data, content } = matter(fileContent);
   const parsed = v.parse(postMetadataSchema, data);

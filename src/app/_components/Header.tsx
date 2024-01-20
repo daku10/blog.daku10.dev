@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const Header = () => {
   return (
-    <header className="py-6">
+    <header className="py-12">
       <div className="flex items-center justify-between">
         <Link
           href="/"

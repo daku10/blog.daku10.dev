@@ -1,7 +1,21 @@
-import { IconSun, IconMoon, IconSunMoon, IconCheck } from "@tabler/icons-react";
+import { IconRefresh } from "@tabler/icons-react";
+import {
+  IconSun,
+  IconMoon,
+  IconSunMoon,
+  IconCheck,
+  IconPencil,
+} from "@tabler/icons-react";
 import { siZenn, siGithub } from "simple-icons";
 
-const icons = ["sun", "moon", "sun-moon", "check"] as const;
+const icons = [
+  "sun",
+  "moon",
+  "sun-moon",
+  "check",
+  "pencil",
+  "refresh",
+] as const;
 const serviceIcons = ["zenn", "github"] as const;
 
 type Icon = (typeof icons)[number] | (typeof serviceIcons)[number];
@@ -11,13 +25,12 @@ type Props = {
   className?: string;
 };
 
+const isIcons = (type: unknown): type is (typeof icons)[number] => {
+  return icons.includes(type as (typeof icons)[number]);
+};
+
 export const Icon = ({ type, className }: Props) => {
-  if (
-    type === "sun" ||
-    type === "moon" ||
-    type === "check" ||
-    type === "sun-moon"
-  ) {
+  if (isIcons(type)) {
     switch (type) {
       case "sun":
         return <IconSun className={className} />;
@@ -27,6 +40,10 @@ export const Icon = ({ type, className }: Props) => {
         return <IconSunMoon className={className} />;
       case "check":
         return <IconCheck className={className} />;
+      case "pencil":
+        return <IconPencil className={className} />;
+      case "refresh":
+        return <IconRefresh className={className} />;
     }
   }
   switch (type) {

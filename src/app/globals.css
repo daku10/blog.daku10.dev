@@ -7,13 +7,19 @@
         --primary: 0 0 0;
         --secondary: 83 86 97;
         --background: 255 255 255;
+        --heading: 17 24 39;
     }
 
     .dark {
         --primary: 255 255 255;
         --secondary: 169 173 193;
         --background: 24 24 27;
+        --heading: 255 255 255;
     }
+}
+
+html {
+    scrollbar-gutter: stable;
 }
 
 body {
