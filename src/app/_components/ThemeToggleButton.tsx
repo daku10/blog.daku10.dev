@@ -37,7 +37,7 @@ export const ThemeToggleButton = () => {
         leaveFrom="opacity-100 transform scale-100"
         leaveTo="opacity-0 transform scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 flex flex-col rounded-md border p-2 shadow-md ring-1 ring-black/5 focus:outline-none">
+        <Menu.Items className="bg-background absolute right-0 mt-2 flex flex-col rounded-md border p-2 shadow-md ring-1 ring-black/5 focus:outline-none">
           <Menu.Item>
             {({ active }) => (
               <RadioItem

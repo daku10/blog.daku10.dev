@@ -1,4 +1,6 @@
+import { Link } from "@/components/Link";
 import { retrievePost, retrievePostSummaries } from "@/lib/api";
+import { TagLabel } from "@/lib/const";
 import { processor } from "@/lib/processor";
 import type { ResolvingMetadata } from "next";
 
@@ -23,9 +25,18 @@ export default async function Page({ params }: Props) {
   const processedContent = await processor.process(post.content);
 
   return (
-    <div>
+    <div className="mx-8">
       <h1>{post.title}</h1>
-      {processedContent.result}
+      <ul>
+        {post.tags.map((tag) => (
+          <li key={tag}>
+            <Link href={`/tags/${tag}`}>{TagLabel[tag]}</Link>
+          </li>
+        ))}
+      </ul>
+      <article className="prose dark:prose-invert prose-gray max-w-none">
+        {processedContent.result}
+      </article>
     </div>
   );
 }

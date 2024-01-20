@@ -25,9 +25,13 @@ publishedAt: "2023-06-24"
 
 単にブログを作るという技術選定では、様々な選択肢がありますが、今回はNext.jsのApp Router + Static Exportベースで作りました。フロントエンドの界隈では、今後数年間はNext.jsが主流になると考えていること、主軸に据えられるApp Routerに触ってみたかったことからこの選択になりました。現状Static Exportで十分なので、Next.jsの機能を十分に活用できていませんが、現時点でもReact Server Componentsが動作する、Client Componentとの使い分けが必要など、色々と新しい機能で遊べています。
 
+### コンテンツ管理
+
+ヘッドレスCMS等で管理することも考えましたが、今回はMarkdownを直接リポジトリに置く方法を取りました。画像をどう扱うかは悩みましたが、
+
 ### Tailwind CSS
 
-デザイン周りは得意ではないので、[shadcn/ui](https://ui.shadcn.com/)や[v0](https://v0.dev/)を始めとする、Tailwind CSSの利用を前提としたエコシステムに乗るために、Tailwind CSSを採用しました。
+デザイン周りは得意ではないので、[shadcn/ui](https://ui.shadcn.com/)や[v0](https://v0.dev/)を始めとする、Tailwind CSSの利用を前提としたエコシステムに乗るために、Tailwind CSSを採用しました。また、Markdownから生成されるHTMLのスタイリングに[@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)を利用しており、ある程度いい感じにスタイリングしてくれています。
 
 ### Cloudflare
 
@@ -35,13 +39,7 @@ publishedAt: "2023-06-24"
 
 ## おわりに
 
-このブログを支える細かい技術は、今後の記事で紹介していく予定です。以下のような記事を予定しています。
-
-- ディレクトリ構成
-- ダークモード対応
-- 記事のスタイリング
-
-また、今後このブログに以下のような機能を追加していく予定です。
+このブログを支える細かい技術は、今後の記事で紹介できればと思います。また、今後このブログに以下のような機能を追加していく予定です。
 
 - 検索機能
 - 目次(ToC)

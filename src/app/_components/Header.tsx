@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const Header = () => {
   return (
-    <header>
-      <div className="mx-auto flex max-w-7xl items-center justify-between p-6">
+    <header className="py-6">
+      <div className="flex items-center justify-between">
         <Link
           href="/"
           className={`${inter.className} text-3xl font-extrabold antialiased`}

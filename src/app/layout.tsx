@@ -18,9 +18,11 @@ export default function RootLayout({
     <html lang="ja" suppressHydrationWarning>
       <body className="bg-background transition-colors">
         <Providers>
-          <Header />
-          {children}
-          <Footer />
+          <div className="mx-auto max-w-7xl px-6">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
