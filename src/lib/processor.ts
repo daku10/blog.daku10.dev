@@ -4,6 +4,7 @@ import remarkRehype from "remark-rehype";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeExternalLinks from "rehype-external-links";
 import type { Plugin } from "unified";
 import { unified } from "unified";
 import * as prod from "react/jsx-runtime";
@@ -50,6 +51,7 @@ export const processor = unified()
   .use(remarkParse)
   .use(remarkGfm)
   .use(remarkRehype)
+  .use(rehypeExternalLinks, { target: "_blank", rel: ["noopener"] })
   .use(rehypeSlug)
   .use(rehypeAutolinkHeadings)
   .use(myRehypeRewriteImg)
