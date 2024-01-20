@@ -10,6 +10,7 @@ const postMetadataSchema = v.object({
   title: v.string(),
   description: v.string(),
   tags: v.tuple([v.picklist(Tags)], v.picklist(Tags)),
+  published: v.boolean(),
   publishedAt: v.string(),
   updatedAt: v.optional(v.string()),
 });
@@ -20,6 +21,7 @@ type PostMetadata = {
   title: string;
   description: string;
   tags: NonEmptyArray<Tag>;
+  published: boolean;
   publishedAt: string;
   updatedAt?: string | undefined;
 };
@@ -59,6 +61,9 @@ export const retrievePostSummaries: (
     )
   )
     .filter((post) => {
+      if (!post.published) {
+        return false;
+      }
       if (!params?.tag) {
         return true;
       }
@@ -75,6 +80,9 @@ export const retrievePost: (slug: string) => Promise<Post> = async (slug) => {
   const fileContent = await readFile(filePath, "utf-8");
   const { data, content } = matter(fileContent);
   const parsed = v.parse(postMetadataSchema, data);
+  if (!parsed.published) {
+    throw new Error("Not found");
+  }
   return {
     slug,
     content,

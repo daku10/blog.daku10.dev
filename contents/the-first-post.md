@@ -2,6 +2,7 @@
 title: Blog始めました
 description: "Blog始めました。Next.jsのApp Router + Static Exportベースで作られており、Cloudflare Pagesでデプロイされています。ブログを始めたモチベーションや使用した技術スタックについて書いています。"
 tags: ["nextjs", "frontend", "blog", "cloudflare"]
+published: true
 publishedAt: "2023-06-24"
 ---
 
@@ -39,6 +40,11 @@ publishedAt: "2023-06-24"
 - ディレクトリ構成
 - ダークモード対応
 - 記事のスタイリング
+
+また、今後このブログに以下のような機能を追加していく予定です。
+
+- 検索機能
+- 目次(ToC)
 
 ブログのソースコードは[GitHub](https://github.com/daku10/blog.daku10.dev)で公開しています。また、記事の内容に誤りがあった場合は、[GitHubのIssue](https://github.com/daku10/blog.daku10.dev/issues)や[X](https://twitter.com/daku10_dev)で教えていただけると嬉しいです。
 
