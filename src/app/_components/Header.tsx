@@ -1,10 +1,10 @@
 import { Link } from "@/components/Link";
 import { ThemeToggleButton } from "./ThemeToggleButton";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { Navigation } from "./Navigation";
 import { Icon } from "@/components/Icon";
 
-const inter = Inter({ subsets: ["latin"] });
+const titleFont = Open_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export const Header = () => {
   return (
@@ -12,7 +12,7 @@ export const Header = () => {
       <div className="flex items-center justify-between">
         <Link
           href="/"
-          className={`${inter.className} text-3xl font-extrabold antialiased`}
+          className={`${titleFont.className} text-3xl font-semibold antialiased`}
         >
           blog.daku10.dev
         </Link>
