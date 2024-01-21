@@ -50,14 +50,14 @@ export default async function Page({ params }: Props) {
         {post.tags.map((tag) => (
           <li key={tag}>
             <Link
-              className="block p-2 text-secondary hover:border-secondary hover:text-primary hover:underline  hover:underline-offset-4"
+              className="block p-2 text-secondary hover:border-secondary hover:text-primary hover:underline hover:underline-offset-4"
               href={`/tags/${tag}`}
             >{`# ${TagLabel[tag]}`}</Link>
           </li>
         ))}
       </ul>
 
-      <article className="prose prose-gray mt-8 max-w-none dark:prose-invert prose-img:mx-auto">
+      <article className="prose prose-gray mt-8 max-w-none dark:prose-invert">
         {processedContent.result}
       </article>
     </div>
