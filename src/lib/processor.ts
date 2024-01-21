@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
+import rehypePrettyCode from "rehype-pretty-code";
 import type { Plugin } from "unified";
 import { unified } from "unified";
 import * as prod from "react/jsx-runtime";
@@ -55,4 +56,7 @@ export const processor = unified()
   .use(rehypeSlug)
   .use(rehypeAutolinkHeadings)
   .use(myRehypeRewriteImg)
+  .use(rehypePrettyCode, {
+    theme: "dark-plus",
+  })
   .use(rehypeReact, production);
