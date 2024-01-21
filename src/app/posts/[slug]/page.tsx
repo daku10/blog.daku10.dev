@@ -46,7 +46,7 @@ export default async function Page({ params }: Props) {
         )}
       </div>
 
-      <ul className="mt-2 flex gap-4">
+      <ul className="mt-2 flex gap-2">
         {post.tags.map((tag) => (
           <li key={tag}>
             <Link

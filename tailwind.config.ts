@@ -14,6 +14,7 @@ const config: Config = {
         secondary: "rgb(var(--secondary))",
         background: "rgb(var(--background))",
         heading: "rgb(var(--heading))",
+        link: "rgb(var(--link))",
       },
       typography: (theme: (s: string) => string) => ({
         DEFAULT: {
@@ -36,6 +37,9 @@ const config: Config = {
             img: {
               marginLeft: "auto",
               marginRight: "auto",
+            },
+            a: {
+              color: "rgb(var(--link))",
             },
           },
         },
