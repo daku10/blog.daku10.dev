@@ -21,13 +21,24 @@ export const Header = () => {
           <div className="ml-8 flex items-center">
             <ThemeToggleButton />
             <Link
+              href="/feed.xml"
+              target="_blank"
+              rel="noopener"
+              prefetch={false}
+            >
+              <Icon
+                type="rss"
+                className="h-10 w-10 p-2 text-secondary hover:text-primary"
+              />
+            </Link>
+            <Link
               href="https://github.com/daku10/blog.daku10.dev"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Icon
                 type="github"
-                className="text-secondary hover:text-primary h-8 w-8 p-1"
+                className="h-10 w-10 p-2 text-secondary hover:text-primary"
               />
             </Link>
           </div>
