@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@headlessui/react": "1.7.18",
+    "@t3-oss/env-nextjs": "0.7.3",
     "@tabler/icons-react": "2.46.0",
     "clsx": "2.1.0",
     "gray-matter": "4.0.3",
@@ -35,7 +36,8 @@
     "tailwind-merge": "2.2.0",
     "unified": "11.0.4",
     "unist-util-visit": "5.0.0",
-    "valibot": "0.25.0"
+    "valibot": "0.25.0",
+    "zod": "3.22.4"
   },
   "devDependencies": {
     "@eslint/js": "8.56.0",
@@ -43,6 +45,7 @@
     "@tailwindcss/typography": "0.5.10",
     "@types/eslint": "8.56.2",
     "@types/eslint__js": "8.42.3",
+    "@types/gtag.js": "0.0.18",
     "@types/node": "20.10.7",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
