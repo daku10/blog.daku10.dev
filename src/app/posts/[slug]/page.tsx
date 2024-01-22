@@ -31,9 +31,9 @@ export default async function Page({ params }: Props) {
   });
 
   return (
-    <div>
+    <div className="mx-36">
       <h1 className="text-3xl font-bold text-heading">{post.title}</h1>
-      <div className="mt-4 flex gap-4 py-2 text-secondary">
+      <div className="mt-4 flex gap-4 text-secondary">
         <div className="flex items-center gap-2">
           <Icon type="pencil" className="h-4 w-4" />
           <time dateTime={post.publishedAt}>{post.publishedAt}</time>
