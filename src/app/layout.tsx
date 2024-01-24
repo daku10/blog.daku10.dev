@@ -7,7 +7,10 @@ import { Suspense } from "react";
 import { Analytics } from "./_components/Analytics";
 
 export const metadata: Metadata = {
-  title: "The daku10 Blog",
+  title: {
+    default: "The daku10 Blog",
+    template: "%s | The daku10 Blog",
+  },
   description: "daku10のブログです。Web開発に関する記事がメインです。",
 };
 
@@ -25,7 +28,7 @@ export default function RootLayout({
         <Providers>
           <div className="grid-cols1 mx-auto grid min-h-svh max-w-7xl grid-rows-[auto_1fr_auto] px-6">
             <Header />
-            {children}
+            <main>{children}</main>
             <Footer />
           </div>
         </Providers>

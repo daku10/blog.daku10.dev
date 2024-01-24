@@ -1,7 +1,6 @@
 import { Icon } from "@/components/Icon";
-import { Link } from "@/components/Link";
+import { TagLink } from "@/components/TagLink";
 import { retrievePost, retrievePostSummaries } from "@/lib/api";
-import { TagLabel } from "@/lib/const";
 import { processor } from "@/lib/processor";
 import type { ResolvingMetadata } from "next";
 
@@ -33,6 +32,7 @@ export default async function Page({ params }: Props) {
   return (
     <div className="mx-36">
       <h1 className="text-3xl font-bold text-heading">{post.title}</h1>
+      <p className="mt-4 text-secondary">{post.description}</p>
       <div className="mt-4 flex gap-4 text-secondary">
         <div className="flex items-center gap-2">
           <Icon type="pencil" className="h-4 w-4" />
@@ -46,13 +46,10 @@ export default async function Page({ params }: Props) {
         )}
       </div>
 
-      <ul className="mt-2 flex gap-2">
+      <ul className="mt-4 flex gap-4">
         {post.tags.map((tag) => (
           <li key={tag}>
-            <Link
-              className="block p-2 text-secondary hover:border-secondary hover:text-primary hover:underline hover:underline-offset-4"
-              href={`/tags/${tag}`}
-            >{`# ${TagLabel[tag]}`}</Link>
+            <TagLink tag={tag} />
           </li>
         ))}
       </ul>

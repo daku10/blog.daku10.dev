@@ -25,7 +25,7 @@ type PostMetadata = {
   updatedAt?: string | undefined;
 };
 
-type PostSummary = {
+export type PostSummary = {
   slug: string;
 } & PostMetadata;
 
