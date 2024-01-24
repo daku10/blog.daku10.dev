@@ -23,7 +23,7 @@ export default function RootLayout({
           <Analytics />
         </Suspense>
         <Providers>
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="grid-cols1 mx-auto grid min-h-svh max-w-7xl grid-rows-[auto_1fr_auto] px-6">
             <Header />
             {children}
             <Footer />
