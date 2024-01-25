@@ -6,7 +6,7 @@ import {
   IconCheck,
   IconPencil,
 } from "@tabler/icons-react";
-import { siZenn, siGithub } from "simple-icons";
+import { siZenn, siGithub, siX } from "simple-icons";
 
 const icons = [
   "sun",
@@ -17,7 +17,7 @@ const icons = [
   "refresh",
   "rss",
 ] as const;
-const serviceIcons = ["zenn", "github"] as const;
+const serviceIcons = ["zenn", "github", "x"] as const;
 
 type Icon = (typeof icons)[number] | (typeof serviceIcons)[number];
 
@@ -70,6 +70,17 @@ export const Icon = ({ type, className }: Props) => {
           className={className}
         >
           <path d={siGithub.path} />
+        </svg>
+      );
+    case "x":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          className={className}
+        >
+          <path d={siX.path} />
         </svg>
       );
   }

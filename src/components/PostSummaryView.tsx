@@ -13,7 +13,7 @@ export const PostSummaryView = ({ postSummary }: Props) => {
       <h3 className="mt-2 inline-block h-7 border-primary text-xl hover:border-b">
         <Link href={`/posts/${postSummary.slug}`}>{postSummary.title}</Link>
       </h3>
-      <ul className="mt-2 flex gap-2">
+      <ul className="mt-2 flex gap-4">
         {postSummary.tags.map((tag) => (
           <li key={tag}>
             <TagLink tag={tag} />

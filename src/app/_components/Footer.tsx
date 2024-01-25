@@ -19,7 +19,7 @@ export const Footer = () => {
         </span>
         <span>
           本サイトに関するライセンスは
-          <Link href="/license" className="text-link underline">
+          <Link href="/about" className="text-link underline">
             サイトのライセンスポリシー
           </Link>
           をご覧ください。
