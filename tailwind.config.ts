@@ -15,6 +15,7 @@ const config: Config = {
         background: "rgb(var(--background))",
         heading: "rgb(var(--heading))",
         link: "rgb(var(--link))",
+        text: "rgb(var(--text))",
       },
       typography: (theme: (s: string) => string) => ({
         DEFAULT: {

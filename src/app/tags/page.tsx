@@ -1,5 +1,5 @@
+import { TagLink } from "@/components/TagLink";
 import { retrieveTagWithPostCounts } from "@/lib/api";
-import Link from "next/link";
 
 export const metadata = {
   title: "タグ一覧",
@@ -11,13 +11,15 @@ export default async function Page() {
 
   return (
     <div>
-      <h1>タグ一覧</h1>
-      <ul>
+      <h2 className="text-xl text-primary">タグ一覧</h2>
+      <ul className="mt-8 flex flex-col gap-2">
         {tags.map((tag) => (
           <li key={tag.slug}>
-            <Link href={`/tags/${tag.slug}`}>
-              {tag.label} {tag.postCount}
-            </Link>
+            <TagLink
+              tag={tag.slug}
+              postCount={tag.postCount}
+              className="text-primary"
+            />
           </li>
         ))}
       </ul>

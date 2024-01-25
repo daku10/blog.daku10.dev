@@ -1,10 +1,10 @@
+import { PostSummaryView } from "@/components/PostSummaryView";
 import {
   retrievePostSummaries,
   retrieveTag,
   retrieveTagWithPostCounts,
 } from "@/lib/api";
 import type { ResolvingMetadata } from "next";
-import Link from "next/link";
 
 type Props = {
   params: { slug: string };
@@ -40,12 +40,11 @@ export default async function Page({ params }: Props) {
   });
   return (
     <div>
-      <h1>{}</h1>
-      <Link href="/tags">タグ一覧</Link>
-      <ul>
+      <h2 className="text-xl text-primary">{`${tag.label}の記事一覧`}</h2>
+      <ul className="mt-8">
         {postSummaries.map((postSummary) => (
           <li key={postSummary.slug}>
-            <Link href={`/posts/${postSummary.slug}`}>{postSummary.title}</Link>
+            <PostSummaryView postSummary={postSummary} />
           </li>
         ))}
       </ul>

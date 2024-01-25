@@ -4,6 +4,7 @@ export const Tags = [
   "frontend",
   "isucon",
   "nextjs",
+  "tailwindcss",
 ] as const;
 
 export type Tag = (typeof Tags)[number];
@@ -14,6 +15,7 @@ export const TagLabel = {
   frontend: "フロントエンド",
   isucon: "ISUCON",
   nextjs: "Next.js",
+  tailwindcss: "Tailwind CSS",
 } satisfies {
   [key in Tag]: string;
 };

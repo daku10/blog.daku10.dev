@@ -4,10 +4,11 @@ import { cn } from "@/lib/util";
 
 type Props = {
   tag: Tag;
+  postCount?: number;
   className?: string;
 };
 
-export const TagLink = ({ tag, className }: Props) => {
+export const TagLink = ({ tag, postCount, className }: Props) => {
   return (
     <Link
       className={cn(
@@ -15,6 +16,6 @@ export const TagLink = ({ tag, className }: Props) => {
         className,
       )}
       href={`/tags/${tag}`}
-    >{`# ${TagLabel[tag]}`}</Link>
+    >{`# ${TagLabel[tag]}${postCount ? ` ${postCount}` : ""}`}</Link>
   );
 };
