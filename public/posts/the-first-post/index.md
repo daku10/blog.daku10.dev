@@ -85,7 +85,7 @@ export default async function Page({ params }: Props) {
 }
 ```
 
-上記のように`unified`のprocess時に任意のデータが渡せそうだったので、実現できました。現在はこれに加えて`width`や`height`の指定や、`loading="lazy"` の追加なども行っています。
+上記のようにunifiedのprocess時に任意のデータが渡せそうだったので、実現できました。現在はこれに加えて`width`や`height`の指定や、`loading="lazy"` の追加なども行っています。
 
 この方法は、`index.md`が直接外に露出することとなるのですが、そもそもGitHubで公開しているので、今回は良しとしました。今後、画像をCDNで扱いたい、ファイルのキャッシュをコントロールしたいなどの理由が出てきた際には、この部分を変更しようと考えています。
 
