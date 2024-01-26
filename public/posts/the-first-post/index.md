@@ -3,8 +3,7 @@ title: Blog始めました
 description: "Blogを新しく始めました。Next.jsのApp Router + Static Exportベースで作られており、Tailwind CSSでスタイリングしています。デプロイ先はCloudflare Pagesです。ブログを始めたモチベーションや使用した技術スタックについて書いています。"
 tags: ["nextjs", "blog", "tailwindcss"]
 published: true
-publishedAt: "2024-01-22"
-updatedAt: "2024-01-22"
+publishedAt: "2024-01-26"
 ---
 
 ## はじめに
