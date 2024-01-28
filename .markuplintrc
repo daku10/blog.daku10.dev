@@ -7,5 +7,21 @@
   },
   "specs": {
     ".[jt]sx$": "@markuplint/react-spec"
-  }
+  },
+  "nodeRules": [
+    {
+      "selector": "img",
+      "rules": {
+        "required-attr": [
+          "alt"
+        ]
+      }
+    },
+    {
+      "selector": "[data-markuplint-disable]",
+      "rules": {
+        "no-hard-code-id": false
+      }
+    }
+  ]
 }

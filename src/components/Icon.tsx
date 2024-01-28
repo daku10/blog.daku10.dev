@@ -52,34 +52,19 @@ export const Icon = ({ type, className }: Props) => {
   switch (type) {
     case "zenn":
       return (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          className={className}
-        >
+        <svg fill="currentColor" viewBox="0 0 24 24" className={className}>
           <path d={siZenn.path} />
         </svg>
       );
     case "github":
       return (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          className={className}
-        >
+        <svg fill="currentColor" viewBox="0 0 24 24" className={className}>
           <path d={siGithub.path} />
         </svg>
       );
     case "x":
       return (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          className={className}
-        >
+        <svg fill="currentColor" viewBox="0 0 24 24" className={className}>
           <path d={siX.path} />
         </svg>
       );

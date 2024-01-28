@@ -30,6 +30,7 @@ export const Header = () => {
                 type="rss"
                 className="h-10 w-10 p-2 text-secondary hover:text-primary"
               />
+              <span className="sr-only">RSS</span>
             </Link>
             <Link
               href="https://github.com/daku10/blog.daku10.dev"
@@ -40,6 +41,7 @@ export const Header = () => {
                 type="github"
                 className="h-10 w-10 p-2 text-secondary hover:text-primary"
               />
+              <span className="sr-only">GitHub</span>
             </Link>
           </div>
         </div>

@@ -27,7 +27,11 @@ export const Analytics = () => {
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
       />
-      <Script id="ga-script" strategy="afterInteractive">
+      <Script
+        id="ga-script"
+        strategy="afterInteractive"
+        data-markuplint-disable
+      >
         {`
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

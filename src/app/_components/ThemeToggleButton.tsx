@@ -37,7 +37,7 @@ export const ThemeToggleButton = () => {
         leaveFrom="opacity-100 transform scale-100"
         leaveTo="opacity-0 transform scale-95"
       >
-        <Menu.Items className="bg-background absolute right-0 mt-2 flex flex-col rounded-md border p-2 shadow-md ring-1 ring-black/5 focus:outline-none">
+        <Menu.Items className="absolute right-0 mt-2 flex flex-col rounded-md border bg-background p-2 shadow-md ring-1 ring-black/5 focus:outline-none">
           <Menu.Item>
             {({ active }) => (
               <RadioItem
@@ -79,10 +79,11 @@ const ThemeIconButton = forwardRef<HTMLButtonElement>((props, ref) => {
     <button
       {...props}
       ref={ref}
-      className="text-secondary hover:text-primary p-2"
+      className="p-2 text-secondary hover:text-primary"
     >
       <Icon type="sun" className="block h-6 w-6 dark:hidden" />
       <Icon type="moon" className="hidden h-6 w-6 dark:block" />
+      <span className="sr-only">Toggle Theme</span>
     </button>
   );
 });
@@ -111,7 +112,7 @@ const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
           onChange(value);
         }}
         className={cn(
-          "text-secondary w-28 cursor-pointer select-none py-1.5 outline-none transition-colors",
+          "w-28 cursor-pointer select-none py-1.5 text-secondary outline-none transition-colors",
           { "text-primary": active || current === value },
         )}
       >

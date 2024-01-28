@@ -46,7 +46,7 @@ export default function Page() {
       <div>
         <div>
           <h2 className="text-xl text-primary">本サイトについて</h2>
-          <p className="text-text mt-6">
+          <p className="mt-6 text-text">
             本サイトでは、Web開発に関する記事を発信していきます。
             <br />
             記事の内容に誤りがあった場合は、
@@ -74,7 +74,7 @@ export default function Page() {
           <h2 className="mt-8 text-xl text-primary">
             サイトのライセンスポリシー
           </h2>
-          <div className="text-text mt-6 grid gap-4">
+          <div className="mt-6 grid gap-4 text-text">
             <section className="">
               <h3 className="text-lg">コードとスニペットのライセンス</h3>
               <p className="mt-2">
