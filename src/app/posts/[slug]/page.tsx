@@ -1,8 +1,8 @@
+import type { ResolvingMetadata } from "next";
 import { Icon } from "@/components/Icon";
 import { TagLink } from "@/components/TagLink";
 import { retrievePost, retrievePostSummaries } from "@/lib/api";
 import { processor } from "@/lib/processor";
-import type { ResolvingMetadata } from "next";
 
 type Props = {
   params: { slug: string };
@@ -32,8 +32,8 @@ export default async function Page({ params }: Props) {
   return (
     <div className="mx-36">
       <h1 className="text-3xl font-bold text-heading">{post.title}</h1>
-      <p className="text-text mt-4">{post.description}</p>
-      <div className="text-text mt-4 flex gap-4">
+      <p className="mt-4 text-text">{post.description}</p>
+      <div className="mt-4 flex gap-4 text-text">
         <div className="flex items-center gap-2">
           <Icon type="pencil" className="h-4 w-4" />
           <time dateTime={post.publishedAt}>{post.publishedAt}</time>

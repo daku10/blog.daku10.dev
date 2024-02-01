@@ -3,6 +3,8 @@ import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import tsEsLintPlugin from "@typescript-eslint/eslint-plugin";
 import nextPlugin from "@next/eslint-plugin-next";
+import unusedImportsPlugin from "eslint-plugin-unused-imports";
+import importPlugin from "eslint-plugin-import";
 import tsEsLintParser from "@typescript-eslint/parser";
 
 /** @type {import("eslint").Linter.FlatConfig[]} */
@@ -16,6 +18,8 @@ export default [
       react: reactPlugin,
       "react-hooks": reactHooksPlugin,
       "@next/next": nextPlugin,
+      import: importPlugin,
+      "unused-imports": unusedImportsPlugin,
     },
   },
   {
@@ -49,6 +53,25 @@ export default [
       "@typescript-eslint/no-import-type-side-effects": "error",
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@next/next/no-img-element": "off",
+      "unused-imports/no-unused-imports": "error",
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "builtin",
+            "external",
+            "parent",
+            "sibling",
+            "index",
+            "object",
+            "type",
+          ],
+          alphabetize: {
+            order: "asc",
+          },
+          "newlines-between": "never",
+        },
+      ],
     },
     settings: {
       react: {

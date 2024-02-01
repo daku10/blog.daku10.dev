@@ -1,18 +1,18 @@
-import rehypeReact from "rehype-react";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import remarkGfm from "remark-gfm";
-import rehypeSlug from "rehype-slug";
+import path from "path";
+import sizeOf from "image-size";
+import * as prod from "react/jsx-runtime";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypePrettyCode from "rehype-pretty-code";
-import type { Plugin } from "unified";
+import rehypeReact from "rehype-react";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
 import { unified } from "unified";
-import * as prod from "react/jsx-runtime";
 import { visit } from "unist-util-visit";
 import type { Root } from "hast";
-import sizeOf from "image-size";
-import path from "path";
+import type { Plugin } from "unified";
 
 // @ts-expect-error: the react types are missing.
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

@@ -4,31 +4,33 @@
 @import "./syntax-highlighting.css";
 
 @layer base {
-    :root {
-        --primary: 0 0 0;
-        --secondary: 83 86 97;
-        --background: 255 255 255;
-        --heading: 17 24 39;
-        --code-background: 237 237 242;
-        --link: 9 105 218;
-        --text: 55 65 81;
-    }
+  :root {
+    --primary: 0 0 0;
+    --secondary: 83 86 97;
+    --background: 255 255 255;
+    --heading: 17 24 39;
+    --code-background: 237 237 242;
+    --link: 9 105 218;
+    --text: 55 65 81;
+  }
 
-    .dark {
-        --primary: 255 255 255;
-        --secondary: 169 173 193;
-        --background: 24 24 27;
-        --heading: 255 255 255;
-        --code-background: 82 82 91;
-        --link: 33 129 247;
-        --text: 209 213 219;
-    }
+  .dark {
+    --primary: 255 255 255;
+    --secondary: 169 173 193;
+    --background: 24 24 27;
+    --heading: 255 255 255;
+    --code-background: 82 82 91;
+    --link: 33 129 247;
+    --text: 209 213 219;
+  }
 }
 
 html {
-    scrollbar-gutter: stable;
+  scrollbar-gutter: stable;
 }
 
 body {
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "游ゴシック体",
+    "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック",
+    "Yu Gothic", sans-serif;
 }

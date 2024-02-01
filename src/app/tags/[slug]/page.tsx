@@ -1,10 +1,10 @@
+import type { ResolvingMetadata } from "next";
 import { PostSummaryView } from "@/components/PostSummaryView";
 import {
   retrievePostSummaries,
   retrieveTag,
   retrieveTagWithPostCounts,
 } from "@/lib/api";
-import type { ResolvingMetadata } from "next";
 
 type Props = {
   params: { slug: string };

@@ -1,5 +1,5 @@
-import { retrievePostSummaries } from "@/lib/api";
 import RSS from "rss";
+import { retrievePostSummaries } from "@/lib/api";
 
 export async function GET() {
   const feed = new RSS({

@@ -1,5 +1,5 @@
-import { retrievePostSummaries } from "@/lib/api";
 import type { MetadataRoute } from "next";
+import { retrievePostSummaries } from "@/lib/api";
 
 // TODO: can we create automatically?
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
