@@ -10,7 +10,7 @@
     "lint:es": "ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.mjs './**/*.{ts,tsx}'",
     "lint:markup": "markuplint './src/**/*.{j,t}sx'",
     "lint:text": "textlint public/posts/**/*.md",
-    "format": "prettier . --write"
+    "format": "prettier src --write"
   },
   "dependencies": {
     "@headlessui/react": "1.7.18",

@@ -3,7 +3,7 @@
  */
 
 figcaption[data-rehype-pretty-code-title] {
-  @apply rounded-t-lg bg-stone-800 text-slate-300 py-2 pl-4;
+  @apply rounded-t-lg bg-stone-800 py-2 pl-4 text-slate-300;
 }
 
 figure[data-rehype-pretty-code-figure] > pre {
@@ -11,9 +11,9 @@ figure[data-rehype-pretty-code-figure] > pre {
 }
 
 figure[data-rehype-pretty-code-figure] span[data-line] {
-  @apply pl-4
+  @apply pl-4;
 }
 
-figure[data-rehype-pretty-code-figure] span[data-line][ data-highlighted-line] {
-  @apply bg-[#3d3d3d] border-l-4 border-slate-500;
+figure[data-rehype-pretty-code-figure] span[data-line][data-highlighted-line] {
+  @apply border-l-4 border-slate-500 bg-[#3d3d3d];
 }
