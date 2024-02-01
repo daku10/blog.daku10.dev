@@ -1,8 +1,8 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { Link } from "@/components/Link";
 import { cn } from "@/lib/util";
-import { usePathname } from "next/navigation";
 
 export const Navigation = () => {
   const pathname = usePathname();

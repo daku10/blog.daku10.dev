@@ -1,5 +1,5 @@
-import { TagLabel, type Tag } from "@/lib/const";
 import { Link } from "./Link";
+import { TagLabel, type Tag } from "@/lib/const";
 import { cn } from "@/lib/util";
 
 type Props = {

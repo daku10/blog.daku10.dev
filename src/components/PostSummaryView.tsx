@@ -1,6 +1,6 @@
-import type { PostSummary } from "@/lib/api";
 import { Link } from "./Link";
 import { TagLink } from "./TagLink";
+import type { PostSummary } from "@/lib/api";
 
 type Props = {
   postSummary: PostSummary;

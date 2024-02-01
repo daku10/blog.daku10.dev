@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
 import "./styles/globals.css";
-import { Header } from "./_components/Header";
-import { Footer } from "./_components/Footer";
-import { Providers } from "./providers";
 import { Suspense } from "react";
 import { Analytics } from "./_components/Analytics";
+import { Footer } from "./_components/Footer";
+import { Header } from "./_components/Header";
+import { Providers } from "./providers";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {

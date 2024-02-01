@@ -1,9 +1,9 @@
 "use client";
 
-import { GA_ID, isEnabled, pageview } from "@/lib/ga";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";
+import { GA_ID, isEnabled, pageview } from "@/lib/ga";
 
 export const Analytics = () => {
   const pathname = usePathname();

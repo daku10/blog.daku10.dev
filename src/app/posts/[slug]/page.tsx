@@ -1,8 +1,8 @@
+import type { ResolvingMetadata } from "next";
 import { Icon } from "@/components/Icon";
 import { TagLink } from "@/components/TagLink";
 import { retrievePost, retrievePostSummaries } from "@/lib/api";
 import { processor } from "@/lib/processor";
-import type { ResolvingMetadata } from "next";
 
 type Props = {
   params: { slug: string };

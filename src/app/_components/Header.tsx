@@ -1,8 +1,8 @@
-import { Link } from "@/components/Link";
-import { ThemeToggleButton } from "./ThemeToggleButton";
 import { Open_Sans } from "next/font/google";
 import { Navigation } from "./Navigation";
+import { ThemeToggleButton } from "./ThemeToggleButton";
 import { Icon } from "@/components/Icon";
+import { Link } from "@/components/Link";
 
 const titleFont = Open_Sans({ subsets: ["latin"], weight: ["400"] });
 
