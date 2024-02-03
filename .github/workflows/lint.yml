@@ -20,7 +20,5 @@ jobs:
         with:
           path: ~/.yarn/berry/cache
           key: node-cache-yarn-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            node-cache-yarn-${{ runner.os }}-
       - run: yarn install
       - run: yarn lint
