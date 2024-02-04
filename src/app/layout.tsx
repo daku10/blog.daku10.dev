@@ -1,5 +1,4 @@
 import "./styles/globals.css";
-import { Suspense } from "react";
 import { Analytics } from "./_components/Analytics";
 import { Footer } from "./_components/Footer";
 import { Header } from "./_components/Header";
@@ -22,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body className="bg-background transition-colors">
-        <Suspense>
-          <Analytics />
-        </Suspense>
+        <Analytics />
         <Providers>
           <div className="grid-cols1 mx-auto grid min-h-svh max-w-7xl grid-rows-[auto_1fr_auto] px-6">
             <Header />
