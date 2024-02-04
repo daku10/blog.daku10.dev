@@ -1,6 +1,6 @@
 ---
-title: ISUCON 2023 ふりかえり
-description: "ISUCON 2023のふりかえり"
+title: ISUCON 13 ふりかえり
+description: "ISUCON 13"
 tags: ["isucon"]
 published: true
 publishedAt: "2024-02-05"
