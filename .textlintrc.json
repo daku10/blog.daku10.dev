@@ -3,7 +3,14 @@
     "filters": {},
     "rules": {
       "preset-ja-spacing": true,
-      "preset-ja-technical-writing": true,
+      "preset-ja-technical-writing": {
+        "ja-no-weak-phrase": {
+          "severity": "warning"
+        },
+        "sentence-length": {
+          "max": 150
+        }
+      },
       "spellcheck-tech-word": true
     }
 }
