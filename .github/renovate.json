@@ -5,6 +5,7 @@
       ":timezone(Asia/Tokyo)",
       "group:allNonMajor"
     ],
+    "baseBranches": ["preview"],
     "labels": ["dependencies", "renovate"],
     "dependencyDashboard": true,
     "schedule": [
