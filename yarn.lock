@@ -518,6 +518,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@markuplint/ml-ast@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@markuplint/ml-ast@npm:4.0.0"
+  checksum: 10c0/bee3b5b8dd9e3568888d326be055c6a9610dc8eb8533a4f9c0b7e0e8bf85827b31b06303eaf8c8cfee0395c80b19152e7beb42997c4d084c427b3d1a30855b83
+  languageName: node
+  linkType: hard
+
 "@markuplint/ml-config@npm:3.14.0":
   version: 3.14.0
   resolution: "@markuplint/ml-config@npm:3.14.0"
@@ -570,6 +577,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@markuplint/ml-spec@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@markuplint/ml-spec@npm:4.0.0"
+  dependencies:
+    "@markuplint/ml-ast": "npm:4.0.0"
+    "@markuplint/types": "npm:4.0.0"
+    dom-accessibility-api: "npm:^0.6.3"
+    is-plain-object: "npm:^5.0.0"
+    type-fest: "npm:^4.10.2"
+  checksum: 10c0/e6566432868e437db655f0faa8bb12c57d58d010bec347064cbe1b15ec94d963cf4a7c4eb19a5e15874f68f6dacb3882f0352fa411e532451dfba491ddb89ba1
+  languageName: node
+  linkType: hard
+
 "@markuplint/parser-utils@npm:3.13.0":
   version: 3.13.0
   resolution: "@markuplint/parser-utils@npm:3.13.0"
@@ -584,14 +604,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@markuplint/react-spec@npm:3.13.0":
-  version: 3.13.0
-  resolution: "@markuplint/react-spec@npm:3.13.0"
+"@markuplint/react-spec@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@markuplint/react-spec@npm:4.0.0"
   dependencies:
-    "@markuplint/ml-spec": "npm:3.14.0"
-  peerDependencies:
-    "@markuplint/ml-core": 3.x
-  checksum: 10c0/f4296e14a55e709f40d5e06af385b3ee4399e821989de9851016dec61b4b7528a9bb3c2fdfe21d8a351dd503adcda46e2e00c82f2546d66f0ec17884407b667a
+    "@markuplint/ml-spec": "npm:4.0.0"
+  checksum: 10c0/bfd3f01e54bda2a71f164e9c8d22079d9314d64c505ac4a106bb8ed8f434af3b4836f2fd039b9d693bcb100585c2c2ad8d71cb0cbeedcfbc84dfb9b67fa0e8da
   languageName: node
   linkType: hard
 
@@ -654,6 +672,23 @@ __metadata:
     type-fest: "npm:^4.8.2"
     whatwg-mimetype: "npm:^3.0.0"
   checksum: 10c0/ffa7f7193384bce9fbaf2b981adc465fd69c64593d30a2d36581d4e6d0f34704370fd48bcfa8eb5abe48a0f39680d071b6fc0f3e7fc911968602784b11e2513b
+  languageName: node
+  linkType: hard
+
+"@markuplint/types@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@markuplint/types@npm:4.0.0"
+  dependencies:
+    "@types/css-tree": "npm:^2.3.4"
+    "@types/debug": "npm:^4.1.12"
+    "@types/whatwg-mimetype": "npm:3.0.2"
+    bcp-47: "npm:^2.1.0"
+    css-tree: "npm:^2.3.1"
+    debug: "npm:^4.3.4"
+    leven: "npm:^4.0.0"
+    type-fest: "npm:^4.10.2"
+    whatwg-mimetype: "npm:^4.0.0"
+  checksum: 10c0/13053cb9008b3fcab970c9a15960a291ca371c7dddd943cb854a08037298ee4462f855fbdc2ab96be52e9aebd362664c9cdd5b5b650faf3337030e2a52e760dc
   languageName: node
   linkType: hard
 
@@ -2092,6 +2127,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bcp-47@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "bcp-47@npm:2.1.0"
+  dependencies:
+    is-alphabetical: "npm:^2.0.0"
+    is-alphanumerical: "npm:^2.0.0"
+    is-decimal: "npm:^2.0.0"
+  checksum: 10c0/0b461b6d5bad215665e59bc57c4e1489312da541612558629e4f3d3538b16ce6c2709a4b62ec9ed6fca7a339740c27df6a454d5821a849b3df5ff7e697372885
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^2.0.0":
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
@@ -2107,7 +2153,7 @@ __metadata:
     "@headlessui/react": "npm:1.7.18"
     "@markuplint/jsx-parser": "npm:3.12.0"
     "@markuplint/ml-core": "npm:3.15.0"
-    "@markuplint/react-spec": "npm:3.13.0"
+    "@markuplint/react-spec": "npm:4.0.0"
     "@next/eslint-plugin-next": "npm:14.1.0"
     "@next/third-parties": "npm:14.1.1-canary.33"
     "@t3-oss/env-nextjs": "npm:0.8.0"
@@ -5433,6 +5479,13 @@ __metadata:
   version: 3.1.0
   resolution: "leven@npm:3.1.0"
   checksum: 10c0/cd778ba3fbab0f4d0500b7e87d1f6e1f041507c56fdcd47e8256a3012c98aaee371d4c15e0a76e0386107af2d42e2b7466160a2d80688aaa03e66e49949f42df
+  languageName: node
+  linkType: hard
+
+"leven@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "leven@npm:4.0.0"
+  checksum: 10c0/393bd949d93103d9ef487be96321bdb02c2e7695e372193f650642e1ad653c61b03da16bf55e45d442db59c7b6407eb947a7748b5777e48ddf0ada25f8b2a815
   languageName: node
   linkType: hard
 
@@ -9853,6 +9906,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^4.10.2":
+  version: 4.10.2
+  resolution: "type-fest@npm:4.10.2"
+  checksum: 10c0/740f7d30da742ff413e8690ec10a24df054bfd87575cf92691b77f5a6b8185c582da529b84ceb13771482599e085712beec51492feaef2a1adc8661c0a47ecba
+  languageName: node
+  linkType: hard
+
 "type-fest@npm:^4.8.2":
   version: 4.10.1
   resolution: "type-fest@npm:4.10.1"
@@ -10312,6 +10372,13 @@ __metadata:
   version: 3.0.0
   resolution: "whatwg-mimetype@npm:3.0.0"
   checksum: 10c0/323895a1cda29a5fb0b9ca82831d2c316309fede0365047c4c323073e3239067a304a09a1f4b123b9532641ab604203f33a1403b5ca6a62ef405bcd7a204080f
+  languageName: node
+  linkType: hard
+
+"whatwg-mimetype@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "whatwg-mimetype@npm:4.0.0"
+  checksum: 10c0/a773cdc8126b514d790bdae7052e8bf242970cebd84af62fb2f35a33411e78e981f6c0ab9ed1fe6ec5071b09d5340ac9178e05b52d35a9c4bcf558ba1b1551df
   languageName: node
   linkType: hard
 
