@@ -12,5 +12,6 @@
       "after 8am before 5pm on Monday"
     ],
     "prHourlyLimit": 0,
-    "prConcurrentLimit": 0
+    "prConcurrentLimit": 0,
+    "postUpdateOptions": ["yarnDedupeHighest"]
   }
