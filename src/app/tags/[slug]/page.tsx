@@ -1,5 +1,5 @@
 import type { ResolvingMetadata } from "next";
-import { PostSummaryView } from "@/components/PostSummaryView";
+import { PostSummaryList } from "@/components/PostSummaryList";
 import {
   retrievePostSummaries,
   retrieveTag,
@@ -41,13 +41,7 @@ export default async function Page({ params }: Props) {
   return (
     <div>
       <h2 className="text-xl text-primary">{`${tag.label}の記事一覧`}</h2>
-      <ul className="mt-8">
-        {postSummaries.map((postSummary) => (
-          <li key={postSummary.slug}>
-            <PostSummaryView postSummary={postSummary} />
-          </li>
-        ))}
-      </ul>
+      <PostSummaryList postSummaries={postSummaries} className="mt-8" />
     </div>
   );
 }
