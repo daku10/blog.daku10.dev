@@ -79,7 +79,7 @@ const ThemeIconButton = forwardRef<HTMLButtonElement>((props, ref) => {
     <button
       {...props}
       ref={ref}
-      className="p-2 text-secondary hover:text-primary"
+      className="p-2 text-secondary hover:text-primary aria-expanded:text-primary"
     >
       <Icon type="sun" className="block h-6 w-6 dark:hidden" />
       <Icon type="moon" className="hidden h-6 w-6 dark:block" />
