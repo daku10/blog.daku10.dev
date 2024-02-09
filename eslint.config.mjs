@@ -32,6 +32,7 @@ export default [
     },
     rules: {
       ...js.configs.recommended.rules,
+      "no-console": "error",
       ...tsEsLintPlugin.configs["eslint-recommended"].overrides[0].rules,
       ...tsEsLintPlugin.configs["strict-type-checked"].rules,
       ...tsEsLintPlugin.configs["stylistic-type-checked"].rules,
