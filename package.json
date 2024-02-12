@@ -34,7 +34,7 @@
     "remark-parse": "11.0.0",
     "remark-rehype": "11.1.0",
     "rss": "1.2.2",
-    "shikiji": "0.10.2",
+    "shiki": "1.1.1",
     "simple-icons": "11.4.0",
     "tailwind-merge": "2.2.1",
     "unified": "11.0.4",
@@ -51,7 +51,6 @@
     "@tailwindcss/typography": "0.5.10",
     "@types/eslint": "8.56.2",
     "@types/eslint__js": "8.42.3",
-    "@types/gtag.js": "0.0.19",
     "@types/node": "20.11.17",
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
@@ -76,7 +75,6 @@
     "textlint-rule-preset-ja-spacing": "2.3.0",
     "textlint-rule-preset-ja-technical-writing": "10.0.1",
     "textlint-rule-spellcheck-tech-word": "5.0.0",
-    "tsx": "4.7.1",
     "typescript": "5.3.3"
   },
   "packageManager": "yarn@4.1.0+sha256.81a00df816059803e6b5148acf03ce313cad36b7f6e5af6efa040a15981a6ffb"
