@@ -1117,7 +1117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hast@npm:^3.0.0, @types/hast@npm:^3.0.4":
+"@types/hast@npm:3.0.4, @types/hast@npm:^3.0.0, @types/hast@npm:^3.0.4":
   version: 3.0.4
   resolution: "@types/hast@npm:3.0.4"
   dependencies:
@@ -1841,6 +1841,7 @@ __metadata:
     "@tailwindcss/typography": "npm:0.5.10"
     "@types/eslint": "npm:8.56.2"
     "@types/eslint__js": "npm:8.42.3"
+    "@types/hast": "npm:3.0.4"
     "@types/node": "npm:20.11.17"
     "@types/react": "npm:18.2.55"
     "@types/react-dom": "npm:18.2.19"
@@ -1857,7 +1858,6 @@ __metadata:
     eslint-plugin-react-hooks: "npm:4.6.0"
     eslint-plugin-unused-imports: "npm:3.0.0"
     gray-matter: "npm:4.0.3"
-    hast: "npm:1.0.0"
     image-size: "npm:1.1.1"
     markuplint: "npm:4.0.3"
     next: "npm:14.1.0"
@@ -4023,13 +4023,6 @@ __metadata:
   dependencies:
     "@types/hast": "npm:^3.0.0"
   checksum: 10c0/b898bc9fe27884b272580d15260b6bbdabe239973a147e97fa98c45fa0ffec967a481aaa42291ec34fb56530dc2d484d473d7e2bae79f39c83f3762307edfea8
-  languageName: node
-  linkType: hard
-
-"hast@npm:1.0.0":
-  version: 1.0.0
-  resolution: "hast@npm:1.0.0"
-  checksum: 10c0/a1a4ffaa99c6a4cfe6bd31e54ee919625a8ebcfc621d2d06cc76e593d7aeee4f1f430fcdbbf17ae8e249567ee7b724e4814b5eb273455d23bad8334c9bfc667d
   languageName: node
   linkType: hard
 
