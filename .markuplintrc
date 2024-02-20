@@ -8,6 +8,9 @@
   "specs": {
     ".[jt]sx$": "@markuplint/react-spec"
   },
+  "rules": {
+    "heading-levels": false
+  },
   "nodeRules": [
     {
       "selector": "img",
