@@ -1,4 +1,4 @@
-import { IconRefresh, IconRss } from "@tabler/icons-react";
+import { IconMenu2, IconX, IconRefresh, IconRss } from "@tabler/icons-react";
 import {
   IconSun,
   IconMoon,
@@ -16,6 +16,8 @@ const icons = [
   "pencil",
   "refresh",
   "rss",
+  "menu",
+  "cancel"
 ] as const;
 const serviceIcons = ["zenn", "github", "x"] as const;
 
@@ -47,6 +49,10 @@ export const Icon = ({ type, className }: Props) => {
         return <IconRefresh className={className} />;
       case "rss":
         return <IconRss className={className} />;
+      case "menu":
+        return <IconMenu2 className={className} />;
+        case "cancel":
+          return <IconX className={className} />;
     }
   }
   switch (type) {
