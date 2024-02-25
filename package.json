@@ -10,6 +10,7 @@
     "lint:es": "ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.mjs './**/*.{ts,tsx}'",
     "lint:markup": "markuplint './src/**/*.{j,t}sx'",
     "lint:text": "textlint public/posts/**/*.md",
+    "lint:format": "prettier --check src",
     "format": "prettier src --write"
   },
   "dependencies": {
