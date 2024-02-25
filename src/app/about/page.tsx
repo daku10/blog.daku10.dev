@@ -3,7 +3,7 @@ import { Link } from "@/components/Link";
 
 export default function Page() {
   return (
-    <div className="grid grid-cols-[max-content_1fr] gap-16">
+    <div className="grid gap-16 md:grid-cols-[max-content_1fr]">
       <div className="grid grid-rows-[max-content] place-content-center place-items-center gap-6">
         <img
           src="/assets/images/profile.webp"

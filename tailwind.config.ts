@@ -13,6 +13,7 @@ const config: Config = {
         primary: "rgb(var(--primary))",
         secondary: "rgb(var(--secondary))",
         background: "rgb(var(--background))",
+        invertbackground: "rgb(var(--invert-background))",
         heading: "rgb(var(--heading))",
         link: "rgb(var(--link))",
         text: "rgb(var(--text))",
