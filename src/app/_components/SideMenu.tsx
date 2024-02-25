@@ -21,7 +21,7 @@ export const SideMenu = () => {
               <span className="sr-only">Menu</span>
             </button>
           </Popover.Button>
-          <Popover.Overlay className="bg-invertbackground/30 fixed inset-0" />
+          <Popover.Overlay className="fixed inset-0 bg-invertbackground/30" />
 
           <Transition
             as={Fragment}

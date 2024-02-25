@@ -2,7 +2,7 @@
  * color is fit for `dark-one` theme
  */
 figure[data-rehype-pretty-code-figure] {
-  @apply max-w-[calc(100vw*0.9)] mx-auto
+  @apply mx-auto max-w-[calc(100vw*0.9)];
 }
 
 figcaption[data-rehype-pretty-code-title] {

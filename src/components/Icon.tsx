@@ -17,7 +17,7 @@ const icons = [
   "refresh",
   "rss",
   "menu",
-  "cancel"
+  "cancel",
 ] as const;
 const serviceIcons = ["zenn", "github", "x"] as const;
 
@@ -51,8 +51,8 @@ export const Icon = ({ type, className }: Props) => {
         return <IconRss className={className} />;
       case "menu":
         return <IconMenu2 className={className} />;
-        case "cancel":
-          return <IconX className={className} />;
+      case "cancel":
+        return <IconX className={className} />;
     }
   }
   switch (type) {
