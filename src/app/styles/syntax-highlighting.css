@@ -1,6 +1,9 @@
 /* for rehype-pretty-code
  * color is fit for `dark-one` theme
  */
+figure[data-rehype-pretty-code-figure] {
+  @apply mx-auto max-w-[calc(100vw*0.9)];
+}
 
 figcaption[data-rehype-pretty-code-title] {
   @apply rounded-t-lg bg-stone-800 py-2 pl-4 text-slate-300;

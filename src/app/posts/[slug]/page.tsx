@@ -30,8 +30,10 @@ export default async function Page({ params }: Props) {
   });
 
   return (
-    <div className="mx-36">
-      <h1 className="text-3xl font-bold text-heading">{post.title}</h1>
+    <div className="md:mx-36">
+      <h1 className="text-lg font-bold text-heading md:text-3xl">
+        {post.title}
+      </h1>
       <p className="mt-4 text-text">{post.description}</p>
       <div className="mt-4 flex gap-4 text-text">
         <div className="flex items-center gap-2">
@@ -54,7 +56,7 @@ export default async function Page({ params }: Props) {
         ))}
       </ul>
 
-      <article className="prose prose-gray mt-8 max-w-none dark:prose-invert">
+      <article className="prose prose-sm prose-gray mt-8 max-w-none dark:prose-invert md:prose-base">
         {processedContent.result}
       </article>
     </div>
