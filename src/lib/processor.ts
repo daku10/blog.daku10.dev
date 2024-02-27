@@ -12,11 +12,16 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
 import type { Root } from "hast";
+import type { Options } from "rehype-react";
 import type { Plugin } from "unified";
 
-// @ts-expect-error: the react types are missing.
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-const production = { Fragment: prod.Fragment, jsx: prod.jsx, jsxs: prod.jsxs };
+const production: Options = {
+  Fragment: prod.Fragment,
+  // @ts-expect-error - unmatched types
+  jsx: prod.jsx,
+  // @ts-expect-error - unmatched types
+  jsxs: prod.jsxs,
+};
 
 const myRehypeRewriteImg: Plugin<[], Root> = () => {
   return (tree, file) => {
