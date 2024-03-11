@@ -460,94 +460,94 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/env@npm:14.1.2"
-  checksum: 10c0/30e3d99e9c0f2bdb3303e8aa1115afb6de941d120cea1d00465d61163edb84fbec7c7091f71cd159abd28f2a6f45847eb10dbd51070b4afea72f8b53da96beb0
+"@next/env@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/env@npm:14.1.3"
+  checksum: 10c0/928dba385f1ed3346880845662f87fe386e42ee0c798ccbd7c13a31e2cb509153d42e6c8a4a73ad9c6d647ac9cb6a570316c8ddcaccc9ec201f7519ec383dc02
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/eslint-plugin-next@npm:14.1.2"
+"@next/eslint-plugin-next@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/eslint-plugin-next@npm:14.1.3"
   dependencies:
     glob: "npm:10.3.10"
-  checksum: 10c0/8f99345e3b0739aaabfb2fe61dc586c1781356ca1ccb8a01c15ddd451c3d7a2ff1d31b0b727ef27baa4227d7c8536a05c5206b9e3631efd668b7dd3ef69fedfa
+  checksum: 10c0/08ac68dad1866c2ec8662b852fcf224fd45a15cc9e6033b3f017760c0b0a1a04e663adf3ab86b2d34b0e89189b7d2cf4226a2769e0ee39bd9405443bb185adb8
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/swc-darwin-arm64@npm:14.1.2"
+"@next/swc-darwin-arm64@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/swc-darwin-arm64@npm:14.1.3"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/swc-darwin-x64@npm:14.1.2"
+"@next/swc-darwin-x64@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/swc-darwin-x64@npm:14.1.3"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/swc-linux-arm64-gnu@npm:14.1.2"
+"@next/swc-linux-arm64-gnu@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/swc-linux-arm64-gnu@npm:14.1.3"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/swc-linux-arm64-musl@npm:14.1.2"
+"@next/swc-linux-arm64-musl@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/swc-linux-arm64-musl@npm:14.1.3"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/swc-linux-x64-gnu@npm:14.1.2"
+"@next/swc-linux-x64-gnu@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/swc-linux-x64-gnu@npm:14.1.3"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/swc-linux-x64-musl@npm:14.1.2"
+"@next/swc-linux-x64-musl@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/swc-linux-x64-musl@npm:14.1.3"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/swc-win32-arm64-msvc@npm:14.1.2"
+"@next/swc-win32-arm64-msvc@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/swc-win32-arm64-msvc@npm:14.1.3"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-ia32-msvc@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/swc-win32-ia32-msvc@npm:14.1.2"
+"@next/swc-win32-ia32-msvc@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/swc-win32-ia32-msvc@npm:14.1.3"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/swc-win32-x64-msvc@npm:14.1.2"
+"@next/swc-win32-x64-msvc@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/swc-win32-x64-msvc@npm:14.1.3"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/third-parties@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@next/third-parties@npm:14.1.2"
+"@next/third-parties@npm:14.1.3":
+  version: 14.1.3
+  resolution: "@next/third-parties@npm:14.1.3"
   dependencies:
     third-party-capital: "npm:1.0.20"
   peerDependencies:
     next: ^13.0.0 || ^14.0.0
     react: ^18.2.0
-  checksum: 10c0/fb30370c97acaeef01ec484460bb83d15e5e21e05b7ba930d7d118813e8444f770f7153dfe3d2a4008aeb7ce27ede609e9ef02baaf3059991d715fdcde3845bf
+  checksum: 10c0/0a8335e73df30bdd3f0605cc25f303fe363449c0ef01764604f1af2f9b8c39078d858e204879cce03612621f862fb9b497c6df10e60212c20ca8c2a031a784fb
   languageName: node
   linkType: hard
 
@@ -1171,12 +1171,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.11.24":
-  version: 20.11.24
-  resolution: "@types/node@npm:20.11.24"
+"@types/node@npm:20.11.25":
+  version: 20.11.25
+  resolution: "@types/node@npm:20.11.25"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/5a62225eb4797b41e6953f9c08c4611d607b5422ddd153312fc81ed6ed37115228ae27e3e3caa1a3bf52d88310306a196ba1cfbd8b2ec918a20f64d80dfa22c9
+  checksum: 10c0/3a65a0469309d503e572a3198d81c9248876236b1bcc0c9943e995cfa536df7ce9a9302638258984877420d1613167a8a82dbfb3a92197319fb79ebebf9abc83
   languageName: node
   linkType: hard
 
@@ -1187,23 +1187,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.2.19":
-  version: 18.2.19
-  resolution: "@types/react-dom@npm:18.2.19"
+"@types/react-dom@npm:18.2.21":
+  version: 18.2.21
+  resolution: "@types/react-dom@npm:18.2.21"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 10c0/88d7c6daa4659f661d0c97985d9fca492f24b421a34bb614dcd94c343aed7bea121463149e97fb01ecaa693be17b7d1542cf71ddb1705f3889a81eb2639a88aa
+  checksum: 10c0/a887b4b647071df48173f054854713b68fdacfceeba7fa14f64ba26688d7d43574d7dc88a2a346e28f2e667eeab1b9bdbcad8a54353869835e52638607f61ff5
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.62":
-  version: 18.2.62
-  resolution: "@types/react@npm:18.2.62"
+"@types/react@npm:*, @types/react@npm:18.2.64":
+  version: 18.2.64
+  resolution: "@types/react@npm:18.2.64"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10c0/a45a986723b0febdcdcea754cfa426345f588fd9a522ab4136220a0b514ccba8f4986b23c73dd8e863d465ee1e733779bffffdd57c19488a318a5135f030c1e8
+  checksum: 10c0/ab3ba9597990d08ffd419a5ad28fd22393c7a9a241ae455fb1d5d193d209471aa1909fa7ad016fd8d161eab6d0babba77b013b56a5170bedf78833085b9ee424
   languageName: node
   linkType: hard
 
@@ -1925,17 +1925,17 @@ __metadata:
     "@markuplint/jsx-parser": "npm:4.3.0"
     "@markuplint/ml-core": "npm:4.3.0"
     "@markuplint/react-spec": "npm:4.1.0"
-    "@next/eslint-plugin-next": "npm:14.1.2"
-    "@next/third-parties": "npm:14.1.2"
+    "@next/eslint-plugin-next": "npm:14.1.3"
+    "@next/third-parties": "npm:14.1.3"
     "@t3-oss/env-nextjs": "npm:0.9.2"
     "@tabler/icons-react": "npm:2.47.0"
     "@tailwindcss/typography": "npm:0.5.10"
     "@types/eslint": "npm:8.56.5"
     "@types/eslint__js": "npm:8.42.3"
     "@types/hast": "npm:3.0.4"
-    "@types/node": "npm:20.11.24"
-    "@types/react": "npm:18.2.62"
-    "@types/react-dom": "npm:18.2.19"
+    "@types/node": "npm:20.11.25"
+    "@types/react": "npm:18.2.64"
+    "@types/react-dom": "npm:18.2.21"
     "@types/rss": "npm:0.0.32"
     "@typescript-eslint/eslint-plugin": "npm:7.1.1"
     "@typescript-eslint/parser": "npm:7.1.1"
@@ -1943,7 +1943,7 @@ __metadata:
     clsx: "npm:2.1.0"
     concurrently: "npm:8.2.2"
     eslint: "npm:8.57.0"
-    eslint-config-next: "npm:14.1.2"
+    eslint-config-next: "npm:14.1.3"
     eslint-plugin-import: "npm:2.29.1"
     eslint-plugin-react: "npm:7.34.0"
     eslint-plugin-react-hooks: "npm:4.6.0"
@@ -1951,11 +1951,11 @@ __metadata:
     gray-matter: "npm:4.0.3"
     image-size: "npm:1.1.1"
     markuplint: "npm:4.3.0"
-    next: "npm:14.1.2"
+    next: "npm:14.1.3"
     next-themes: "npm:0.2.1"
     postcss: "npm:8.4.35"
     prettier: "npm:3.2.5"
-    prettier-plugin-tailwindcss: "npm:0.5.11"
+    prettier-plugin-tailwindcss: "npm:0.5.12"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     rehype-autolink-headings: "npm:7.1.0"
@@ -1969,17 +1969,17 @@ __metadata:
     rss: "npm:1.2.2"
     serve: "npm:14.2.1"
     shiki: "npm:1.1.7"
-    simple-icons: "npm:11.7.0"
+    simple-icons: "npm:11.8.0"
     tailwind-merge: "npm:2.2.1"
     tailwindcss: "npm:3.4.1"
     textlint: "npm:14.0.3"
-    textlint-rule-preset-ja-spacing: "npm:2.3.0"
+    textlint-rule-preset-ja-spacing: "npm:2.3.1"
     textlint-rule-preset-ja-technical-writing: "npm:10.0.1"
     textlint-rule-spellcheck-tech-word: "npm:5.0.0"
-    typescript: "npm:5.3.3"
+    typescript: "npm:5.4.2"
     unified: "npm:11.0.4"
     unist-util-visit: "npm:5.0.0"
-    valibot: "npm:0.29.0"
+    valibot: "npm:0.30.0"
     zod: "npm:3.22.4"
   languageName: unknown
   linkType: soft
@@ -3064,11 +3064,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:14.1.2":
-  version: 14.1.2
-  resolution: "eslint-config-next@npm:14.1.2"
+"eslint-config-next@npm:14.1.3":
+  version: 14.1.3
+  resolution: "eslint-config-next@npm:14.1.3"
   dependencies:
-    "@next/eslint-plugin-next": "npm:14.1.2"
+    "@next/eslint-plugin-next": "npm:14.1.3"
     "@rushstack/eslint-patch": "npm:^1.3.3"
     "@typescript-eslint/parser": "npm:^5.4.2 || ^6.0.0"
     eslint-import-resolver-node: "npm:^0.3.6"
@@ -3083,7 +3083,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/c600588b1231360981fd862ac1c878f03a05847a8a5399d3cf1590b59e2072f74b3e23a4b4aabdb45ef870709884d9a8e847ab8f602ee31ab31d3753f3103a38
+  checksum: 10c0/4ab843af53cebf38b5e280597b94582b5cc4afc91dc04e6a70ed9c333cd0ebf4e8ae8ac16d77992e2c1557754cbd0f5460f5a858db62b83db4837d84638ac524
   languageName: node
   linkType: hard
 
@@ -6449,20 +6449,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:14.1.2":
-  version: 14.1.2
-  resolution: "next@npm:14.1.2"
+"next@npm:14.1.3":
+  version: 14.1.3
+  resolution: "next@npm:14.1.3"
   dependencies:
-    "@next/env": "npm:14.1.2"
-    "@next/swc-darwin-arm64": "npm:14.1.2"
-    "@next/swc-darwin-x64": "npm:14.1.2"
-    "@next/swc-linux-arm64-gnu": "npm:14.1.2"
-    "@next/swc-linux-arm64-musl": "npm:14.1.2"
-    "@next/swc-linux-x64-gnu": "npm:14.1.2"
-    "@next/swc-linux-x64-musl": "npm:14.1.2"
-    "@next/swc-win32-arm64-msvc": "npm:14.1.2"
-    "@next/swc-win32-ia32-msvc": "npm:14.1.2"
-    "@next/swc-win32-x64-msvc": "npm:14.1.2"
+    "@next/env": "npm:14.1.3"
+    "@next/swc-darwin-arm64": "npm:14.1.3"
+    "@next/swc-darwin-x64": "npm:14.1.3"
+    "@next/swc-linux-arm64-gnu": "npm:14.1.3"
+    "@next/swc-linux-arm64-musl": "npm:14.1.3"
+    "@next/swc-linux-x64-gnu": "npm:14.1.3"
+    "@next/swc-linux-x64-musl": "npm:14.1.3"
+    "@next/swc-win32-arm64-msvc": "npm:14.1.3"
+    "@next/swc-win32-ia32-msvc": "npm:14.1.3"
+    "@next/swc-win32-x64-msvc": "npm:14.1.3"
     "@swc/helpers": "npm:0.5.2"
     busboy: "npm:1.6.0"
     caniuse-lite: "npm:^1.0.30001579"
@@ -6500,7 +6500,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10c0/3964d535c8c439bcdbe99adbf2e7859ee4af9c2bb541e9358d1b613d1debae99b1a020de57d378cac03c94167f772820eb05162b795f407b552bdbe1e2753e58
+  checksum: 10c0/b723955669b40b49761220b582e46ee0fb472b01b67fb9b6ceabc9a191a252bba253a65d72b284fcac1001c85d39bd6816db71e78e97b2221137ed15776c35bd
   languageName: node
   linkType: hard
 
@@ -7146,9 +7146,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:0.5.11":
-  version: 0.5.11
-  resolution: "prettier-plugin-tailwindcss@npm:0.5.11"
+"prettier-plugin-tailwindcss@npm:0.5.12":
+  version: 0.5.12
+  resolution: "prettier-plugin-tailwindcss@npm:0.5.12"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-pug": "*"
@@ -7162,6 +7162,7 @@ __metadata:
     prettier-plugin-marko: "*"
     prettier-plugin-organize-attributes: "*"
     prettier-plugin-organize-imports: "*"
+    prettier-plugin-sort-imports: "*"
     prettier-plugin-style-order: "*"
     prettier-plugin-svelte: "*"
   peerDependenciesMeta:
@@ -7187,13 +7188,15 @@ __metadata:
       optional: true
     prettier-plugin-organize-imports:
       optional: true
+    prettier-plugin-sort-imports:
+      optional: true
     prettier-plugin-style-order:
       optional: true
     prettier-plugin-svelte:
       optional: true
     prettier-plugin-twig-melody:
       optional: true
-  checksum: 10c0/46e095d2a4298820a75a7b36022e8f2bcd1658a289f2ab11e4b9d4b6075272fee003d9959d084dcb33d5d669daf275e978d9a9aed35efe5eb9e77e70070b47f6
+  checksum: 10c0/984b79fd33aed89f09bb19c3659079eb19dad6c38a78150f8b1a3082d7331f4faf46e6c561e0e54f47954679c105ef8e674e9c56e22db318e1493b468aa29f5b
   languageName: node
   linkType: hard
 
@@ -8050,10 +8053,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-icons@npm:11.7.0":
-  version: 11.7.0
-  resolution: "simple-icons@npm:11.7.0"
-  checksum: 10c0/4eaee9374b8603e4f2c626f32613a8e191fff3aa20deb620571619708895f709aa7066a6c50ebd6de7474457671446632c417bd4dcb06e3f821d80ba3d649c06
+"simple-icons@npm:11.8.0":
+  version: 11.8.0
+  resolution: "simple-icons@npm:11.8.0"
+  checksum: 10c0/750468a2265420f8f4a6453b03b1459392c031e30c3e548f06e224527cf6c43ccefc85dcf155c3f768b16e04798980ef84c27318397aa0d5ff579fcc667ece8c
   languageName: node
   linkType: hard
 
@@ -8550,7 +8553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"textlint-rule-helper@npm:^2.0.0, textlint-rule-helper@npm:^2.1.1, textlint-rule-helper@npm:^2.2.0, textlint-rule-helper@npm:^2.2.1, textlint-rule-helper@npm:^2.2.4, textlint-rule-helper@npm:^2.3.0, textlint-rule-helper@npm:^2.3.1":
+"textlint-rule-helper@npm:^2.0.0, textlint-rule-helper@npm:^2.1.1, textlint-rule-helper@npm:^2.2.1, textlint-rule-helper@npm:^2.2.4, textlint-rule-helper@npm:^2.3.0, textlint-rule-helper@npm:^2.3.1":
   version: 2.3.1
   resolution: "textlint-rule-helper@npm:2.3.1"
   dependencies:
@@ -8561,13 +8564,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@npm:2.2.0"
+"textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@npm:2.3.1"
   dependencies:
     match-index: "npm:^1.0.3"
-    textlint-rule-helper: "npm:^2.2.0"
-  checksum: 10c0/974795f1cda10bab8e7a3b0f93aa1cc9025dedea289c9d207292f8eb60d2144e6a9103c9d1ef9f1966d6c4ee461a6adfdb87e05ca2c61847981bdcaed50c219c
+    textlint-rule-helper: "npm:^2.2.4"
+  checksum: 10c0/aa153100d03f1e3de886bba0db39c12d82bd007f065cf14b3beb4cdbce7ae0c02c998d17724a1c43967f0b788fa0d25aabcc8677d4ce1e6f6cbefd28891b3d49
   languageName: node
   linkType: hard
 
@@ -8606,24 +8609,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"textlint-rule-ja-no-space-around-parentheses@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "textlint-rule-ja-no-space-around-parentheses@npm:2.2.0"
+"textlint-rule-ja-no-space-around-parentheses@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "textlint-rule-ja-no-space-around-parentheses@npm:2.3.1"
   dependencies:
     match-index: "npm:^1.0.3"
-    textlint-rule-helper: "npm:^2.2.0"
-  checksum: 10c0/a438fb8610796dc2179c57d001c27284f68a660f4726891ea00e5ffd5daaeb2775101400f14c044c7d0d70dc21c4e2afbec564fbbc6df415a76897a20f3c944d
+    textlint-rule-helper: "npm:^2.2.4"
+  checksum: 10c0/a74fc1861a254dacfa8984dc713946fb4fb332bf7b4d6323f5b7ab410699a8ab44cb8e29bce05fd04194104ade39733e66b93006bf4abc892be8b062bd916416
   languageName: node
   linkType: hard
 
-"textlint-rule-ja-no-space-between-full-width@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "textlint-rule-ja-no-space-between-full-width@npm:2.2.0"
+"textlint-rule-ja-no-space-between-full-width@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "textlint-rule-ja-no-space-between-full-width@npm:2.3.1"
   dependencies:
     match-index: "npm:^1.0.3"
     regx: "npm:^1.0.4"
-    textlint-rule-helper: "npm:^2.2.0"
-  checksum: 10c0/79024e0e71dd827ef30df65fdaec722218a632277a35aecc247c7b067f8538b572c32ff507fe5b84c4767f5986fa3008365b2641fe18e87149e747e26783e811
+    textlint-rule-helper: "npm:^2.2.4"
+  checksum: 10c0/45fe0b38bfa56f27e720a5a39e8831489eb00fcb3235f13b4945c165d17ac95587c2fbe045205d3e0bd5b15269de544ee509f3c875fb0f1bafbc910c0b839dbf
   languageName: node
   linkType: hard
 
@@ -8648,43 +8651,53 @@ __metadata:
   languageName: node
   linkType: hard
 
-"textlint-rule-ja-space-after-exclamation@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "textlint-rule-ja-space-after-exclamation@npm:2.2.0"
+"textlint-rule-ja-space-after-exclamation@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "textlint-rule-ja-space-after-exclamation@npm:2.3.1"
   dependencies:
     match-index: "npm:^1.0.3"
-    textlint-rule-helper: "npm:^2.2.0"
-  checksum: 10c0/7c8ee2321d4fef8b8ab36bf6503750ff6a82f1428076ea1b29e637f8c0ae7d34d3052460407a9f349a56acc5329ee5839aeb939ae75b0560b8e6fc27dcfd9256
+    textlint-rule-helper: "npm:^2.2.4"
+  checksum: 10c0/6be744e2b5662b0cff791bee1be0b18d5c5164ac9f77d39bf81dd7371c0ea7fa18b8cfab0e2e7fec176d4bb3a644696080ed7395ec056005e3b04a25c29e1d87
   languageName: node
   linkType: hard
 
-"textlint-rule-ja-space-after-question@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "textlint-rule-ja-space-after-question@npm:2.2.0"
+"textlint-rule-ja-space-after-question@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "textlint-rule-ja-space-after-question@npm:2.3.1"
   dependencies:
     match-index: "npm:^1.0.1"
-    textlint-rule-helper: "npm:^2.2.0"
-  checksum: 10c0/c8d59f144dda6bc9c5ee6b88db5b902cadb18ba94bbb859767903b85521e752e2487afddbc51eb8ab2fb4471ca162fc7f75b72745f957ab9d968820fbea2608d
+    textlint-rule-helper: "npm:^2.2.4"
+  checksum: 10c0/25a970ab0a31eafd5b31ac16e222ba80db336c22715fbd785afdbd6316f5933c697ae3f883a5d1eb478d54098a378970fa2502e396d9960626127478cc773bd1
   languageName: node
   linkType: hard
 
-"textlint-rule-ja-space-around-code@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "textlint-rule-ja-space-around-code@npm:2.2.0"
+"textlint-rule-ja-space-around-code@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "textlint-rule-ja-space-around-code@npm:2.3.1"
   dependencies:
     match-index: "npm:^1.0.1"
-    textlint-rule-helper: "npm:^2.2.0"
-  checksum: 10c0/7850fccf9259d4aee6c8991d6f456c57e4b5dbcba7aba087ae6982eb8c8040e13fccb57a5eb1dfe7cbb9735227bf9717f190d0b61e544eeda7850f0682012c16
+    textlint-rule-helper: "npm:^2.2.4"
+  checksum: 10c0/dfdb60466ed56d9a468cf9ebd1cc077b7d50837799c37630d954e30df5c4ca443eed850e34c35c9eb6e05ef4a83e9d57f3588caac579abc92c792d908ef3aa4b
   languageName: node
   linkType: hard
 
-"textlint-rule-ja-space-between-half-and-full-width@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "textlint-rule-ja-space-between-half-and-full-width@npm:2.3.0"
+"textlint-rule-ja-space-around-link@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "textlint-rule-ja-space-around-link@npm:2.3.1"
   dependencies:
     match-index: "npm:^1.0.1"
-    textlint-rule-helper: "npm:^2.2.0"
-  checksum: 10c0/3c9ca24abe26627f4676a21402eff009519fd67e2bc4fa2d462939c9c5575e92703c415b86ea5a1bd1f33203546eff40dc0ba303b9177c348a18d129cb6a85e9
+    textlint-rule-helper: "npm:^2.2.4"
+  checksum: 10c0/7b38ba4ec9d7f004eb613532b50a19545c16e9e411060bc4d77390ce409b03c840e72d71de26b0f00319c7aaa7e4e97a8cd53d058134f7690f217502921b7d07
+  languageName: node
+  linkType: hard
+
+"textlint-rule-ja-space-between-half-and-full-width@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "textlint-rule-ja-space-between-half-and-full-width@npm:2.3.1"
+  dependencies:
+    match-index: "npm:^1.0.1"
+    textlint-rule-helper: "npm:^2.2.4"
+  checksum: 10c0/0f193a68b6a86693c0a36fe1f5b59048b8934a7e09ed0d187887a44d6398b7f28d869f0178b1dbe98fe8cd028535b31ac8001458684981f7e6c5d4e02521445a
   languageName: node
   linkType: hard
 
@@ -8833,18 +8846,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"textlint-rule-preset-ja-spacing@npm:2.3.0":
-  version: 2.3.0
-  resolution: "textlint-rule-preset-ja-spacing@npm:2.3.0"
+"textlint-rule-preset-ja-spacing@npm:2.3.1":
+  version: 2.3.1
+  resolution: "textlint-rule-preset-ja-spacing@npm:2.3.1"
   dependencies:
-    textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana: "npm:^2.2.0"
-    textlint-rule-ja-no-space-around-parentheses: "npm:^2.2.0"
-    textlint-rule-ja-no-space-between-full-width: "npm:^2.2.0"
-    textlint-rule-ja-space-after-exclamation: "npm:^2.2.0"
-    textlint-rule-ja-space-after-question: "npm:^2.2.0"
-    textlint-rule-ja-space-around-code: "npm:^2.2.0"
-    textlint-rule-ja-space-between-half-and-full-width: "npm:^2.3.0"
-  checksum: 10c0/c6ffda8208f41e8425dd130fe22aeb877c78285e3ac0f53962e79592db7e37cb8276483ca7b7a7a802f8d58285b469aec7662ac53758929d36fb6cb57ec7dbd3
+    textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana: "npm:^2.3.1"
+    textlint-rule-ja-no-space-around-parentheses: "npm:^2.3.1"
+    textlint-rule-ja-no-space-between-full-width: "npm:^2.3.1"
+    textlint-rule-ja-space-after-exclamation: "npm:^2.3.1"
+    textlint-rule-ja-space-after-question: "npm:^2.3.1"
+    textlint-rule-ja-space-around-code: "npm:^2.3.1"
+    textlint-rule-ja-space-around-link: "npm:^2.3.1"
+    textlint-rule-ja-space-between-half-and-full-width: "npm:^2.3.1"
+  checksum: 10c0/1cb8e661827ad119457af2a55eb6a45b45b97e3525af76b3095f8aa7b4d0fb09b24a1559321ed79f65ac9fc75dfa876bdc053c623b329982272f49c46bc9183d
   languageName: node
   linkType: hard
 
@@ -9232,23 +9246,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.3.3":
-  version: 5.3.3
-  resolution: "typescript@npm:5.3.3"
+"typescript@npm:5.4.2":
+  version: 5.4.2
+  resolution: "typescript@npm:5.4.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/e33cef99d82573624fc0f854a2980322714986bc35b9cb4d1ce736ed182aeab78e2cb32b385efa493b2a976ef52c53e20d6c6918312353a91850e2b76f1ea44f
+  checksum: 10c0/583ff68cafb0c076695f72d61df6feee71689568179fb0d3a4834dac343df6b6ed7cf7b6f6c801fa52d43cd1d324e2f2d8ae4497b09f9e6cfe3d80a6d6c9ca52
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>":
-  version: 5.3.3
-  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
+"typescript@patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>":
+  version: 5.4.2
+  resolution: "typescript@patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>::version=5.4.2&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/1d0a5f4ce496c42caa9a30e659c467c5686eae15d54b027ee7866744952547f1be1262f2d40de911618c242b510029d51d43ff605dba8fb740ec85ca2d3f9500
+  checksum: 10c0/fcf6658073d07283910d9a0e04b1d5d0ebc822c04dbb7abdd74c3151c7aa92fcddbac7d799404e358197222006ccdc4c0db219d223d2ee4ccd9e2b01333b49be
   languageName: node
   linkType: hard
 
@@ -9514,10 +9528,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"valibot@npm:0.29.0":
-  version: 0.29.0
-  resolution: "valibot@npm:0.29.0"
-  checksum: 10c0/0bb277461bd7b7c16188a99567cd80353ac53c30a215fc007965eab009f6db84204845977118b1f5277eaef7cb1c5b9d60548fab453fc47eebfd30e67ebd6b9c
+"valibot@npm:0.30.0":
+  version: 0.30.0
+  resolution: "valibot@npm:0.30.0"
+  checksum: 10c0/9b343d3b9812d580a0e2452952e74570a3781fc76e6187cd90898b83249353b95a04d8d9193789ee1c86379b94ee76b45e045f26870384f036af6410ce2dfc0a
   languageName: node
   linkType: hard
 
