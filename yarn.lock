@@ -1195,14 +1195,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.67":
-  version: 18.2.67
-  resolution: "@types/react@npm:18.2.67"
+"@types/react@npm:*, @types/react@npm:18.2.69":
+  version: 18.2.69
+  resolution: "@types/react@npm:18.2.69"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10c0/d8c49476ca8c96cbbcd8b1fd1bf881396dbf548fdadb0b6463d0bb262e5013e0a239994842d09e74f9c21dcaf620555bc1f1485f8578b0498af87bc06291f5a2
+  checksum: 10c0/239b947ed8576a271057a6f571d0967098074b101a2bece244e88093dc8fb2f020872c463b8e78b2049334ba99158f6eef5960e51f73a389f86eee39b835d846
   languageName: node
   linkType: hard
 
@@ -1933,7 +1933,7 @@ __metadata:
     "@types/eslint__js": "npm:8.42.3"
     "@types/hast": "npm:3.0.4"
     "@types/node": "npm:20.11.30"
-    "@types/react": "npm:18.2.67"
+    "@types/react": "npm:18.2.69"
     "@types/react-dom": "npm:18.2.22"
     "@types/rss": "npm:0.0.32"
     "@typescript-eslint/eslint-plugin": "npm:7.3.1"
@@ -1968,7 +1968,7 @@ __metadata:
     rss: "npm:1.2.2"
     serve: "npm:14.2.1"
     shiki: "npm:1.2.0"
-    simple-icons: "npm:11.9.0"
+    simple-icons: "npm:11.10.0"
     tailwind-merge: "npm:2.2.2"
     tailwindcss: "npm:3.4.1"
     textlint: "npm:14.0.4"
@@ -8051,10 +8051,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-icons@npm:11.9.0":
-  version: 11.9.0
-  resolution: "simple-icons@npm:11.9.0"
-  checksum: 10c0/4d0acbf8b0e2134fd55f363e8c8bfd4339f9c0a5458d1e8d4381f1d8517b48787ba1d257ce968763c8b671f7853b190c248e4612188ec34d169e58a24fc8abd4
+"simple-icons@npm:11.10.0":
+  version: 11.10.0
+  resolution: "simple-icons@npm:11.10.0"
+  checksum: 10c0/1d21195c116e318c103cd4da66107c6eb8cfe47b3496a43f55d243ae002c3c70a8353571a8a58cc0de9c69fb978f779a1125a0bbaeaf24822ac7427f0e047e69
   languageName: node
   linkType: hard
 
