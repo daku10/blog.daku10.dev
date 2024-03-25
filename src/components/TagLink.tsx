@@ -16,6 +16,6 @@ export const TagLink = ({ tag, postCount, className }: Props) => {
         className,
       )}
       href={`/tags/${tag}`}
-    >{`# ${TagLabel[tag]}${postCount ? ` ${postCount}` : ""}`}</Link>
+    >{`# ${TagLabel[tag]}${postCount ? ` ${postCount.toString()}` : ""}`}</Link>
   );
 };
