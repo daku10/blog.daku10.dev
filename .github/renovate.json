@@ -11,6 +11,12 @@
     "schedule": [
       "after 8am before 5pm on Monday"
     ],
+    "packageRules": [
+      {
+        "groupName": "eslint",
+        "matchPackageNames": ["eslint", "@eslint/js", "@types/eslint", "@types/eslint__js"]
+      }
+    ],
     "prHourlyLimit": 0,
     "prConcurrentLimit": 0,
     "postUpdateOptions": ["yarnDedupeHighest"]
