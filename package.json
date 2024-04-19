@@ -11,6 +11,7 @@
     "lint:markup": "markuplint './src/**/*.{j,t}sx'",
     "lint:text": "textlint public/posts/**/*.md",
     "lint:format": "prettier --check src",
+    "analyze": "ANALYZE=true next build",
     "format": "prettier src --write"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "@markuplint/jsx-parser": "4.6.0",
     "@markuplint/ml-core": "4.6.0",
     "@markuplint/react-spec": "4.4.0",
+    "@next/bundle-analyzer": "14.2.2",
     "@next/eslint-plugin-next": "14.2.2",
     "@tailwindcss/typography": "0.5.12",
     "@types/eslint": "8.56.9",
