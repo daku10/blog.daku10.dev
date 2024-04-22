@@ -1,16 +1,14 @@
-import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod";
+import * as v from "valibot";
 
-export const env = createEnv({
-  client: {
-    NEXT_PUBLIC_GA_ID: z.string().min(1),
-    NEXT_PUBLIC_APP_ENV: z.union([
-      z.literal("production"),
-      z.literal("development"),
-    ]),
-  },
-  experimental__runtimeEnv: {
-    NEXT_PUBLIC_GA_ID: process.env["NEXT_PUBLIC_GA_ID"],
-    NEXT_PUBLIC_APP_ENV: process.env["NEXT_PUBLIC_APP_ENV"],
-  },
+const schema = v.object({
+  NEXT_PUBLIC_GA_ID: v.string([v.minLength(1)]),
+  NEXT_PUBLIC_APP_ENV: v.union([
+    v.literal("production"),
+    v.literal("development"),
+  ]),
+});
+
+export const env = v.parse(schema, {
+  NEXT_PUBLIC_GA_ID: process.env["NEXT_PUBLIC_GA_ID"],
+  NEXT_PUBLIC_APP_ENV: process.env["NEXT_PUBLIC_APP_ENV"],
 });
