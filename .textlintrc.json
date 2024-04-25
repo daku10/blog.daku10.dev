@@ -7,6 +7,9 @@
         "ja-no-weak-phrase": {
           "severity": "warning"
         },
+        "ja-no-successive-word": {
+          "allow": ["…"]
+        },
         "sentence-length": {
           "max": 150
         }
