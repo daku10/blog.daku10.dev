@@ -679,9 +679,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/typography@npm:0.5.12":
-  version: 0.5.12
-  resolution: "@tailwindcss/typography@npm:0.5.12"
+"@tailwindcss/typography@npm:0.5.13":
+  version: 0.5.13
+  resolution: "@tailwindcss/typography@npm:0.5.13"
   dependencies:
     lodash.castarray: "npm:^4.4.0"
     lodash.isplainobject: "npm:^4.0.6"
@@ -689,7 +689,7 @@ __metadata:
     postcss-selector-parser: "npm:6.0.10"
   peerDependencies:
     tailwindcss: "*"
-  checksum: 10c0/3410b06594b89b5650cd4c985e6b4f48d1ba2cfbe146bb5ea2a2cfc1c9b065cd3ca2215436a814f458936683836f9cf792a8d6341345feccf6fb9910c565c092
+  checksum: 10c0/6c01287e7492c001595cd5a39765f313e48e1d2997ea78823919edabd692300d144c42b6e16dee6e077a683e635b9164ff985d5a0f8eeff7824b2d119151899e
   languageName: node
   linkType: hard
 
@@ -1189,22 +1189,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.2.25":
-  version: 18.2.25
-  resolution: "@types/react-dom@npm:18.2.25"
+"@types/react-dom@npm:18.3.0":
+  version: 18.3.0
+  resolution: "@types/react-dom@npm:18.3.0"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 10c0/87604407eca6884c5b4d4657cb511dc5ba28ea1cfa5d0ce1fc2d659a7ad1b64ae85dcda60e3f010641f9a52a6a60dfcaa6be3b0d0de9d624475052a13dae01f4
+  checksum: 10c0/6c90d2ed72c5a0e440d2c75d99287e4b5df3e7b011838cdc03ae5cd518ab52164d86990e73246b9d812eaf02ec351d74e3b4f5bd325bf341e13bf980392fd53b
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.79":
-  version: 18.2.79
-  resolution: "@types/react@npm:18.2.79"
+"@types/react@npm:*, @types/react@npm:18.3.1":
+  version: 18.3.1
+  resolution: "@types/react@npm:18.3.1"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10c0/c8a8a005d8830a48cc1ef93c3510c4935a2a03e5557dbecaa8f1038450cbfcb18eb206fa7fba7077d54b8da21faeb25577e897a333392770a7797f625b62c78a
+  checksum: 10c0/18d856c12a4ec93f3cda2d58ef3d77a9480818afd3af895f812896fb82cfca1f35a692ab1add4ce826a4eb58a071624c7d1c8c6c4ccfb81c100d2916dc607614
   languageName: node
   linkType: hard
 
@@ -1954,13 +1954,13 @@ __metadata:
     "@next/eslint-plugin-next": "npm:14.2.3"
     "@next/third-parties": "npm:14.2.3"
     "@tabler/icons-react": "npm:3.2.0"
-    "@tailwindcss/typography": "npm:0.5.12"
+    "@tailwindcss/typography": "npm:0.5.13"
     "@types/eslint": "npm:8.56.10"
     "@types/eslint__js": "npm:8.42.3"
     "@types/hast": "npm:3.0.4"
     "@types/node": "npm:20.12.7"
-    "@types/react": "npm:18.2.79"
-    "@types/react-dom": "npm:18.2.25"
+    "@types/react": "npm:18.3.1"
+    "@types/react-dom": "npm:18.3.0"
     "@types/rss": "npm:0.0.32"
     "@typescript-eslint/eslint-plugin": "npm:7.7.1"
     "@typescript-eslint/parser": "npm:7.7.1"
@@ -1971,7 +1971,7 @@ __metadata:
     eslint-config-next: "npm:14.2.3"
     eslint-plugin-import: "npm:2.29.1"
     eslint-plugin-react: "npm:7.34.1"
-    eslint-plugin-react-hooks: "npm:4.6.1"
+    eslint-plugin-react-hooks: "npm:4.6.2"
     eslint-plugin-unused-imports: "npm:3.1.0"
     gray-matter: "npm:4.0.3"
     image-size: "npm:1.1.1"
@@ -1981,8 +1981,8 @@ __metadata:
     postcss: "npm:8.4.38"
     prettier: "npm:3.2.5"
     prettier-plugin-tailwindcss: "npm:0.5.14"
-    react: "npm:18.3.0"
-    react-dom: "npm:18.3.0"
+    react: "npm:18.3.1"
+    react-dom: "npm:18.3.1"
     rehype-autolink-headings: "npm:7.1.0"
     rehype-external-links: "npm:3.0.0"
     rehype-pretty-code: "npm:0.13.1"
@@ -1994,11 +1994,11 @@ __metadata:
     rss: "npm:1.2.2"
     serve: "npm:14.2.3"
     shiki: "npm:1.3.0"
-    simple-icons: "npm:11.13.0"
+    simple-icons: "npm:11.14.0"
     tailwind-merge: "npm:2.3.0"
     tailwindcss: "npm:3.4.3"
     textlint: "npm:14.0.4"
-    textlint-rule-preset-ja-spacing: "npm:2.4.2"
+    textlint-rule-preset-ja-spacing: "npm:2.4.3"
     textlint-rule-preset-ja-technical-writing: "npm:10.0.1"
     textlint-rule-spellcheck-tech-word: "npm:5.0.0"
     typescript: "npm:5.4.5"
@@ -3226,12 +3226,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:4.6.1":
-  version: 4.6.1
-  resolution: "eslint-plugin-react-hooks@npm:4.6.1"
+"eslint-plugin-react-hooks@npm:4.6.2":
+  version: 4.6.2
+  resolution: "eslint-plugin-react-hooks@npm:4.6.2"
   peerDependencies:
     eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-  checksum: 10c0/c7b6cf91dc92d4d69311cc9d83bc944abb131aa843284a2b5312323cee8c26425c31027b8d9626d4c909055b42f1a413eadb29cf0025adf689bcfde99dcd498a
+  checksum: 10c0/4844e58c929bc05157fb70ba1e462e34f1f4abcbc8dd5bbe5b04513d33e2699effb8bca668297976ceea8e7ebee4e8fc29b9af9d131bcef52886feaa2308b2cc
   languageName: node
   linkType: hard
 
@@ -7433,15 +7433,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:18.3.0":
-  version: 18.3.0
-  resolution: "react-dom@npm:18.3.0"
+"react-dom@npm:18.3.1":
+  version: 18.3.1
+  resolution: "react-dom@npm:18.3.1"
   dependencies:
     loose-envify: "npm:^1.1.0"
-    scheduler: "npm:^0.23.1"
+    scheduler: "npm:^0.23.2"
   peerDependencies:
-    react: ^18.3.0
-  checksum: 10c0/5072767a5d67e242579e5ed46094bf5665385fcfc50584e818273ba668f768348bfd9101841fa3986635635b1238a7a5b2d28b73b134ebbe58a415311afd60d4
+    react: ^18.3.1
+  checksum: 10c0/a752496c1941f958f2e8ac56239172296fcddce1365ce45222d04a1947e0cc5547df3e8447f855a81d6d39f008d7c32eab43db3712077f09e3f67c4874973e85
   languageName: node
   linkType: hard
 
@@ -7452,12 +7452,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.3.0":
-  version: 18.3.0
-  resolution: "react@npm:18.3.0"
+"react@npm:18.3.1":
+  version: 18.3.1
+  resolution: "react@npm:18.3.1"
   dependencies:
     loose-envify: "npm:^1.1.0"
-  checksum: 10c0/ad87bbfdb0c5466148c657da18b0d5458e835389fc591d59840f0e6ec797a004073a01c8cdbff1767a8774c7219054a56f74dacd67bdbb849f1314e427999268
+  checksum: 10c0/283e8c5efcf37802c9d1ce767f302dd569dd97a70d9bb8c7be79a789b9902451e0d16334b05d73299b20f048cbc3c7d288bbbde10b701fa194e2089c237dbea3
   languageName: node
   linkType: hard
 
@@ -7980,12 +7980,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.1":
-  version: 0.23.1
-  resolution: "scheduler@npm:0.23.1"
+"scheduler@npm:^0.23.2":
+  version: 0.23.2
+  resolution: "scheduler@npm:0.23.2"
   dependencies:
     loose-envify: "npm:^1.1.0"
-  checksum: 10c0/cfda827a445fb57192e05275040eccc7c5e2749b98f15559520c7f6539d89d75633bb8b6c1cedf56ca0546630b72d0958bf00b63e2b8f9296e87d0d9d2d50e35
+  checksum: 10c0/26383305e249651d4c58e6705d5f8425f153211aef95f15161c151f7b8de885f24751b377e4a0b3dd42cce09aad3f87a61dab7636859c0d89b7daf1a1e2a5c78
   languageName: node
   linkType: hard
 
@@ -8157,10 +8157,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-icons@npm:11.13.0":
-  version: 11.13.0
-  resolution: "simple-icons@npm:11.13.0"
-  checksum: 10c0/a570aa17742217a9cc948d64936dc46d3ae0d39aae4d64c4a66946b97c30a0fb7823c7384b461d5d85e261af8de65576298f6c7e609ed7714763959b4acb0e23
+"simple-icons@npm:11.14.0":
+  version: 11.14.0
+  resolution: "simple-icons@npm:11.14.0"
+  checksum: 10c0/196187c5aa90c3a78ee8adc5038830f89c4d89d6b3846e7517b1f318e73c6894733a194747a17ef0c41b2e9d7eb8ff2de473ce835b3dd25b6bb89591ca336e0c
   languageName: node
   linkType: hard
 
@@ -8679,13 +8679,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@npm:^2.4.2":
-  version: 2.4.2
-  resolution: "textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@npm:2.4.2"
+"textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@npm:^2.4.3":
+  version: 2.4.3
+  resolution: "textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@npm:2.4.3"
   dependencies:
-    match-index: "npm:^1.0.3"
     textlint-rule-helper: "npm:^2.2.4"
-  checksum: 10c0/b89266ada2fabffa4f96c828f9aeebd1b0c15ff761eaeb48022ad05001b54b996a944f7a6316d515ae3915614882f4253e4f57ae8833bc75240c3fd0eab32695
+  checksum: 10c0/b50445c1f768fe8e6ca1a7772c8dbdde81b48883d3338007e00bdb4255017bed32d45d14d62ac5fbc72294ed5fb99d77f16a262134d7be3bd151bf6efd04f69d
   languageName: node
   linkType: hard
 
@@ -8962,11 +8961,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"textlint-rule-preset-ja-spacing@npm:2.4.2":
-  version: 2.4.2
-  resolution: "textlint-rule-preset-ja-spacing@npm:2.4.2"
+"textlint-rule-preset-ja-spacing@npm:2.4.3":
+  version: 2.4.3
+  resolution: "textlint-rule-preset-ja-spacing@npm:2.4.3"
   dependencies:
-    textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana: "npm:^2.4.2"
+    textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana: "npm:^2.4.3"
     textlint-rule-ja-no-space-around-parentheses: "npm:^2.4.2"
     textlint-rule-ja-no-space-between-full-width: "npm:^2.4.2"
     textlint-rule-ja-space-after-exclamation: "npm:^2.4.2"
@@ -8974,7 +8973,7 @@ __metadata:
     textlint-rule-ja-space-around-code: "npm:^2.4.2"
     textlint-rule-ja-space-around-link: "npm:^2.4.2"
     textlint-rule-ja-space-between-half-and-full-width: "npm:^2.4.2"
-  checksum: 10c0/1d829da6d78a8a6682b04533902caf44e70289e5a9e14819db4c9fda60a4d1abbd88915fff96163c8fee0921bc30613ac8f6ff89bf799d22bf607ecb7da8c4a8
+  checksum: 10c0/08c08479faae862e55359438e0dacb7948351454740bd2d16cd8dbd056b0c19ad32a3b262640fbf6b8e87b0554d8d28a922906d8045ad33f5db83574155ebfed
   languageName: node
   linkType: hard
 
