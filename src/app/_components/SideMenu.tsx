@@ -33,7 +33,7 @@ export const SideMenu = () => {
             // leaveTo="opacity-0"
           >
             <Popover.Panel>
-              <div className="fixed bottom-0 left-0 h-[calc(100vh-88px)] w-screen bg-background ">
+              <div className="fixed bottom-0 left-0 h-[calc(100vh-88px)] w-screen bg-background">
                 <div className="flex h-full flex-col justify-between">
                   <nav>
                     <ul className="py- grid gap-6 px-6 py-6">
