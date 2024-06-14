@@ -1,7 +1,7 @@
 import * as v from "valibot";
 
 const schema = v.object({
-  NEXT_PUBLIC_GA_ID: v.string([v.minLength(1)]),
+  NEXT_PUBLIC_GA_ID: v.pipe(v.string(), v.minLength(1)),
   NEXT_PUBLIC_APP_ENV: v.union([
     v.literal("production"),
     v.literal("development"),

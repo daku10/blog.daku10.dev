@@ -8,7 +8,8 @@ import type { Tag } from "./const";
 const postMetadataSchema = v.object({
   title: v.string(),
   description: v.string(),
-  tags: v.tuple([v.picklist(Tags)], v.picklist(Tags)),
+  // this is a non-empty array for tags
+  tags: v.tupleWithRest([v.picklist(Tags)], v.picklist(Tags)),
   published: v.boolean(),
   publishedAt: v.string(),
   updatedAt: v.optional(v.string()),
