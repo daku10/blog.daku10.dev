@@ -42,7 +42,7 @@
     "valibot": "0.35.0"
   },
   "devDependencies": {
-    "@eslint/js": "8.57.0",
+    "@eslint/js": "9.6.0",
     "@markuplint/jsx-parser": "4.6.1",
     "@markuplint/ml-core": "4.6.1",
     "@markuplint/react-spec": "4.4.1",
@@ -60,7 +60,7 @@
     "@typescript-eslint/parser": "7.14.1",
     "autoprefixer": "10.4.19",
     "concurrently": "8.2.2",
-    "eslint": "8.57.0",
+    "eslint": "9.6.0",
     "eslint-config-next": "14.2.4",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-react": "7.34.3",
