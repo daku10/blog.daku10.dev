@@ -35,7 +35,7 @@
     "remark-rehype": "11.1.0",
     "rss": "1.2.2",
     "shiki": "1.10.0",
-    "simple-icons": "12.4.0",
+    "simple-icons": "13.0.0",
     "tailwind-merge": "2.3.0",
     "unified": "11.0.5",
     "unist-util-visit": "5.0.0",
