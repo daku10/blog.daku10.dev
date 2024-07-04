@@ -2113,7 +2113,7 @@ __metadata:
     rss: "npm:1.2.2"
     serve: "npm:14.2.3"
     shiki: "npm:1.10.0"
-    simple-icons: "npm:12.4.0"
+    simple-icons: "npm:13.0.0"
     tailwind-merge: "npm:2.3.0"
     tailwindcss: "npm:3.4.4"
     textlint: "npm:14.0.4"
@@ -8335,10 +8335,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-icons@npm:12.4.0":
-  version: 12.4.0
-  resolution: "simple-icons@npm:12.4.0"
-  checksum: 10c0/01a7465e65d377f94891fb62d1dd4878c9a67c94d7692e0716fd344a4213dd670bd8ee41463edfec8efaee088adffabd5fff1a5cb77ec2af41731325d68cac7a
+"simple-icons@npm:13.0.0":
+  version: 13.0.0
+  resolution: "simple-icons@npm:13.0.0"
+  checksum: 10c0/efdc1ae8d704426f44de6f56fe54ba90bfa58e8cb454c84f4ed44ea01799c23381ef26372192b2f6d1b72279c088fb6bea3c7b00e413c0fafc39a8d46af32485
   languageName: node
   linkType: hard
 
