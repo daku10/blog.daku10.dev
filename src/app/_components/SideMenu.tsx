@@ -1,6 +1,12 @@
 "use client";
 
-import { Popover, Transition } from "@headlessui/react";
+import {
+  Popover,
+  PopoverBackdrop,
+  PopoverButton,
+  PopoverPanel,
+  Transition,
+} from "@headlessui/react";
 import { usePathname } from "next/navigation";
 import { Fragment, forwardRef } from "react";
 import { Icon } from "@/components/Icon";
@@ -14,14 +20,14 @@ export const SideMenu = () => {
     <Popover>
       {({ open, close }) => (
         <>
-          <Popover.Button as={Fragment}>
+          <PopoverButton as={Fragment}>
             <button className="p-2 text-secondary hover:text-primary aria-expanded:text-primary">
               {!open && <Icon type="menu" className="h-6 w-6" />}
               {open && <Icon type="cancel" className="h-6 w-6" />}
               <span className="sr-only">Menu</span>
             </button>
-          </Popover.Button>
-          <Popover.Overlay className="fixed inset-0 bg-invertbackground/30" />
+          </PopoverButton>
+          <PopoverBackdrop className="fixed inset-0 bg-invertbackground/30" />
 
           <Transition
             as={Fragment}
@@ -32,7 +38,7 @@ export const SideMenu = () => {
             // leaveFrom="opacity-100"
             // leaveTo="opacity-0"
           >
-            <Popover.Panel>
+            <PopoverPanel>
               <div className="fixed bottom-0 left-0 h-[calc(100vh-88px)] w-screen bg-background">
                 <div className="flex h-full flex-col justify-between">
                   <nav>
@@ -99,7 +105,7 @@ export const SideMenu = () => {
                   </div>
                 </div>
               </div>
-            </Popover.Panel>
+            </PopoverPanel>
           </Transition>
         </>
       )}
