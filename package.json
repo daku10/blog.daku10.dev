@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "serve out",
-    "lint": "concurrently 'yarn:lint:*'",
+    "lint": "concurrently 'pnpm:lint:*'",
     "lint:es": "ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.mjs './**/*.{ts,tsx}'",
     "lint:markup": "markuplint './src/**/*.{j,t}sx'",
     "lint:text": "textlint public/posts/**/*.md",
@@ -78,5 +78,5 @@
     "textlint-rule-spellcheck-tech-word": "5.0.0",
     "typescript": "5.5.4"
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d"
 }
