@@ -17,9 +17,7 @@ import type { Plugin } from "unified";
 
 const production: Options = {
   Fragment: prod.Fragment,
-  // @ts-expect-error - unmatched types
   jsx: prod.jsx,
-  // @ts-expect-error - unmatched types
   jsxs: prod.jsxs,
 };
 
