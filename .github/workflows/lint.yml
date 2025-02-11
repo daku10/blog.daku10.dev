@@ -17,7 +17,5 @@ jobs:
         with:
           node-version-file: ".node-version"
           cache: "pnpm"
-      - run: npm install -g corepack
-      - run: corepack enable pnpm
       - run: pnpm install
       - run: pnpm lint
