@@ -37,7 +37,7 @@ export const ThemeToggleButton = () => {
         leaveFrom="opacity-100 transform scale-100"
         leaveTo="opacity-0 transform scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 flex flex-col rounded-md border bg-background p-2 shadow-md ring-1 ring-black/5 focus:outline-none">
+        <Menu.Items className="absolute right-0 mt-2 flex flex-col rounded-md border bg-background p-2 shadow-md ring-1 ring-black/5 focus:outline-hidden">
           <Menu.Item>
             {({ active }) => (
               <RadioItem
@@ -112,7 +112,7 @@ const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
           onChange(value);
         }}
         className={cn(
-          "w-28 cursor-pointer select-none py-1.5 text-secondary outline-none transition-colors",
+          "w-28 cursor-pointer select-none py-1.5 text-secondary outline-hidden transition-colors",
           { "text-primary": active || current === value },
         )}
       >
