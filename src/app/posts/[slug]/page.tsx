@@ -5,13 +5,11 @@ import { retrievePost, retrievePostSummaries } from "@/lib/api";
 import { processor } from "@/lib/processor";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata(
-  { params }: Props,
-  _parent: ResolvingMetadata,
-) {
+export async function generateMetadata(props: Props, _parent: ResolvingMetadata) {
+  const params = await props.params;
   const post = await retrievePost(params.slug);
   return {
     title: post.title,
@@ -19,7 +17,8 @@ export async function generateMetadata(
   };
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const { slug } = params;
   const post = await retrievePost(slug);
   const processedContent = await processor.process({
