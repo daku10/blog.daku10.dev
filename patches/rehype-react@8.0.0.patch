@@ -1,0 +1,31 @@
+diff --git a/index.d.ts b/index.d.ts
+index dee7c4db8b7fabb3818f5d38d0bb6fa8dc00cdac..53fe373bfdd96e7eed61361c07b693a5acdec978 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -4,6 +4,11 @@ import type {Options} from './lib/index.js'
+ 
+ export type {Components, Options} from 'hast-util-to-jsx-runtime'
+ 
++/**
++ * react-rehypeがJSX.Elementを使用しているが、@types/react@19以降で、globalなJSX namespaceは消えた。そのため、@types/react@19以降を使用する場合、any型として解決されてしまう。これを避けるためにReact.JSX.Elementを使用するようにパッチを当てている。
++ * また、この問題はhast-util-to-jsx-runtimeにも存在しており、2.3.5以降で修正されているため、そのバージョンを使用する必要がある。(修正というよりts-ignoreをしているだけなのだが……)
++ */
++
+ /**
+  * Turn HTML into preact, react, solid, svelte, vue, etc.
+  *
+@@ -36,12 +41,12 @@ export type {Components, Options} from 'hast-util-to-jsx-runtime'
+  * @returns
+  *   Nothing.
+  */
+-declare const rehypeReact: Plugin<[Options], Root, JSX.Element>
++declare const rehypeReact: Plugin<[Options], Root, React.JSX.Element>
+ export default rehypeReact
+ 
+ // Register the result type.
+ declare module 'unified' {
+   interface CompileResultMap {
+-    JsxElement: JSX.Element
++    JsxElement: React.JSX.Element
+   }
+ }
