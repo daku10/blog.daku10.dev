@@ -36,7 +36,7 @@ export const Header = () => {
             >
               <Icon
                 type="rss"
-                className="text-secondary hover:text-primary h-10 w-10 p-2"
+                className="h-10 w-10 p-2 text-secondary hover:text-primary"
               />
               <span className="sr-only">RSS</span>
             </Link>
@@ -48,7 +48,7 @@ export const Header = () => {
             >
               <Icon
                 type="github"
-                className="text-secondary hover:text-primary h-10 w-10 p-2"
+                className="h-10 w-10 p-2 text-secondary hover:text-primary"
               />
               <span className="sr-only">GitHub</span>
             </Link>

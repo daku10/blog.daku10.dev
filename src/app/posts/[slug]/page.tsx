@@ -8,7 +8,10 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata(props: Props, _parent: ResolvingMetadata) {
+export async function generateMetadata(
+  props: Props,
+  _parent: ResolvingMetadata,
+) {
   const params = await props.params;
   const post = await retrievePost(params.slug);
   return {
@@ -55,7 +58,7 @@ export default async function Page(props: Props) {
         ))}
       </ul>
 
-      <article className="prose prose-sm prose-gray mt-8 max-w-none dark:prose-invert md:prose-base">
+      <article className="prose prose-sm mt-8 max-w-none prose-gray md:prose-base dark:prose-invert">
         {processedContent.result}
       </article>
     </div>

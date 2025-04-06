@@ -10,7 +10,10 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata(props: Props, _parent: ResolvingMetadata) {
+export async function generateMetadata(
+  props: Props,
+  _parent: ResolvingMetadata,
+) {
   const params = await props.params;
   const tag = retrieveTag(params.slug);
   // TODO: 404

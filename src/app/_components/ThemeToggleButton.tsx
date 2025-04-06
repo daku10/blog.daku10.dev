@@ -112,7 +112,7 @@ const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
           onChange(value);
         }}
         className={cn(
-          "w-28 cursor-pointer select-none py-1.5 text-secondary outline-hidden transition-colors",
+          "w-28 cursor-pointer py-1.5 text-secondary outline-hidden transition-colors select-none",
           { "text-primary": active || current === value },
         )}
       >
