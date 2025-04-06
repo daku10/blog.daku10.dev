@@ -5,7 +5,7 @@ import { ThemeToggleButton } from "./ThemeToggleButton";
 import { Icon } from "@/components/Icon";
 import { Link } from "@/components/Link";
 
-const titleFont = Open_Sans({ subsets: ["latin"], weight: ["400"] });
+const titleFont = Open_Sans({ subsets: ["latin"] });
 
 export const Header = () => {
   return (
@@ -36,7 +36,7 @@ export const Header = () => {
             >
               <Icon
                 type="rss"
-                className="h-10 w-10 p-2 text-secondary hover:text-primary"
+                className="text-secondary hover:text-primary h-10 w-10 p-2"
               />
               <span className="sr-only">RSS</span>
             </Link>
@@ -48,7 +48,7 @@ export const Header = () => {
             >
               <Icon
                 type="github"
-                className="h-10 w-10 p-2 text-secondary hover:text-primary"
+                className="text-secondary hover:text-primary h-10 w-10 p-2"
               />
               <span className="sr-only">GitHub</span>
             </Link>
