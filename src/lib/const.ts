@@ -20,6 +20,4 @@ export const TagLabel = {
   tailwindcss: "Tailwind CSS",
   linux: "Linux",
   wsl2: "WSL2",
-} satisfies {
-  [key in Tag]: string;
-};
+} satisfies Record<Tag, string>;
