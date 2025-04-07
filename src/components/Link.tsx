@@ -6,6 +6,7 @@ type Props = {
   className?: string;
   target?: string;
   rel?: string;
+  onClick?: () => void;
   prefetch?: boolean;
 };
 
