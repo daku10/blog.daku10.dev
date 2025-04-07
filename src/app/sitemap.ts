@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { retrievePostSummaries } from "@/lib/api";
 
+export const dynamic = "force-static";
+
 // TODO: can we create automatically?
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();

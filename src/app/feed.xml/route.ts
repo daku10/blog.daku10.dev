@@ -1,6 +1,8 @@
 import RSS from "rss";
 import { retrievePostSummaries } from "@/lib/api";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const feed = new RSS({
     title: "blog.daku10.dev",
