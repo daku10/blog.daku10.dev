@@ -7,13 +7,14 @@ import {
 } from "@/lib/api";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export function generateMetadata(
-  { params }: Props,
+export async function generateMetadata(
+  props: Props,
   _parent: ResolvingMetadata,
 ) {
+  const params = await props.params;
   const tag = retrieveTag(params.slug);
   // TODO: 404
   if (!tag) {
@@ -28,7 +29,8 @@ export function generateMetadata(
   };
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const { slug } = params;
   const tag = retrieveTag(slug);
   if (!tag) {

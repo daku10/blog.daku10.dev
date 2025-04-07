@@ -5,7 +5,7 @@ import { ThemeToggleButton } from "./ThemeToggleButton";
 import { Icon } from "@/components/Icon";
 import { Link } from "@/components/Link";
 
-const titleFont = Open_Sans({ subsets: ["latin"], weight: ["400"] });
+const titleFont = Open_Sans({ subsets: ["latin"], weight: "variable" });
 
 export const Header = () => {
   return (

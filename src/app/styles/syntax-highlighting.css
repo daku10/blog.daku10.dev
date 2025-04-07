@@ -10,7 +10,7 @@ figcaption[data-rehype-pretty-code-title] {
 }
 
 figure[data-rehype-pretty-code-figure] > pre {
-  @apply rounded-b-lg rounded-t-none px-0;
+  @apply rounded-t-none rounded-b-lg px-0;
 }
 
 figure[data-rehype-pretty-code-figure] span[data-line] {

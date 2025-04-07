@@ -1,8 +1,14 @@
 import NextLink from "next/link";
-import type { ComponentProps } from "react";
 
-type Props<T> = ComponentProps<typeof NextLink<T>>;
+type Props = {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  target?: string;
+  rel?: string;
+  prefetch?: boolean;
+};
 
-export function Link<T>({ ...rest }: Props<T>) {
+export function Link({ ...rest }: Props) {
   return <NextLink {...rest} />;
 }

@@ -1,6 +1,12 @@
 "use client";
 
-import { Menu, Transition } from "@headlessui/react";
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
+} from "@headlessui/react";
 import { useTheme } from "next-themes";
 import { Fragment, forwardRef, useEffect, useState } from "react";
 import type { ComponentProps } from "react";
@@ -27,7 +33,7 @@ export const ThemeToggleButton = () => {
 
   return (
     <Menu as="div" className="relative">
-      <Menu.Button as={ThemeIconButton} />
+      <MenuButton as={ThemeIconButton} />
       <Transition
         as={Fragment}
         enter="transition ease-out duration-100"
@@ -37,38 +43,38 @@ export const ThemeToggleButton = () => {
         leaveFrom="opacity-100 transform scale-100"
         leaveTo="opacity-0 transform scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 flex flex-col rounded-md border bg-background p-2 shadow-md ring-1 ring-black/5 focus:outline-none">
-          <Menu.Item>
-            {({ active }) => (
+        <MenuItems className="absolute right-0 mt-2 flex flex-col rounded-md border bg-background p-2 shadow-md ring-1 ring-black/5 focus:outline-hidden">
+          <MenuItem>
+            {({ focus }) => (
               <RadioItem
-                active={active}
+                active={focus}
                 current={theme}
                 value="light"
                 onChange={setTheme}
               />
             )}
-          </Menu.Item>
-          <Menu.Item>
-            {({ active }) => (
+          </MenuItem>
+          <MenuItem>
+            {({ focus }) => (
               <RadioItem
-                active={active}
+                active={focus}
                 current={theme}
                 value="dark"
                 onChange={setTheme}
               />
             )}
-          </Menu.Item>
-          <Menu.Item>
-            {({ active }) => (
+          </MenuItem>
+          <MenuItem>
+            {({ focus }) => (
               <RadioItem
-                active={active}
+                active={focus}
                 current={theme}
                 value="system"
                 onChange={setTheme}
               />
             )}
-          </Menu.Item>
-        </Menu.Items>
+          </MenuItem>
+        </MenuItems>
       </Transition>
     </Menu>
   );
@@ -79,7 +85,7 @@ const ThemeIconButton = forwardRef<HTMLButtonElement>((props, ref) => {
     <button
       {...props}
       ref={ref}
-      className="p-2 text-secondary hover:text-primary aria-expanded:text-primary"
+      className="cursor-pointer p-2 text-secondary hover:text-primary aria-expanded:text-primary"
     >
       <Icon type="sun" className="block h-6 w-6 dark:hidden" />
       <Icon type="moon" className="hidden h-6 w-6 dark:block" />
@@ -112,7 +118,7 @@ const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
           onChange(value);
         }}
         className={cn(
-          "w-28 cursor-pointer select-none py-1.5 text-secondary outline-none transition-colors",
+          "w-28 cursor-pointer py-1.5 text-secondary outline-hidden transition-colors select-none",
           { "text-primary": active || current === value },
         )}
       >
