@@ -37,7 +37,7 @@
     "rss": "1.2.2",
     "shiki": "1.29.2",
     "simple-icons": "13.21.0",
-    "tailwind-merge": "2.6.0",
+    "tailwind-merge": "3.2.0",
     "unified": "11.0.5",
     "unist-util-visit": "5.0.0",
     "valibot": "0.42.1"
