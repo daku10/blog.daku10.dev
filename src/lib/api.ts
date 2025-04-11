@@ -147,5 +147,5 @@ export const retrieveTags: () => readonly TagWithLabel[] = () => {
 export const retrieveTag: (slug: string) => TagWithLabel | undefined = (
   slug,
 ) => {
-  return retrieveTags().filter((tag) => tag.slug === slug)[0];
+  return retrieveTags().find((tag) => tag.slug === slug);
 };

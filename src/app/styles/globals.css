@@ -1,29 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import "./syntax-highlighting.css";
+@import "tailwindcss";
+@import "./syntax-highlighting.css" layer(utilities);
+
+@config '../../../tailwind.config.ts';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-invert-background: var(--invert-background);
+  --color-heading: var(--heading);
+  --color-link: var(--link);
+  --color-text: var(--text);
+}
 
 @layer base {
   :root {
-    --primary: 0 0 0;
-    --secondary: 83 86 97;
-    --background: 255 255 255;
-    --invert-background: 24 24 27;
-    --heading: 17 24 39;
-    --code-background: 237 237 242;
-    --link: 9 105 218;
-    --text: 55 65 81;
+    --primary: rgb(0 0 0);
+    --secondary: rgb(83 86 97);
+    --background: rgb(255 255 255);
+    --invert-background: rgb(24 24 27);
+    --heading: rgb(17 24 39);
+    --code-background: rgb(237 237 242);
+    --link: rgb(9 105 218);
+    --text: rgb(55 65 81);
   }
 
   .dark {
-    --primary: 255 255 255;
-    --secondary: 169 173 193;
-    --background: 24 24 27;
-    --invert-background: 255 255 255;
-    --heading: 255 255 255;
-    --code-background: 82 82 91;
-    --link: 33 129 247;
-    --text: 209 213 219;
+    --primary: rgb(255 255 255);
+    --secondary: rgb(169 173 193);
+    --background: rgb(24 24 27);
+    --invert-background: rgb(255 255 255);
+    --heading: rgb(255 255 255);
+    --code-background: rgb(82 82 91);
+    --link: rgb(33 129 247);
+    --text: rgb(209 213 219);
   }
 }
 
@@ -32,7 +62,8 @@ html {
 }
 
 body {
-  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "游ゴシック体",
-    "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック",
-    "Yu Gothic", sans-serif;
+  font-family:
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", "游ゴシック体", "YuGothic",
+    "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic",
+    sans-serif;
 }

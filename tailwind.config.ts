@@ -9,20 +9,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: "rgb(var(--primary))",
-        secondary: "rgb(var(--secondary))",
-        background: "rgb(var(--background))",
-        invertbackground: "rgb(var(--invert-background))",
-        heading: "rgb(var(--heading))",
-        link: "rgb(var(--link))",
-        text: "rgb(var(--text))",
-      },
-      typography: (theme: (s: string) => string) => ({
+      typography: ({ theme }: { theme: (s: string) => string }) => ({
         DEFAULT: {
           css: {
             code: {
-              backgroundColor: "rgb(var(--code-background))",
+              backgroundColor: "var(--code-background)",
               borderRadius: theme("borderRadius.DEFAULT"),
               paddingTop: theme("spacing.[0.5]"),
               paddingBottom: theme("spacing.[0.5]"),
@@ -41,7 +32,7 @@ const config: Config = {
               marginRight: "auto",
             },
             a: {
-              color: "rgb(var(--link))",
+              color: "var(--link)",
             },
           },
         },
@@ -49,6 +40,5 @@ const config: Config = {
     },
   },
   plugins: [typography],
-  darkMode: "class",
 };
 export default config;

@@ -18,7 +18,7 @@ export const SideMenu = () => {
 
   return (
     <Popover>
-      {/* eslint-disable-next-line @typescript-eslint/unbound-method -- ignore because is is controlled by the headlessui library*/}
+      {}
       {({ open, close }) => (
         <>
           <PopoverButton as={Fragment}>
@@ -28,7 +28,7 @@ export const SideMenu = () => {
               <span className="sr-only">Menu</span>
             </button>
           </PopoverButton>
-          <PopoverBackdrop className="fixed inset-0 bg-invertbackground/30" />
+          <PopoverBackdrop className="fixed inset-0 bg-invert-background/30" />
 
           <Transition
             as={Fragment}
