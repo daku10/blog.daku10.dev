@@ -31,8 +31,8 @@ jobs:
       - name: Check if preview is ahead of main
         id: check-ahead
         run: |
-          git fetch origin main:main preview:preview
-          AHEAD_COMMITS=$(git rev-list --count main..preview)
+          git fetch origin main:refs/remotes/origin/main
+          AHEAD_COMMITS=$(git rev-list --count origin/main..HEAD)
           echo "ahead_commits=$AHEAD_COMMITS" >> $GITHUB_OUTPUT
           if [ "$AHEAD_COMMITS" -gt 0 ]; then
             echo "is_ahead=true" >> $GITHUB_OUTPUT
@@ -44,7 +44,7 @@ jobs:
         if: steps.check-ahead.outputs.is_ahead == 'true'
         id: commit-messages
         run: |
-          COMMIT_LIST=$(git log --format="%s" main..preview | sed 's/"/\\"/g')
+          COMMIT_LIST=$(git log --format="%s" origin/main..HEAD | sed 's/"/\\"/g')
           echo "commit_list<<EOF" >> $GITHUB_OUTPUT
           echo "$COMMIT_LIST" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
