@@ -1,0 +1,76 @@
+name: Create PR from Preview to Main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - preview
+  workflow_dispatch:
+    inputs:
+      pr_title:
+        description: "Pull request title"
+        required: false
+        default: "Preview"
+      pr_body:
+        description: "Pull request body"
+        required: false
+        default: "This PR syncs changes from preview branch to main."
+
+jobs:
+  check-and-create-pr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Check if preview is ahead of main
+        id: check-ahead
+        run: |
+          git fetch origin main:refs/remotes/origin/main
+          AHEAD_COMMITS=$(git rev-list --count origin/main..HEAD)
+          echo "ahead_commits=$AHEAD_COMMITS" >> $GITHUB_OUTPUT
+          if [ "$AHEAD_COMMITS" -gt 0 ]; then
+            echo "is_ahead=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_ahead=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get commit messages
+        if: steps.check-ahead.outputs.is_ahead == 'true'
+        id: commit-messages
+        run: |
+          COMMIT_LIST=$(git log --format="%s" origin/main..HEAD | sed 's/"/\\"/g')
+          echo "commit_list<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMMIT_LIST" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.check-ahead.outputs.is_ahead == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_TITLE: ${{ github.event.inputs.pr_title || 'Update main from preview' }}
+        run: |
+          # Check if PR already exists
+          PR_EXISTS=$(gh pr list --base main --head preview --json number --jq 'length')
+
+          if [ "$PR_EXISTS" -eq 0 ]; then
+            # Create PR title and body
+            COMMIT_LIST="${{ steps.commit-messages.outputs.commit_list }}"
+            PR_BODY="${{ github.event.inputs.pr_body || 'This PR syncs changes from preview branch to main.' }}"
+            PR_BODY+=$'\n\n'
+            PR_BODY+="## Changes included:"
+            PR_BODY+=$'\n```\n'
+            PR_BODY+="$COMMIT_LIST"
+            PR_BODY+=$'\n```'
+
+            # Create the PR
+            gh pr create --base main --head preview --title "$PR_TITLE" --body "$PR_BODY"
+            echo "Pull request created successfully"
+          else
+            echo "Pull request already exists, skipping creation"
+          fi

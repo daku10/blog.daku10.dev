@@ -1,5 +1,6 @@
+import { readFileSync } from "fs";
 import path from "path";
-import sizeOf from "image-size";
+import { imageSize } from "image-size";
 import * as prod from "react/jsx-runtime";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
@@ -33,7 +34,8 @@ const myRehypeRewriteImg: Plugin<[], Root> = () => {
           typeof file.data["slug"] === "string"
         ) {
           const fileName = node.properties["src"].substring(2);
-          const dimensions = sizeOf(
+          // TODO: not good to use sync API here
+          const imageBuffer = readFileSync(
             path.join(
               process.cwd(),
               "public",
@@ -42,6 +44,7 @@ const myRehypeRewriteImg: Plugin<[], Root> = () => {
               fileName,
             ),
           );
+          const dimensions = imageSize(imageBuffer);
           node.properties["src"] = `./${file.data["slug"]}/${fileName}`;
           node.properties["width"] = dimensions.width;
           node.properties["height"] = dimensions.height;
