@@ -18,5 +18,6 @@
   ],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
-  "postUpdateOptions": ["yarnDedupeHighest"]
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "minimumReleaseAge": "7 days"
 }
