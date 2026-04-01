@@ -1,4 +1,5 @@
 import RSS from "rss";
+
 import { retrievePostSummaries } from "@/lib/api";
 
 export const dynamic = "force-static";

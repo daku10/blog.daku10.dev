@@ -1,4 +1,5 @@
 import type { ResolvingMetadata } from "next";
+
 import { Icon } from "@/components/Icon";
 import { TagLink } from "@/components/TagLink";
 import { retrievePost, retrievePostSummaries } from "@/lib/api";
