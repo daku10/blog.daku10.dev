@@ -1,20 +1,21 @@
 import { readFileSync } from "fs";
 import path from "path";
+
+import type { Root } from "hast";
 import { imageSize } from "image-size";
 import * as prod from "react/jsx-runtime";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeReact from "rehype-react";
+import type { Options } from "rehype-react";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
-import { visit } from "unist-util-visit";
-import type { Root } from "hast";
-import type { Options } from "rehype-react";
 import type { Plugin } from "unified";
+import { visit } from "unist-util-visit";
 
 const production: Options = {
   Fragment: prod.Fragment,

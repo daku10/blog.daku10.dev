@@ -1,6 +1,7 @@
-import { Link } from "./Link";
 import { TagLabel, type Tag } from "@/lib/const";
 import { cn } from "@/lib/util";
+
+import { Link } from "./Link";
 
 type Props = {
   tag: Tag;
