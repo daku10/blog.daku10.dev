@@ -1,4 +1,5 @@
 import type { ResolvingMetadata } from "next";
+
 import { PostSummaryList } from "@/components/PostSummaryList";
 import {
   retrievePostSummaries,

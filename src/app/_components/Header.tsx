@@ -1,9 +1,11 @@
 import { Open_Sans } from "next/font/google";
+
+import { Icon } from "@/components/Icon";
+import { Link } from "@/components/Link";
+
 import { Navigation } from "./Navigation";
 import { SideMenu } from "./SideMenu";
 import { ThemeToggleButton } from "./ThemeToggleButton";
-import { Icon } from "@/components/Icon";
-import { Link } from "@/components/Link";
 
 const titleFont = Open_Sans({ subsets: ["latin"], weight: "variable" });
 

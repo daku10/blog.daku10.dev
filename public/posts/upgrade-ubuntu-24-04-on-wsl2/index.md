@@ -106,6 +106,7 @@ LOGO=ubuntu-logo
 ### export時のエラー Error code: Wsl/E_ACCESSDENIED
 
 WSL2のインスタンスをエクスポートする際に、以下のエラーが出ました。
+
 ```powershell title="powershell"
 wsl --export Ubuntu C:\Users
 アクセスが拒否されました。

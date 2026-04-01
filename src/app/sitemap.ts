@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+
 import { retrievePostSummaries } from "@/lib/api";
 
 export const dynamic = "force-static";
