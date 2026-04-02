@@ -7,6 +7,10 @@ import { defineConfig, fontProviders } from "astro/config";
 export default defineConfig({
   site: "https://blog.daku10.dev",
   outDir: "./out",
+  trailingSlash: "never",
+  build: {
+    format: "file",
+  },
   integrations: [react()],
   fonts: [
     {
