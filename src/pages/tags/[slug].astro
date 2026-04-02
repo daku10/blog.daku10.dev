@@ -1,0 +1,31 @@
+---
+import { PostSummaryList } from "@/components/PostSummaryList";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  retrievePostSummaries,
+  retrieveTag,
+  retrieveTagWithPostCounts,
+} from "@/lib/api";
+
+export async function getStaticPaths() {
+  const tags = await retrieveTagWithPostCounts();
+  return tags.map((tag) => ({
+    params: { slug: tag.slug },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props;
+const postSummaries = await retrievePostSummaries({
+  tag: tag.slug,
+});
+const validTag = retrieveTag(tag.slug);
+---
+
+<BaseLayout
+  title={validTag ? `${validTag.label}の記事一覧` : "タグ一覧"}
+  description={validTag ? `${validTag.label}の記事一覧です。` : "タグ一覧です。"}
+>
+  <h2 class="text-xl text-primary">{`${tag.label}の記事一覧`}</h2>
+  <PostSummaryList postSummaries={postSummaries} className="mt-8" />
+</BaseLayout>

@@ -3,25 +3,17 @@ import path from "path";
 
 import type { Root } from "hast";
 import { imageSize } from "image-size";
-import * as prod from "react/jsx-runtime";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypePrettyCode from "rehype-pretty-code";
-import rehypeReact from "rehype-react";
-import type { Options } from "rehype-react";
 import rehypeSlug from "rehype-slug";
+import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import type { Plugin } from "unified";
 import { visit } from "unist-util-visit";
-
-const production: Options = {
-  Fragment: prod.Fragment,
-  jsx: prod.jsx,
-  jsxs: prod.jsxs,
-};
 
 const myRehypeRewriteImg: Plugin<[], Root> = () => {
   return (tree, file) => {
@@ -66,4 +58,4 @@ export const processor = unified()
   .use(rehypePrettyCode, {
     theme: "dark-plus",
   })
-  .use(rehypeReact, production);
+  .use(rehypeStringify);

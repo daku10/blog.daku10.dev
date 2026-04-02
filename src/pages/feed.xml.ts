@@ -1,16 +1,16 @@
+import type { APIRoute } from "astro";
 import RSS from "rss";
 
 import { retrievePostSummaries } from "@/lib/api";
+import { siteConfig } from "@/lib/site";
 
-export const dynamic = "force-static";
-
-export async function GET() {
+export const GET: APIRoute = async () => {
   const feed = new RSS({
     title: "blog.daku10.dev",
-    description: "daku10のブログです。Web開発に関する記事がメインです。",
-    site_url: "https://blog.daku10.dev",
-    feed_url: "https://blog.daku10.dev/feed.xml",
-    language: "ja",
+    description: siteConfig.description,
+    site_url: siteConfig.url,
+    feed_url: `${siteConfig.url}/feed.xml`,
+    language: siteConfig.lang,
   });
 
   const posts = await retrievePostSummaries();
@@ -19,7 +19,7 @@ export async function GET() {
     feed.item({
       title: post.title,
       description: post.description,
-      url: `https://blog.daku10.dev/posts/${post.slug}`,
+      url: `${siteConfig.url}/posts/${post.slug}`,
       date: new Date(post.publishedAt),
     });
   });
@@ -29,4 +29,4 @@ export async function GET() {
       "Content-Type": "application/xml; charset=utf-8",
     },
   });
-}
+};
