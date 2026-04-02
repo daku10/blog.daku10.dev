@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Popover,
   PopoverBackdrop,
@@ -7,23 +5,26 @@ import {
   PopoverPanel,
   Transition,
 } from "@headlessui/react";
-import { usePathname } from "next/navigation";
-import { Fragment, forwardRef } from "react";
+import { Fragment } from "react";
 
 import { Icon } from "@/components/Icon";
 import { Link } from "@/components/Link";
 import { cn } from "@/lib/util";
 
-export const SideMenu = () => {
-  const pathname = usePathname();
+type Props = {
+  pathname: string;
+};
 
+export const SideMenu = ({ pathname }: Props) => {
   return (
     <Popover>
-      {}
       {({ open, close }) => (
         <>
           <PopoverButton as={Fragment}>
-            <button className="p-2 text-secondary hover:text-primary aria-expanded:text-primary">
+            <button
+              className="p-2 text-secondary hover:text-primary aria-expanded:text-primary"
+              type="button"
+            >
               {!open && <Icon type="menu" className="h-6 w-6" />}
               {open && <Icon type="cancel" className="h-6 w-6" />}
               <span className="sr-only">Menu</span>
@@ -31,24 +32,18 @@ export const SideMenu = () => {
           </PopoverButton>
           <PopoverBackdrop className="fixed inset-0 bg-invert-background/30" />
 
-          <Transition
-            as={Fragment}
-            // enter="transition ease-out duration-200"
-            // enterFrom="transition-top-full"
-            // enterTo="transition-top-0"
-            // leave="transition ease-in duration-150"
-            // leaveFrom="opacity-100"
-            // leaveTo="opacity-0"
-          >
+          <Transition as={Fragment}>
             <PopoverPanel>
               <div className="fixed bottom-0 left-0 h-[calc(100vh-88px)] w-screen bg-background">
                 <div className="flex h-full flex-col justify-between">
                   <nav>
-                    <ul className="py- grid gap-6 px-6 py-6">
+                    <ul className="grid gap-6 px-6 py-6">
                       <li>
                         <Link
                           href="/tags"
-                          onClick={close}
+                          onClick={() => {
+                            close();
+                          }}
                           className={cn(
                             "text-lg text-secondary hover:text-primary hover:underline hover:underline-offset-8",
                             {
@@ -63,7 +58,9 @@ export const SideMenu = () => {
                       <li>
                         <Link
                           href="/about"
-                          onClick={close}
+                          onClick={() => {
+                            close();
+                          }}
                           className={cn(
                             "text-lg text-secondary hover:text-primary hover:underline hover:underline-offset-8",
                             {
@@ -80,12 +77,7 @@ export const SideMenu = () => {
                   <div>
                     <hr className="border-t" />
                     <div className="flex px-6 py-2">
-                      <Link
-                        href="/feed.xml"
-                        target="_blank"
-                        rel="noopener"
-                        prefetch={false}
-                      >
+                      <Link href="/feed.xml" target="_blank" rel="noopener">
                         <Icon
                           type="rss"
                           className="h-10 w-10 p-2 text-secondary hover:text-primary"
@@ -114,21 +106,3 @@ export const SideMenu = () => {
     </Popover>
   );
 };
-
-const SideMenuButton = forwardRef<HTMLButtonElement>((props, ref) => {
-  return (
-    <button
-      {...props}
-      ref={ref}
-      className="p-2 text-secondary hover:text-primary aria-expanded:text-primary"
-    >
-      <Icon
-        type="menu"
-        className="ui-open:hidden block h-6 w-6 aria-expanded:hidden"
-      />
-      <Icon type="cancel" className="hidden h-6 w-6 aria-expanded:block" />
-      <span className="sr-only">Menu</span>
-    </button>
-  );
-});
-SideMenuButton.displayName = "SideMenuButton";

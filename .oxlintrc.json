@@ -10,7 +10,7 @@
   "env": {
     "builtin": true
   },
-  "ignorePatterns": [".next/**", "out/**"],
+  "ignorePatterns": [".astro/**", ".next/**", "out/**"],
   "overrides": [
     {
       "files": ["**/*.ts", "**/*.tsx", "**/*.cts", "**/*.mts"],

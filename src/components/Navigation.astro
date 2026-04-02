@@ -1,0 +1,42 @@
+---
+import { cn } from "@/lib/util";
+
+type Props = {
+  pathname: string;
+};
+
+const { pathname } = Astro.props;
+---
+
+<nav>
+  <ul class="flex">
+    <li>
+      <a
+        href="/tags"
+        class={cn(
+          "px-4 text-lg text-secondary hover:text-primary hover:underline hover:underline-offset-8",
+          {
+            "text-primary underline underline-offset-8":
+              pathname.startsWith("/tags"),
+          },
+        )}
+      >
+        Tags
+      </a>
+    </li>
+    <li>
+      <a
+        href="/about"
+        class={cn(
+          "px-4 text-lg text-secondary hover:text-primary hover:underline hover:underline-offset-8",
+          {
+            "text-primary underline underline-offset-8":
+              pathname.startsWith("/about"),
+          },
+        )}
+      >
+        About
+      </a>
+    </li>
+  </ul>
+</nav>

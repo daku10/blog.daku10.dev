@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Menu,
   MenuButton,
@@ -7,7 +5,6 @@ import {
   MenuItems,
   Transition,
 } from "@headlessui/react";
-import { useTheme } from "next-themes";
 import { Fragment, forwardRef, useEffect, useState } from "react";
 import type { ComponentProps } from "react";
 
@@ -16,19 +13,55 @@ import { cn } from "@/lib/util";
 
 type Theme = "light" | "dark" | "system";
 
-const isValidTheme = (theme: string | undefined): theme is Theme => {
+const storageKey = "theme";
+
+const isValidTheme = (theme: string | null | undefined): theme is Theme => {
   return theme === "light" || theme === "dark" || theme === "system";
 };
 
+const resolveSystemTheme = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const applyTheme = (theme: Theme) => {
+  const resolved = theme === "system" ? resolveSystemTheme() : theme;
+  document.documentElement.classList.toggle("dark", resolved === "dark");
+};
+
 export const ThemeToggleButton = () => {
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [theme, setThemeState] = useState<Theme>("system");
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem(storageKey);
+    const nextTheme = isValidTheme(savedTheme) ? savedTheme : "system";
+
+    setThemeState(nextTheme);
+    applyTheme(nextTheme);
     setMounted(true);
+
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = () => {
+      if (nextTheme === "system") {
+        applyTheme("system");
+      }
+    };
+
+    media.addEventListener("change", onChange);
+    return () => {
+      media.removeEventListener("change", onChange);
+    };
   }, []);
 
-  if (!mounted || !isValidTheme(theme)) {
+  const setTheme = (nextTheme: Theme) => {
+    localStorage.setItem(storageKey, nextTheme);
+    applyTheme(nextTheme);
+    setThemeState(nextTheme);
+  };
+
+  if (!mounted) {
     return <ThemeIconButton />;
   }
 
@@ -87,6 +120,7 @@ const ThemeIconButton = forwardRef<HTMLButtonElement>((props, ref) => {
       {...props}
       ref={ref}
       className="cursor-pointer p-2 text-secondary hover:text-primary aria-expanded:text-primary"
+      type="button"
     >
       <Icon type="sun" className="block h-6 w-6 dark:hidden" />
       <Icon type="moon" className="hidden h-6 w-6 dark:block" />
@@ -114,14 +148,15 @@ const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
       <button
         {...rest}
         ref={ref}
-        onClick={(e) => {
-          rest.onClick?.(e);
-          onChange(value);
-        }}
         className={cn(
           "w-28 cursor-pointer py-1.5 text-secondary outline-hidden transition-colors select-none",
           { "text-primary": active || current === value },
         )}
+        onClick={(e) => {
+          rest.onClick?.(e);
+          onChange(value);
+        }}
+        type="button"
       >
         <span className="flex w-full items-center">
           <Icon type={type} className="h-6 w-6" />

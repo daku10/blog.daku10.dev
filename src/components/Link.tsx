@@ -1,15 +1,10 @@
-import NextLink from "next/link";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 
 type Props = {
   href: string;
-  children: React.ReactNode;
-  className?: string;
-  target?: string;
-  rel?: string;
-  onClick?: () => void;
-  prefetch?: boolean;
-};
+  children: ReactNode;
+} & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export function Link({ ...rest }: Props) {
-  return <NextLink {...rest} />;
+  return <a {...rest} />;
 }
