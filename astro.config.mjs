@@ -1,6 +1,7 @@
 import path from "node:path";
 
 import react from "@astrojs/react";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
 export default defineConfig({
@@ -24,6 +25,7 @@ export default defineConfig({
     },
   ],
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         "@": path.resolve("./src"),
