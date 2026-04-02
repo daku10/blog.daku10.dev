@@ -1,5 +1,6 @@
 ---
 import { Font } from "astro:assets";
+import { PUBLIC_APP_ENV, PUBLIC_GA_ID } from "astro:env/client";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import { pageTitle, siteConfig } from "@/lib/site";
@@ -13,10 +14,8 @@ type Props = {
 
 const { title, description = siteConfig.description } = Astro.props;
 const pathname = Astro.url.pathname;
-const gaId =
-  process.env["PUBLIC_GA_ID"] ?? process.env["NEXT_PUBLIC_GA_ID"] ?? "";
-const appEnv =
-  process.env["PUBLIC_APP_ENV"] ?? process.env["NEXT_PUBLIC_APP_ENV"];
+const gaId = PUBLIC_GA_ID;
+const appEnv = PUBLIC_APP_ENV;
 const analyticsEnabled = appEnv === "production" && gaId.length > 0;
 ---
 
@@ -45,25 +44,29 @@ const analyticsEnabled = appEnv === "production" && gaId.length > 0;
         document.documentElement.classList.toggle("dark", resolved === "dark");
       })();
     </script>
-    {analyticsEnabled && (
-      <>
-        <script
-          is:inline
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-        ></script>
-        <script
-          is:inline
-          set:html={`window.dataLayer = window.dataLayer || [];
+    {
+      analyticsEnabled && (
+        <>
+          <script
+            is:inline
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+          />
+          <script
+            is:inline
+            set:html={`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag("js", new Date());
 gtag("config", "${gaId}");`}
-        ></script>
-      </>
-    )}
+          />
+        </>
+      )
+    }
   </head>
   <body class="bg-background text-text transition-colors">
-    <div class="grid-cols1 mx-auto grid min-h-svh max-w-7xl grid-rows-[auto_1fr_auto] px-6">
+    <div
+      class="grid-cols1 mx-auto grid min-h-svh max-w-7xl grid-rows-[auto_1fr_auto] px-6"
+    >
       <Header pathname={pathname} />
       <main>
         <slot />

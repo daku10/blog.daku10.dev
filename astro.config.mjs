@@ -2,7 +2,7 @@ import path from "node:path";
 
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, fontProviders, envField } from "astro/config";
 
 export default defineConfig({
   site: "https://blog.daku10.dev",
@@ -10,6 +10,21 @@ export default defineConfig({
   trailingSlash: "never",
   build: {
     format: "file",
+  },
+  env: {
+    schema: {
+      PUBLIC_GA_ID: envField.string({
+        context: "client",
+        access: "public",
+        optional: false,
+      }),
+      PUBLIC_APP_ENV: envField.enum({
+        context: "client",
+        access: "public",
+        optional: false,
+        values: ["development", "production"],
+      }),
+    },
   },
   integrations: [react()],
   fonts: [
