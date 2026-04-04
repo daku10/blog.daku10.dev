@@ -1,2 +1,5 @@
 minimumReleaseAge: 10080 # 7 days
 savePrefix: ""
+minimumReleaseAgeExclude:
+  # Renovate security update: wrangler@4.59.1
+  - wrangler@4.59.1
