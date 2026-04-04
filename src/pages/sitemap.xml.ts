@@ -1,4 +1,5 @@
 import type { APIRoute } from "astro";
+import { PUBLIC_APP_ENV } from "astro:env/client";
 
 import { retrievePostSummaries, retrieveTagWithPostCounts } from "@/lib/api";
 import { siteConfig } from "@/lib/site";
@@ -15,6 +16,12 @@ const renderUrl = (loc: string, lastmod?: string | Date, priority?: number) => {
 };
 
 export const GET: APIRoute = async () => {
+  if (PUBLIC_APP_ENV !== "production") {
+    return new Response(null, {
+      status: 404,
+    });
+  }
+
   const posts = await retrievePostSummaries();
   const tags = await retrieveTagWithPostCounts();
   const now = new Date().toISOString();
