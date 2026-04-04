@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://blog.daku10.dev/sitemap.xml

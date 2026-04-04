@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:preview": "astro build && printf '/*\\n  X-Robots-Tag: noindex, nofollow\\n' > out/_headers",
+    "build:production": "astro build",
     "start": "serve out",
+    "deploy": "pnpm wrangler deploy",
+    "deploy:preview": "pnpm wrangler deploy --env=preview",
     "preview:workers": "wrangler dev",
     "lint": "concurrently 'pnpm:lint:*'",
     "lint:ts": "astro check",
