@@ -7,6 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "start": "serve out",
+    "deploy": "wrangler deploy",
+    "deploy:preview": "wrangler deploy --env=preview",
     "preview:workers": "wrangler dev",
     "lint": "concurrently 'pnpm:lint:*'",
     "lint:ts": "astro check",
