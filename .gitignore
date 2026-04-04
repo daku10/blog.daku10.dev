@@ -13,6 +13,7 @@
 /.next/
 /.astro/
 /out/
+.wrangler/
 
 # production
 /build

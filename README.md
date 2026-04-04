@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# blog.daku10.dev
 
-## Getting Started
+Astro-based static blog.
 
-First, run the development server:
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4321](http://localhost:4321).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+pnpm build
+```
 
-## Learn More
+Static files are generated into `out/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Cloudflare Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The current production deployment can continue to use the static `out/` directory.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Cloudflare Workers
 
-## Deploy on Vercel
+This repository includes a minimal `wrangler.toml` so the same `out/` directory can be served from Workers Static Assets during a staged migration from Pages.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Preview locally with Workers:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm preview:workers
+```
+
+The suggested migration flow is:
+
+1. Keep Pages as-is.
+2. Build and verify the Workers deployment on `*.workers.dev`.
+3. Switch the custom domain after the Workers deployment is confirmed.
+4. Remove Pages only after the new route is stable.
+
+Deployment is expected to run in Cloudflare Workers Builds or another CI environment rather than from a local machine.
