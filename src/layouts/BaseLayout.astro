@@ -1,0 +1,77 @@
+---
+import { Font } from "astro:assets";
+import { PUBLIC_APP_ENV, PUBLIC_GA_ID } from "astro:env/client";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import { pageTitle, siteConfig } from "@/lib/site";
+
+import "@/app/styles/globals.css";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title, description = siteConfig.description } = Astro.props;
+const pathname = Astro.url.pathname;
+const gaId = PUBLIC_GA_ID;
+const appEnv = PUBLIC_APP_ENV;
+const analyticsEnabled = appEnv === "production" && gaId.length > 0;
+---
+
+<!doctype html>
+<html lang={siteConfig.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{pageTitle(title)}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <Font
+      cssVariable="--font-brand"
+      preload={[{ weight: 600, style: "normal", subset: "latin" }]}
+    />
+    <script is:inline>
+      (() => {
+        const storageKey = "theme";
+        const theme = localStorage.getItem(storageKey) ?? "system";
+        const resolved =
+          theme === "system"
+            ? window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+            : theme;
+        document.documentElement.classList.toggle("dark", resolved === "dark");
+      })();
+    </script>
+    {
+      analyticsEnabled && (
+        <>
+          <script
+            is:inline
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+          />
+          <script
+            is:inline
+            set:html={`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("config", "${gaId}");`}
+          />
+        </>
+      )
+    }
+  </head>
+  <body class="bg-background text-text transition-colors">
+    <div
+      class="grid-cols1 mx-auto grid min-h-svh max-w-7xl grid-rows-[auto_1fr_auto] px-6"
+    >
+      <Header pathname={pathname} />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

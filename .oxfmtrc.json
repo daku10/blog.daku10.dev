@@ -5,5 +5,5 @@
   "sortImports": true,
   "printWidth": 80,
   "sortPackageJson": false,
-  "ignorePatterns": ["src/generated/*"]
+  "ignorePatterns": [".astro/**", "out/**", "src/generated/*"]
 }

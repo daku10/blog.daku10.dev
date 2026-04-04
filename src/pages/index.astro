@@ -1,0 +1,12 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { PostSummaryList } from "@/components/PostSummaryList";
+import { retrievePostSummaries } from "@/lib/api";
+
+const postSummaries = await retrievePostSummaries();
+---
+
+<BaseLayout>
+  <h2 class="text-xl text-primary">最新記事</h2>
+  <PostSummaryList postSummaries={postSummaries} className="mt-8" />
+</BaseLayout>
