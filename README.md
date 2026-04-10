@@ -24,7 +24,7 @@ The current production deployment can continue to use the static `out/` director
 
 ## Cloudflare Workers
 
-This repository includes a minimal `wrangler.toml` so the same `out/` directory can be served from Workers Static Assets during a staged migration from Pages.
+This repository includes a minimal `wrangler.jsonc` so the same `out/` directory can be served from Workers Static Assets during a staged migration from Pages.
 
 Preview locally with Workers:
 
