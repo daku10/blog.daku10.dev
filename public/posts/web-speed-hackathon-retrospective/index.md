@@ -10,7 +10,7 @@ publishedAt: "2026-04-11"
 
 [Web Speed Hackathon 2026](https://cyberagent.connpass.com/event/371488/)に参加し、最終順位は**4位(813.25点)** でした。最終レギュレーションチェック前は21位前後でしたが、ここで多くの方がレギュレーション違反となったため4位になったという形です。前回も参加しており、その時は最終レギュレーションチェックで失敗したので、その反省を活かせたのは嬉しいことでした。ただ、後述しますが、後に自身で確認したときに最終的な状態でも微妙に壊した機能があったため、少し申し訳ない気持ちもあります。
 
-今回は自分の振り返りも兼ねて、コンテスト中にやったこととコンテスト後に試した改善を残しておきます。コンテスト後の改善の結果はローカル環境にて**1122.10点**、コンテストと同様のGitHub Actions上では**1027.85点**を記録できました。コードに関しては[こちらのリポジトリ](https://github.com/daku10/web-speed-hackathon-2026)に置いてあり、[mainブランチ](https://github.com/daku10/web-speed-hackathon-2026/commits/main/)はコンテスト終了時、[after-contestブランチ](https://github.com/daku10/web-speed-hackathon-2026/commits/after-contest/)にはコンテスト終了後に色々な改善を積んだものがあります。[^1]
+今回は自分の振り返りも兼ねて、コンテスト中にやったこととコンテスト後に試した改善を残しておきます。コンテスト後の改善の結果はローカル環境にて**1122.10点**、コンテストと同様のGitHub Actions上では**1027.85点**を記録できました。コードに関しては[こちらのリポジトリ](https://github.com/daku10/web-speed-hackathon-2026)に置いてあり、[mainブランチ](https://github.com/daku10/web-speed-hackathon-2026/tree/main)はコンテスト終了時、[after-contestブランチ](https://github.com/daku10/web-speed-hackathon-2026/tree/after-contest)にはコンテスト終了後に色々な改善を積んだものがあります。[^1]
 
 [^1]: コミット履歴や実装等はめちゃめちゃ汚いですし、after-contestブランチに関しては`database.sqlite`をgitignoreしたため`pnpm seed:insert`の実行が必要な点にも注意してください。
 
