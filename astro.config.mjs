@@ -42,6 +42,7 @@ export default defineConfig({
       styles: ["normal"],
       subsets: ["latin"],
       fallbacks: ["Avenir Next", "Helvetica Neue", "Arial", "sans-serif"],
+      display: "fallback",
       options: {
         experimental: {
           glyphs: ["blog.daku10ev"],

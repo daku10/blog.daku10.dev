@@ -7,6 +7,7 @@ export const Tags = [
   "tailwindcss",
   "linux",
   "wsl2",
+  "web-speed-hackathon",
 ] as const;
 
 export type Tag = (typeof Tags)[number];
@@ -20,4 +21,5 @@ export const TagLabel = {
   tailwindcss: "Tailwind CSS",
   linux: "Linux",
   wsl2: "WSL2",
+  "web-speed-hackathon": "Web Speed Hackathon",
 } satisfies Record<Tag, string>;

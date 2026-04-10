@@ -3,7 +3,7 @@ import { Icon } from "@/components/Icon";
 import { TagLink } from "@/components/TagLink";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { retrievePost, retrievePostSummaries } from "@/lib/api";
-import { processor } from "@/lib/processor";
+import { renderMarkdown } from "@/lib/processor";
 
 export async function getStaticPaths() {
   const posts = await retrievePostSummaries();
@@ -19,13 +19,10 @@ if (!slug) {
 }
 
 const post = await retrievePost(slug);
-const processedContent = await processor.process({
-  data: {
-    slug,
-  },
-  value: post.content,
+const html = await renderMarkdown({
+  slug,
+  content: post.content,
 });
-const html = processedContent.toString();
 ---
 
 <BaseLayout
