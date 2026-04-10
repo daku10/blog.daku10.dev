@@ -24,6 +24,12 @@ export default defineConfig({
         optional: false,
         values: ["local", "preview", "production"],
       }),
+      PUBLIC_SITE_URL: envField.string({
+        context: "client",
+        access: "public",
+        optional: false,
+        default: "https://blog.daku10.dev",
+      }),
     },
   },
   integrations: [react()],
