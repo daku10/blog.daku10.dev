@@ -28,7 +28,12 @@ const processedContent = await processor.process({
 const html = processedContent.toString();
 ---
 
-<BaseLayout title={post.title} description={post.description}>
+<BaseLayout
+  title={post.title}
+  description={post.description}
+  ogImage={`/og/posts/${post.slug}.png`}
+  ogType="article"
+>
   <div class="md:mx-36">
     <h1 class="text-lg font-bold text-heading md:text-3xl">{post.title}</h1>
     <p class="mt-4 text-text">{post.description}</p>
@@ -37,25 +42,29 @@ const html = processedContent.toString();
         <Icon type="pencil" className="h-4 w-4" />
         <time datetime={post.publishedAt}>{post.publishedAt}</time>
       </div>
-      {post.updatedAt && post.publishedAt !== post.updatedAt && (
-        <div class="flex items-center gap-2">
-          <Icon type="refresh" className="h-4 w-4" />
-          <time datetime={post.updatedAt}>{post.updatedAt}</time>
-        </div>
-      )}
+      {
+        post.updatedAt && post.publishedAt !== post.updatedAt && (
+          <div class="flex items-center gap-2">
+            <Icon type="refresh" className="h-4 w-4" />
+            <time datetime={post.updatedAt}>{post.updatedAt}</time>
+          </div>
+        )
+      }
     </div>
 
     <ul class="mt-4 flex gap-4">
-      {post.tags.map((tag) => (
-        <li>
-          <TagLink tag={tag} />
-        </li>
-      ))}
+      {
+        post.tags.map((tag) => (
+          <li>
+            <TagLink tag={tag} />
+          </li>
+        ))
+      }
     </ul>
 
     <article
       class="prose prose-sm mt-8 max-w-none prose-gray md:prose-base dark:prose-invert"
       set:html={html}
-    ></article>
+    />
   </div>
 </BaseLayout>

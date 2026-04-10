@@ -14,6 +14,7 @@
 /.astro/
 /out/
 .wrangler/
+.cache/
 
 # production
 /build
