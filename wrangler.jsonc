@@ -1,9 +1,12 @@
 {
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "blog-daku10-dev",
   "compatibility_date": "2026-04-03",
   "assets": {
     "directory": "./out",
   },
+  "workers_dev": false,
+  "preview_urls": false,
   "env": {
     "preview": {
       "name": "preview-blog-daku10-dev",
