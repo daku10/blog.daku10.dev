@@ -1,9 +1,9 @@
-/** @jsxImportSource preact */
 import styles from "./ThemeToggleButton.module.css";
 
 import { useSignal, useSignalEffect } from "@preact/signals";
 import { useSignalRef } from "@preact/signals/utils";
 
+import { Icon } from "@/components/Icon";
 import { cn } from "@/lib/util";
 
 type Theme = "light" | "dark" | "system";
@@ -43,8 +43,8 @@ const ThemeIconButton = ({
       popoverTarget={menuId}
       type="button"
     >
-      <SunIcon className="block h-6 w-6 dark:hidden" />
-      <MoonIcon className="hidden h-6 w-6 dark:block" />
+      <Icon className="block h-6 w-6 dark:hidden" type="sun" />
+      <Icon className="hidden h-6 w-6 dark:block" type="moon" />
       <span className="sr-only">Toggle Theme</span>
     </button>
   );
@@ -54,9 +54,10 @@ type RadioItemProps = {
   current: Theme;
   onChange: (value: Theme) => void;
   value: Theme;
+  enabled?: boolean;
 };
 
-const RadioItem = ({ current, onChange, value }: RadioItemProps) => {
+const RadioItem = ({ current, onChange, value, enabled }: RadioItemProps) => {
   const type = value === "light" ? "sun" : value === "dark" ? "moon" : "system";
   const label =
     value === "light" ? "Light" : value === "dark" ? "Dark" : "System";
@@ -72,15 +73,16 @@ const RadioItem = ({ current, onChange, value }: RadioItemProps) => {
       }}
       role="menuitemradio"
       type="button"
+      tabIndex={enabled === false ? -1 : 0}
     >
       <span className="flex w-full items-center">
-        {type === "sun" && <SunIcon className="h-6 w-6" />}
-        {type === "moon" && <MoonIcon className="h-6 w-6" />}
-        {type === "system" && <SunMoonIcon className="h-6 w-6" />}
+        {type === "sun" && <Icon className="h-6 w-6" type="sun" />}
+        {type === "moon" && <Icon className="h-6 w-6" type="moon" />}
+        {type === "system" && <Icon className="h-6 w-6" type="sun-moon" />}
         <span className="ml-2">{label}</span>
         {current === value && (
           <span className="ml-auto">
-            <CheckIcon className="h-4 w-4" />
+            <Icon className="h-4 w-4" type="check" />
           </span>
         )}
       </span>
@@ -91,6 +93,7 @@ const RadioItem = ({ current, onChange, value }: RadioItemProps) => {
 export const ThemeToggleButton = () => {
   const theme = useSignal<Theme>("system");
   const activeIndex = useSignal(2);
+  const menuOpened = useSignal(false);
   const buttonRef = useSignalRef<HTMLButtonElement | null>(null);
   const menuRef = useSignalRef<HTMLDivElement | null>(null);
 
@@ -122,7 +125,10 @@ export const ThemeToggleButton = () => {
     }
 
     const onToggle = () => {
-      if (!menu.matches(":popover-open")) {
+      const isOpen = menu.matches(":popover-open");
+      menuOpened.value = isOpen;
+
+      if (!isOpen) {
         return;
       }
       const nextIndex = themeOrder.indexOf(theme.value);
@@ -168,6 +174,7 @@ export const ThemeToggleButton = () => {
     menu.addEventListener("keydown", onKeyDown);
 
     return () => {
+      menuOpened.value = false;
       menu.removeEventListener("toggle", onToggle);
       menu.removeEventListener("keydown", onKeyDown);
     };
@@ -194,91 +201,25 @@ export const ThemeToggleButton = () => {
         popover="auto"
         role="menu"
       >
-        <RadioItem current={theme.value} onChange={setTheme} value="light" />
-        <RadioItem current={theme.value} onChange={setTheme} value="dark" />
-        <RadioItem current={theme.value} onChange={setTheme} value="system" />
+        <RadioItem
+          current={theme.value}
+          onChange={setTheme}
+          value="light"
+          enabled={menuOpened.value}
+        />
+        <RadioItem
+          current={theme.value}
+          onChange={setTheme}
+          value="dark"
+          enabled={menuOpened.value}
+        />
+        <RadioItem
+          current={theme.value}
+          onChange={setTheme}
+          value="system"
+          enabled={menuOpened.value}
+        />
       </div>
     </div>
-  );
-};
-
-const SunIcon = ({ className }: { className?: string }) => {
-  return (
-    <svg
-      aria-hidden="true"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2" />
-      <path d="M12 20v2" />
-      <path d="m4.93 4.93 1.41 1.41" />
-      <path d="m17.66 17.66 1.41 1.41" />
-      <path d="M2 12h2" />
-      <path d="M20 12h2" />
-      <path d="m6.34 17.66-1.41 1.41" />
-      <path d="m19.07 4.93-1.41 1.41" />
-    </svg>
-  );
-};
-
-const MoonIcon = ({ className }: { className?: string }) => {
-  return (
-    <svg
-      aria-hidden="true"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path d="M12 3a6 6 0 1 0 9 9a9 9 0 1 1 -9 -9" />
-    </svg>
-  );
-};
-
-const SunMoonIcon = ({ className }: { className?: string }) => {
-  return (
-    <svg
-      aria-hidden="true"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path d="M9.173 14.83a4 4 0 1 1 5.657 -5.657" />
-      <path d="M11.294 12.707l.174 .247a7.5 7.5 0 0 0 8.845 2.492a9 9 0 0 1 -14.671 2.914" />
-      <path d="M3 12h1" />
-      <path d="M12 3v1" />
-      <path d="M5.6 5.6l.7 .7" />
-      <path d="M3 21l18 -18" />
-    </svg>
-  );
-};
-
-const CheckIcon = ({ className }: { className?: string }) => {
-  return (
-    <svg
-      aria-hidden="true"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path d="m5 12 5 5L20 7" />
-    </svg>
   );
 };

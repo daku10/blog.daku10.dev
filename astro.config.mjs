@@ -1,7 +1,6 @@
 import path from "node:path";
 
 import preact from "@astrojs/preact";
-import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders, envField } from "astro/config";
 
@@ -34,18 +33,8 @@ export default defineConfig({
     },
   },
   integrations: [
-    react({
-      include: [/\/src\/components\/.*\.tsx$/],
-      exclude: [
-        /\/src\/components\/islands\/SideMenu\.tsx$/,
-        /\/src\/components\/islands\/ThemeToggleButton\.tsx$/,
-      ],
-    }),
     preact({
-      include: [
-        /\/src\/components\/islands\/SideMenu\.tsx$/,
-        /\/src\/components\/islands\/ThemeToggleButton\.tsx$/,
-      ],
+      include: [/\/src\/.*\.tsx$/],
     }),
   ],
   fonts: [

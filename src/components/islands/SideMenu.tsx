@@ -1,8 +1,7 @@
-/** @jsxImportSource preact */
-
 import { useSignal, useSignalEffect } from "@preact/signals";
 import { useSignalRef } from "@preact/signals/utils";
 
+import { Icon } from "@/components/Icon";
 import { cn } from "@/lib/util";
 
 type Props = {
@@ -14,75 +13,6 @@ const focusableSelector = [
   "button:not([disabled])",
   "[tabindex]:not([tabindex='-1'])",
 ].join(", ");
-
-const MenuIcon = ({ open }: { open: boolean }) => {
-  if (open) {
-    return (
-      <svg
-        aria-hidden="true"
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <path d="M18 6 6 18" />
-        <path d="m6 6 12 12" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-6 w-6"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path d="M4 6h16" />
-      <path d="M4 12h16" />
-      <path d="M4 18h16" />
-    </svg>
-  );
-};
-
-const RssIcon = () => {
-  return (
-    <svg
-      aria-hidden="true"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap={"round"}
-      strokeLinejoin={"round"}
-      className="h-10 w-10 p-2 text-secondary hover:text-primary"
-      viewBox="0 0 24 24"
-    >
-      <path d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-      <path d="M4 4a16 16 0 0 1 16 16" />
-      <path d="M4 11a9 9 0 0 1 9 9" />
-    </svg>
-  );
-};
-
-const GitHubIcon = () => {
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-10 w-10 p-2 text-secondary hover:text-primary"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path d="M12 .5C5.65.5.5 5.66.5 12.02c0 5.09 3.29 9.4 7.86 10.93.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.76 2.68 1.25 3.34.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.45.11-3.03 0 0 .97-.31 3.17 1.18a10.97 10.97 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.74.11 3.03.74.8 1.18 1.83 1.18 3.09 0 4.44-2.68 5.41-5.24 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A11.53 11.53 0 0 0 23.5 12.02C23.5 5.66 18.35.5 12 .5Z" />
-    </svg>
-  );
-};
 
 export const SideMenu = ({ pathname }: Props) => {
   const open = useSignal(false);
@@ -174,7 +104,7 @@ export const SideMenu = ({ pathname }: Props) => {
         }}
         type="button"
       >
-        <MenuIcon open={open.value} />
+        <Icon className="h-6 w-6" type={open.value ? "cancel" : "menu"} />
         <span className="sr-only">Menu</span>
       </button>
 
@@ -240,7 +170,7 @@ export const SideMenu = ({ pathname }: Props) => {
                 <div className="flex px-6 py-2">
                   <a href="/feed.xml" rel="noopener" target="_blank">
                     <span className="text-secondary hover:text-primary">
-                      <RssIcon />
+                      <Icon className="h-10 w-10 p-2" type="rss" />
                     </span>
                     <span className="sr-only">RSS</span>
                   </a>
@@ -250,7 +180,7 @@ export const SideMenu = ({ pathname }: Props) => {
                     target="_blank"
                   >
                     <span className="text-secondary hover:text-primary">
-                      <GitHubIcon />
+                      <Icon className="h-10 w-10 p-2" type="github" />
                     </span>
                     <span className="sr-only">GitHub</span>
                   </a>

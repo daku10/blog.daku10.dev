@@ -255,12 +255,15 @@ export const renderOgImage = async ({
   const normalizedTitle = normalizeTitle(title);
   const titleFontSize = resolveTitleFontSize(normalizedTitle);
   const labels = tags.map((tag) => TagLabel[tag] ?? tag);
-  const svg = await satori(
+  const card = (
     <OgCard
       labels={labels}
       title={normalizedTitle}
       titleFontSize={titleFontSize}
-    />,
+    />
+  ) as Parameters<typeof satori>[0];
+  const svg = await satori(
+    card,
     {
       fonts: await getFonts(),
       height: imageHeight,
