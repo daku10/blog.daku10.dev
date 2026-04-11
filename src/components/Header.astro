@@ -27,9 +27,9 @@ const { pathname } = Astro.props;
       </div>
       <div class="ml-8 flex items-center">
         <div class="md:hidden">
-          <SideMenu client:media="(max-width: 767px)" pathname={pathname} />
+          <SideMenu client:only="preact" pathname={pathname} />
         </div>
-        <ThemeToggleButton client:load />
+        <ThemeToggleButton client:only="react" />
         <Link
           className="hidden md:block"
           href="/feed.xml"

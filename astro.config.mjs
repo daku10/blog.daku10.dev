@@ -1,5 +1,6 @@
 import path from "node:path";
 
+import preact from "@astrojs/preact";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders, envField } from "astro/config";
@@ -32,7 +33,15 @@ export default defineConfig({
       }),
     },
   },
-  integrations: [react()],
+  integrations: [
+    react({
+      include: [/\/src\/components\/.*\.tsx$/],
+      exclude: [/\/src\/components\/islands\/SideMenu\.tsx$/],
+    }),
+    preact({
+      include: [/\/src\/components\/islands\/SideMenu\.tsx$/],
+    }),
+  ],
   fonts: [
     {
       name: "Open Sans",
