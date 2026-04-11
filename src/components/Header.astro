@@ -29,7 +29,7 @@ const { pathname } = Astro.props;
         <div class="md:hidden">
           <SideMenu client:only="preact" pathname={pathname} />
         </div>
-        <ThemeToggleButton client:only="react" />
+        <ThemeToggleButton client:only="preact" />
         <Link
           className="hidden md:block"
           href="/feed.xml"

@@ -36,10 +36,16 @@ export default defineConfig({
   integrations: [
     react({
       include: [/\/src\/components\/.*\.tsx$/],
-      exclude: [/\/src\/components\/islands\/SideMenu\.tsx$/],
+      exclude: [
+        /\/src\/components\/islands\/SideMenu\.tsx$/,
+        /\/src\/components\/islands\/ThemeToggleButton\.tsx$/,
+      ],
     }),
     preact({
-      include: [/\/src\/components\/islands\/SideMenu\.tsx$/],
+      include: [
+        /\/src\/components\/islands\/SideMenu\.tsx$/,
+        /\/src\/components\/islands\/ThemeToggleButton\.tsx$/,
+      ],
     }),
   ],
   fonts: [
