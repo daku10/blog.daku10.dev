@@ -32,11 +32,7 @@ export default defineConfig({
       }),
     },
   },
-  integrations: [
-    preact({
-      include: [/\/src\/.*\.tsx$/],
-    }),
-  ],
+  integrations: [preact()],
   fonts: [
     {
       name: "Open Sans",

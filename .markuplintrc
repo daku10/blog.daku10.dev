@@ -31,8 +31,7 @@
     {
       "selector": "[data-markuplint-disable]",
       "rules": {
-        "no-hard-code-id": false,
-        "neighbor-popovers": false
+        "no-hard-code-id": false
       }
     }
   ]

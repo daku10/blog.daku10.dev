@@ -1,7 +1,7 @@
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import * as budoux from "budoux";
+import { loadDefaultJapaneseParser } from "budoux";
 import satori from "satori";
 import sharp from "sharp";
 
@@ -24,7 +24,7 @@ const regularFontUrl =
   "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Regular.otf";
 const boldFontUrl =
   "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Bold.otf";
-const parser = budoux.loadDefaultJapaneseParser();
+const parser = loadDefaultJapaneseParser();
 
 const estimateTextWidth = (value: string) => {
   let width = 0;
