@@ -261,15 +261,12 @@ export const renderOgImage = async ({
       title={normalizedTitle}
       titleFontSize={titleFontSize}
     />
-  ) as Parameters<typeof satori>[0];
-  const svg = await satori(
-    card,
-    {
-      fonts: await getFonts(),
-      height: imageHeight,
-      width: imageWidth,
-    },
   );
+  const svg = await satori(card, {
+    fonts: await getFonts(),
+    height: imageHeight,
+    width: imageWidth,
+  });
 
   return sharp(Buffer.from(svg)).png().toBuffer();
 };
