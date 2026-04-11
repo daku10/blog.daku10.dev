@@ -1,9 +1,9 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import type { ComponentChildren, JSX } from "preact";
 
 type Props = {
   href: string;
-  children: ReactNode;
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
+  children: ComponentChildren;
+} & JSX.IntrinsicElements["a"];
 
 export function Link({ ...rest }: Props) {
   return <a {...rest} />;

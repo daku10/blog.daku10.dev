@@ -1,19 +1,14 @@
-import {
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  Transition,
-} from "@headlessui/react";
-import { Fragment, forwardRef, useEffect, useState } from "react";
-import type { ComponentProps } from "react";
+import { useSignal, useSignalEffect } from "@preact/signals";
 
 import { Icon } from "@/components/Icon";
 import { cn } from "@/lib/util";
 
+import styles from "./ThemeToggleButton.module.css";
+
 type Theme = "light" | "dark" | "system";
 
 const storageKey = "theme";
+const menuId = "theme-toggle-menu";
 
 const isValidTheme = (theme: string | null | undefined): theme is Theme => {
   return theme === "light" || theme === "dark" || theme === "system";
@@ -30,21 +25,77 @@ const applyTheme = (theme: Theme) => {
   document.documentElement.classList.toggle("dark", resolved === "dark");
 };
 
-export const ThemeToggleButton = () => {
-  const [mounted, setMounted] = useState(false);
-  const [theme, setThemeState] = useState<Theme>("system");
+const ThemeIconButton = () => {
+  return (
+    <button
+      aria-haspopup="menu"
+      className={cn(
+        "cursor-pointer p-2 text-secondary hover:text-primary aria-expanded:text-primary",
+        styles["theme-menu-button"],
+      )}
+      popoverTarget={menuId}
+      type="button"
+    >
+      <Icon className="block h-6 w-6 dark:hidden" type="sun" />
+      <Icon className="hidden h-6 w-6 dark:block" type="moon" />
+      <span className="sr-only">Toggle Theme</span>
+    </button>
+  );
+};
 
-  useEffect(() => {
+type RadioItemProps = {
+  current: Theme;
+  onChange: (value: Theme) => void;
+  value: Theme;
+};
+
+const RadioItem = ({ current, onChange, value }: RadioItemProps) => {
+  const type = value === "light" ? "sun" : value === "dark" ? "moon" : "system";
+  const label =
+    value === "light" ? "Light" : value === "dark" ? "Dark" : "System";
+
+  return (
+    <button
+      className={cn(
+        "w-28 cursor-pointer py-1.5 text-secondary transition-colors select-none",
+        { "text-primary": current === value },
+      )}
+      onClick={() => {
+        onChange(value);
+      }}
+      role="menuitemradio"
+      type="button"
+      popoverTarget={menuId}
+      popoverTargetAction="hide"
+    >
+      <span className="flex w-full items-center">
+        {type === "sun" && <Icon className="h-6 w-6" type="sun" />}
+        {type === "moon" && <Icon className="h-6 w-6" type="moon" />}
+        {type === "system" && <Icon className="h-6 w-6" type="sun-moon" />}
+        <span className="ml-2">{label}</span>
+        {current === value && (
+          <span className="ml-auto">
+            <Icon className="h-4 w-4" type="check" />
+          </span>
+        )}
+      </span>
+    </button>
+  );
+};
+
+export const ThemeToggleButton = () => {
+  const theme = useSignal<Theme>("system");
+
+  useSignalEffect(() => {
     const savedTheme = localStorage.getItem(storageKey);
     const nextTheme = isValidTheme(savedTheme) ? savedTheme : "system";
 
-    setThemeState(nextTheme);
+    theme.value = nextTheme;
     applyTheme(nextTheme);
-    setMounted(true);
 
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     const onChange = () => {
-      if (nextTheme === "system") {
+      if (theme.value === "system") {
         applyTheme("system");
       }
     };
@@ -53,123 +104,32 @@ export const ThemeToggleButton = () => {
     return () => {
       media.removeEventListener("change", onChange);
     };
-  }, []);
+  });
 
   const setTheme = (nextTheme: Theme) => {
     localStorage.setItem(storageKey, nextTheme);
     applyTheme(nextTheme);
-    setThemeState(nextTheme);
+    theme.value = nextTheme;
   };
 
-  if (!mounted) {
-    return <ThemeIconButton />;
-  }
-
   return (
-    <Menu as="div" className="relative">
-      <MenuButton as={ThemeIconButton} />
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="opacity-0 transform scale-95"
-        enterTo="opacity-100 transform scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="opacity-100 transform scale-100"
-        leaveTo="opacity-0 transform scale-95"
+    <div>
+      <ThemeIconButton />
+      <div
+        id={menuId}
+        className={cn(
+          "rounded-md border bg-background p-3 shadow-md ring-1 ring-black/5",
+          styles["theme-menu"],
+        )}
+        popover="auto"
+        role="menu"
       >
-        <MenuItems className="absolute right-0 mt-2 flex flex-col rounded-md border bg-background p-2 shadow-md ring-1 ring-black/5 focus:outline-hidden">
-          <MenuItem>
-            {({ focus }) => (
-              <RadioItem
-                active={focus}
-                current={theme}
-                value="light"
-                onChange={setTheme}
-              />
-            )}
-          </MenuItem>
-          <MenuItem>
-            {({ focus }) => (
-              <RadioItem
-                active={focus}
-                current={theme}
-                value="dark"
-                onChange={setTheme}
-              />
-            )}
-          </MenuItem>
-          <MenuItem>
-            {({ focus }) => (
-              <RadioItem
-                active={focus}
-                current={theme}
-                value="system"
-                onChange={setTheme}
-              />
-            )}
-          </MenuItem>
-        </MenuItems>
-      </Transition>
-    </Menu>
+        <div className="flex flex-col">
+          <RadioItem current={theme.value} onChange={setTheme} value="light" />
+          <RadioItem current={theme.value} onChange={setTheme} value="dark" />
+          <RadioItem current={theme.value} onChange={setTheme} value="system" />
+        </div>
+      </div>
+    </div>
   );
 };
-
-const ThemeIconButton = forwardRef<HTMLButtonElement>((props, ref) => {
-  return (
-    <button
-      {...props}
-      ref={ref}
-      className="cursor-pointer p-2 text-secondary hover:text-primary aria-expanded:text-primary"
-      type="button"
-    >
-      <Icon type="sun" className="block h-6 w-6 dark:hidden" />
-      <Icon type="moon" className="hidden h-6 w-6 dark:block" />
-      <span className="sr-only">Toggle Theme</span>
-    </button>
-  );
-});
-ThemeIconButton.displayName = "ThemeIconButton";
-
-type RadioItemProps = {
-  active: boolean;
-  current: Theme;
-  value: Theme;
-  onChange: (value: Theme) => void;
-} & Omit<ComponentProps<"button">, "onChange">;
-
-const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
-  ({ current, value, onChange, active, ...rest }, ref) => {
-    const type =
-      value === "light" ? "sun" : value === "dark" ? "moon" : "sun-moon";
-    const label =
-      value === "light" ? "Light" : value === "dark" ? "Dark" : "System";
-
-    return (
-      <button
-        {...rest}
-        ref={ref}
-        className={cn(
-          "w-28 cursor-pointer py-1.5 text-secondary outline-hidden transition-colors select-none",
-          { "text-primary": active || current === value },
-        )}
-        onClick={(e) => {
-          rest.onClick?.(e);
-          onChange(value);
-        }}
-        type="button"
-      >
-        <span className="flex w-full items-center">
-          <Icon type={type} className="h-6 w-6" />
-          <span className="ml-2">{label}</span>
-          {current === value && (
-            <span className="ml-auto">
-              <Icon type="check" className="h-4 w-4" />
-            </span>
-          )}
-        </span>
-      </button>
-    );
-  },
-);
-
-RadioItem.displayName = "RadioItem";
