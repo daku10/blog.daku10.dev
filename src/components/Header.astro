@@ -27,7 +27,7 @@ const { pathname } = Astro.props;
       </div>
       <div class="ml-8 flex items-center">
         <div class="md:hidden">
-          <SideMenu client:only="media(max-width: 768px)" pathname={pathname} />
+          <SideMenu client:media="(max-width: 767px)" pathname={pathname} />
         </div>
         <ThemeToggleButton client:load />
         <Link
