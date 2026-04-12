@@ -1,6 +1,6 @@
 import path from "node:path";
 
-import react from "@astrojs/react";
+import preact from "@astrojs/preact";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders, envField } from "astro/config";
 
@@ -32,7 +32,7 @@ export default defineConfig({
       }),
     },
   },
-  integrations: [react()],
+  integrations: [preact()],
   fonts: [
     {
       name: "Open Sans",

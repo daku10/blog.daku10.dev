@@ -11,6 +11,14 @@
   "rules": {
     "heading-levels": false
   },
+  "overrideMode": "merge",
+  "overrides": {
+    "./src/components/islands/ThemeToggleButton.tsx": {
+      "rules": {
+        "neighbor-popovers": false
+      }
+    }
+  },
   "nodeRules": [
     {
       "selector": "img",

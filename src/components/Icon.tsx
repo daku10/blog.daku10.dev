@@ -1,11 +1,14 @@
-import { IconMenu2, IconX, IconRefresh, IconRss } from "@tabler/icons-react";
 import {
-  IconSun,
-  IconMoon,
-  IconSunMoon,
   IconCheck,
+  IconMenu2,
+  IconMoon,
   IconPencil,
-} from "@tabler/icons-react";
+  IconRefresh,
+  IconRss,
+  IconSun,
+  IconSunMoon,
+  IconX,
+} from "@tabler/icons-preact";
 import { siZenn, siGithub, siX } from "simple-icons";
 
 const icons = [
