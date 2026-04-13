@@ -1,8 +1,8 @@
 import path from "node:path";
 
-import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { defineCollection } from "astro:content";
 
 import { Tags } from "./lib/const";
 

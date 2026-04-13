@@ -1,13 +1,13 @@
 import path from "node:path";
 
 import preact from "@astrojs/preact";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig, fontProviders, envField } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import tailwindcss from "@tailwindcss/vite";
-import { defineConfig, fontProviders, envField } from "astro/config";
 
 export default defineConfig({
   site: "https://blog.daku10.dev",
