@@ -43,7 +43,12 @@ export default defineConfig({
     rehypePlugins: [
       [rehypeExternalLinks, { rel: ["noopener"], target: "_blank" }],
       rehypeSlug,
-      rehypeAutolinkHeadings,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "append",
+        },
+      ],
       [
         rehypePrettyCode,
         {
