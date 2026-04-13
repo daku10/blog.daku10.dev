@@ -1,32 +1,9 @@
-import { readFile, readdir } from "fs/promises";
-import path from "path";
-
-import matter from "gray-matter";
-import * as v from "valibot";
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
 
 import { TagLabel, Tags } from "./const";
 import type { Tag } from "./const";
 
-const postMetadataSchema = v.object({
-  title: v.string(),
-  description: v.string(),
-  // this is a non-empty array for tags
-  tags: v.tupleWithRest([v.picklist(Tags)], v.picklist(Tags)),
-  published: v.boolean(),
-  publishedAt: v.string(),
-  updatedAt: v.optional(v.string()),
-});
-
-type NonEmptyArray<T> = [T, ...T[]];
-
-type PostMetadata = {
-  title: string;
-  description: string;
-  tags: NonEmptyArray<Tag>;
-  published: boolean;
-  publishedAt: string;
-  updatedAt?: string | undefined;
-};
+type PostMetadata = CollectionEntry<"posts">["data"];
 
 export type PostSummary = {
   slug: string;
@@ -43,26 +20,11 @@ type PostSearchParams = {
 export const retrievePostSummaries: (
   params?: PostSearchParams,
 ) => Promise<PostSummary[]> = async (params) => {
-  const postsDir = path.join(process.cwd(), "public", "posts");
-  const fileNames = (await readdir(postsDir)).map((dir) => ({
-    slug: dir,
-    fileName: path.join(dir, "index.md"),
-  }));
-
-  return (
-    await Promise.all(
-      fileNames.map(async (fileName) => {
-        const filePath = path.join(postsDir, fileName.fileName);
-        const fileContent = await readFile(filePath, "utf-8");
-        const { data } = matter(fileContent);
-        const parsed = v.parse(postMetadataSchema, data);
-        return {
-          slug: fileName.slug,
-          ...parsed,
-        };
-      }),
-    )
-  )
+  return (await getCollection("posts"))
+    .map((post) => ({
+      slug: post.id,
+      ...post.data,
+    }))
     .filter((post) => {
       if (!post.published) {
         return false;
@@ -79,23 +41,16 @@ export const retrievePostSummaries: (
 };
 
 export const retrievePost: (slug: string) => Promise<Post> = async (slug) => {
-  const filePath = path.join(
-    process.cwd(),
-    "public",
-    "posts",
-    slug,
-    "index.md",
-  );
-  const fileContent = await readFile(filePath, "utf-8");
-  const { data, content } = matter(fileContent);
-  const parsed = v.parse(postMetadataSchema, data);
-  if (!parsed.published) {
+  const post = await getEntry("posts", slug);
+
+  if (!post || !post.data.published) {
     throw new Error("Not found");
   }
+
   return {
     slug,
-    content,
-    ...parsed,
+    content: post.body ?? "",
+    ...post.data,
   };
 };
 
