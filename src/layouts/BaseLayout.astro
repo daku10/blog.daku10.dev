@@ -28,6 +28,24 @@ const appEnv = PUBLIC_APP_ENV;
 const shouldNoindex = appEnv !== "production";
 const analyticsEnabled = appEnv === "production" && gaId.length > 0;
 const resolvedTitle = pageTitle(title);
+const speculationRules = JSON.stringify({
+  prefetch: [
+    {
+      where: {
+        href_matches: "/*",
+      },
+      eagerness: "eager",
+    },
+  ],
+  prerender: [
+    {
+      where: {
+        href_matches: "/*",
+      },
+      eagerness: "moderate",
+    },
+  ],
+});
 ---
 
 <!doctype html>
@@ -68,6 +86,7 @@ const resolvedTitle = pageTitle(title);
         document.documentElement.classList.toggle("dark", resolved === "dark");
       })();
     </script>
+    <script is:inline type="speculationrules" set:html={speculationRules} />
     {
       analyticsEnabled && (
         <>
