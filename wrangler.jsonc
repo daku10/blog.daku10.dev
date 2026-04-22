@@ -10,6 +10,7 @@
   "env": {
     "preview": {
       "name": "preview-blog-daku10-dev",
+      "workers_dev": true, // for cloudflare access
     },
   },
 }
