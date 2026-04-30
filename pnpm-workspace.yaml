@@ -1,5 +1,2 @@
 minimumReleaseAge: 10080 # 7 days
 savePrefix: ""
-minimumReleaseAgeExclude:
-  # Renovate security update: astro@6.1.6
-  - astro@6.1.6
