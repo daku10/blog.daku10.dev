@@ -52,7 +52,7 @@
     "@types/node": "24.12.2",
     "@types/rss": "0.0.32",
     "budoux": "0.8.1",
-    "concurrently": "9.2.1",
+    "concurrently": "10.0.5",
     "markuplint": "4.14.1",
     "oxfmt": "0.46.0",
     "oxlint": "1.61.0",
