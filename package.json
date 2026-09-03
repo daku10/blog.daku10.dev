@@ -22,7 +22,7 @@
     "format": "oxfmt --write ."
   },
   "dependencies": {
-    "@astrojs/preact": "5.1.1",
+    "@astrojs/preact": "6.0.4",
     "@preact/signals": "2.9.0",
     "@tabler/icons-preact": "3.41.1",
     "astro": "6.1.10",
