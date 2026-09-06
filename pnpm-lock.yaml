@@ -152,8 +152,8 @@ importers:
         specifier: 0.26.0
         version: 0.26.0
       sharp:
-        specifier: 0.34.5
-        version: 0.34.5
+        specifier: 0.35.4
+        version: 0.35.4(@types/node@24.12.2)
       shiki:
         specifier: 4.0.2
         version: 4.0.2
@@ -11212,8 +11212,7 @@ snapshots:
 
   semver@7.7.4: {}
 
-  semver@7.8.5:
-    optional: true
+  semver@7.8.5: {}
 
   send@1.2.1(supports-color@10.2.2):
     dependencies:
@@ -11358,7 +11357,6 @@ snapshots:
       '@img/sharp-win32-ia32': 0.35.4
       '@img/sharp-win32-x64': 0.35.4
       '@types/node': 24.12.2
-    optional: true
 
   shebang-command@2.0.0:
     dependencies:
