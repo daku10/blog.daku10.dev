@@ -8,7 +8,7 @@
   "packageRules": [
     {
       "groupName": "oxc",
-      "matchPackageNames": ["oxfmt", "oxlint"]
+      "matchPackageNames": ["oxfmt", "oxlint", "oxlint-tsgolint"]
     },
     {
       "groupName": "markuplint",
