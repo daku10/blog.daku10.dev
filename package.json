@@ -26,7 +26,7 @@
     "@astrojs/preact": "6.1.0",
     "@preact/signals": "2.11.3",
     "@tabler/icons-preact": "3.49.0",
-    "astro": "7.2.9",
+    "astro": "7.3.3",
     "clsx": "2.1.1",
     "preact": "10.29.8",
     "rehype-autolink-headings": "7.1.0",
