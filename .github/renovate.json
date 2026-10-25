@@ -1,23 +1,26 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":timezone(Asia/Tokyo)", "group:allNonMajor"],
-  "baseBranches": ["preview"],
+  "extends": [
+    "config:recommended",
+    ":timezone(Asia/Tokyo)",
+    "group:allNonMajor"
+  ],
+  "baseBranchPatterns": ["preview"],
   "labels": ["dependencies", "renovate"],
   "dependencyDashboard": true,
   "schedule": ["after 8am before 5pm on Monday"],
   "packageRules": [
     {
       "groupName": "oxc",
-      "matchPackageNames": ["oxfmt", "oxlint"]
+      "matchPackageNames": ["oxfmt", "oxlint", "oxlint-tsgolint"]
     },
     {
       "groupName": "markuplint",
-      "matchPackageNames": ["markuplint"],
-      "matchPackagePrefixes": ["@markuplint"]
+      "matchPackageNames": ["markuplint", "@markuplint/**"]
     }
   ],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
-  "postUpdateOptions": ["yarnDedupeHighest"],
+  "postUpdateOptions": ["pnpmDedupe"],
   "minimumReleaseAge": "7 days"
 }

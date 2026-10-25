@@ -126,7 +126,7 @@ wsl --export Ubuntu C:\Users\ubuntu.tar
 これは、アップグレード前の環境に依存すると思います。
 私はアップグレード前にDNS周りのトラブルがあったため、`/etc/wsl.conf`を変更することで`/etc/resolve.conf`を自動生成せず、手動で設定していました。[^1]
 
-[^1]: https://qiita.com/kkato233/items/1fc71bde5a6d94f1b982 など
+[^1]: https://qiita.com/kkato233/items/1fc71bde5a6d94f1b982
 
 アップグレード後も`/etc/wsl.conf`は引き継がれており、内容も変わらずだったのですが、`/etc/resolve.conf`は自動生成されるものになっていました。`/etc/resolve.conf`を削除して、再度書き直しても解決しませんでした。そのため、`sudo chattr +i /etc/resolve.conf`でファイルをロックすることで解決しました。(多分もっと良い方法はありそう……)[^2]
 

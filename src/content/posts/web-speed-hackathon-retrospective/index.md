@@ -110,7 +110,7 @@ CSSで実現可能なものをJavaScriptで代替しているパターンもよ�
 上記の修正に加えて、いくつか細かい修正を加え、**4位(813.25点)** という結果でコンテストを終えました。その状態は[mainブランチ](https://github.com/daku10/web-speed-hackathon-2026)に置いてあります。ただ、後にスコアを上げようと確認した際に、以下の箇所で初期アプリケーションと異なることが判明しました。
 
 1. ユーザープロフィールのヘッダーの背景色が、他の画面からの遷移では問題ないが、直アクセスだと反映されていなかった。imgのonloadで実装されていたが、SSRしたタイミングで発火しないようになっていた。
-1. DM詳細画面での画面表示時、メッセージ送信・受信時のスクロール位置が画面下部より少し上になっている。メッセージ入力フォーム分の高さがずれている。毎ミリ秒監視してスクロールする処理の最適化をしたときに、`window.scrollTo` から `scrollIntoView`に書き換わっていたのだが、入力フォーム分の高さが考慮されないため。
+1. DM詳細画面での画面表示時、メッセージ送信・受信時のスクロール位置が画面下部より少し上になっている。メッセージ入力フォーム分の高さがずれている。毎ミリ秒監視してスクロールする処理の最適化をしたときに、`window.scrollTo`から`scrollIntoView`に書き換わっていたのだが、入力フォーム分の高さが考慮されないため。
 1. Crokのストリーミング中のスクロールボタンが表示されない。シンプルに修正時に巻き込んで壊してしまった。
 
 3番目に関してはテストケースに記載が無かったため良いとしても、他の2項目は抵触していると思うので申し訳なさがあります。また、SSRも誤った実装になっていたため、hydration errorがconsoleに出ているような危うい状態でした。
@@ -130,11 +130,11 @@ CSSで実現可能なものをJavaScriptで代替しているパターンもよ�
 
 ### 2. video要素がLCPになることへの対処
 
-画像に関しては `fetchPriority=high` でリソースの先読みをして、LCPを改善できるのですが、動画の場合は以下を行うと効果的でした。
+画像に関しては`fetchPriority=high`でリソースの先読みをして、LCPを改善できるのですが、動画の場合は以下を行うと効果的でした。
 
 1. [poster](https://developer.mozilla.org/ja/docs/Web/API/HTMLVideoElement/poster)プロパティを使用して、先に画像を出す
 1. [preload](https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements/video#preload)は`none`にしておき、他のリソースを優先する
-1. 1番目のposter画像をpreloadできるように `<link rel="preload" as="image" href="poster.jpg" fetchpriority="high">` のようなコードをheadに入れる
+1. 1番目のposter画像をpreloadできるように`<link rel="preload" as="image" href="poster.jpg" fetchpriority="high">`のようなコードをheadに入れる
 
 ここに関しては[この記事](https://web.dev/learn/performance/video-performance?hl=ja#user-initiated_playback)が参考になりました。
 
@@ -148,7 +148,7 @@ CSSで実現可能なものをJavaScriptで代替しているパターンもよ�
 
 ### 5. CrokのTBT改善
 
-講評でも触れられていましたが、`react-syntax-highlighter` のAuto DetectがTBT悪化の大きな要因だったので、それを外すだけでも大分改善しました。ただ、mermaidのシンタックスハイライトに関しては、微妙に初期と異なるものになるので初期のアプリケーションと全く同じものを目指す、という点ではもう一手間必要です。しかし、今回は見送りました。また、SSEで一度に送るメッセージのサイズを増やしたところ、ユーザー目線では快適になったのですが、TBTが悪化してしまったので今回は入れていません。
+講評でも触れられていましたが、`react-syntax-highlighter`のAuto DetectがTBT悪化の大きな要因だったので、それを外すだけでも大分改善しました。ただ、mermaidのシンタックスハイライトに関しては、微妙に初期と異なるものになるので初期のアプリケーションと全く同じものを目指す、という点ではもう一手間必要です。しかし、今回は見送りました。また、SSEで一度に送るメッセージのサイズを増やしたところ、ユーザー目線では快適になったのですが、TBTが悪化してしまったので今回は入れていません。
 
 ### 6. DM送信のINP改善
 
@@ -160,9 +160,9 @@ CSSで実現可能なものをJavaScriptで代替しているパターンもよ�
 
 - `react/react-dom` → `preact`
   - `react-final-form`: 壊れたので、自前実装に変更
-  - `react-router`: `wouter` → `wouter/preact` というプロセスを経て置き換え
+  - `react-router`: `wouter` → `wouter/preact`というプロセスを経て置き換え
   - `react-helmet`: 大したことはしていなかったので自前実装に変更
-  - `@tanstack/react-query`: `@tanstack/preact-query` に簡単に置き換え
+  - `@tanstack/react-query`: `@tanstack/preact-query`に簡単に置き換え
 
 上記の移行後preactはDOMのイベントハンドリングが異なるためか、翻訳機能のクリックに関連する箇所が壊れましたが、それ以外に大きな問題はなさそうでした。
 

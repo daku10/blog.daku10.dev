@@ -1,2 +1,6 @@
 minimumReleaseAge: 10080 # 7 days
 savePrefix: ""
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
