@@ -28,7 +28,7 @@
     "@tabler/icons-preact": "3.49.0",
     "astro": "7.3.3",
     "clsx": "2.1.1",
-    "preact": "10.29.8",
+    "preact": "11.0.2",
     "rehype-autolink-headings": "7.1.0",
     "rehype-external-links": "3.0.0",
     "rehype-pretty-code": "0.14.5",
