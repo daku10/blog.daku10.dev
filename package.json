@@ -50,7 +50,7 @@
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.3",
     "@types/hast": "3.0.5",
-    "@types/node": "24.19.2",
+    "@types/node": "26.6.6",
     "@types/rss": "0.0.32",
     "budoux": "0.9.3",
     "concurrently": "10.0.6",
